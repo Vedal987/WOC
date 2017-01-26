@@ -28433,6 +28433,7 @@ GameObject:
   - component: {fileID: 1374775108}
   - component: {fileID: 1374775107}
   - component: {fileID: 1374775106}
+  - component: {fileID: 1374775111}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -28505,9 +28506,25 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1451680140}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1374775111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1374775105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8238cc53530b64fbb7828c3d3bb591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1451680140}
+  damping: 0.5
+  lookAheadFactor: 2
+  lookAheadReturnSpeed: 0.5
+  lookAheadMoveThreshold: 0.1
 --- !u!1001 &1374946987
 Prefab:
   m_ObjectHideFlags: 0
@@ -30525,7 +30542,7 @@ Transform:
   m_LocalScale: {x: 3.13, y: 3.13, z: 1}
   m_Children: []
   m_Father: {fileID: 1451680140}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1449744418
 BoxCollider2D:
@@ -30604,7 +30621,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1374775110}
   - {fileID: 1449744417}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -34547,7 +34563,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1652879296
+  randomSeed: -675837114
   InitialModule:
     serializedVersion: 3
     enabled: 1
