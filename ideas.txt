@@ -1,0 +1,53 @@
+Retro
+2D
+
+3 species:
+Titans (Good)
+Demons (Bad)
+Hybrids (Good)
+
+General Name: Creatures
+
+Pokemon/Undertale
+
+Game starts next to hybrids.
+
+-World:
+
+Should be a war between demons and titans, hybrids were created in the war and are rare.
+
+-Core Mechanics:
+
+Collect creatures
+Can carry one at once
+Boss demons
+
+Starter creatures
+Can kill/get down to low health and catch/befriend
+
+Combat Style:
+
+The creatures fight for you against other creatures
+
+
+---Characters:
+
+Leader of demons: Kronos
+Leader of titans: Omega
+
+Main: Lunios
+
+Char:
+Ariel/Hybrid: Lvl: 40 Helps you fight at the start of the game
+
+Starters:
+Kai/Hybrid: Lvl: 1 Ariel gives it you if you defend the village
+Lennox/Demon Lvl: 5 Kronos gives it to you if you kill everyone in the village
+
+
+Bad Run:
+Fight Omega and think its over but then Ariel fights you
+
+Good Run:
+You fight Kronos, leader of demons and win
+
