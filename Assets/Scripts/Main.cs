@@ -14,7 +14,7 @@ public class Main : MonoBehaviour {
 
 	void Start () {
 		modelAnimator = model.GetComponent<Animator> ();
-		StartCoroutine ("StartBattle");
+		//StartCoroutine ("StartBattle");
 	}
 		
 	void Update()
@@ -26,8 +26,10 @@ public class Main : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		GetComponent<Rigidbody2D>().velocity=targetVelocity * playerSpeed;
+		if (!inBattle) {
+			Vector2 targetVelocity = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+			GetComponent<Rigidbody2D> ().velocity = targetVelocity * playerSpeed;
+		}
 	}
 
 	IEnumerator StartBattle()
