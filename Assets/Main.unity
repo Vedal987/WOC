@@ -1218,9 +1218,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1449744417}
-  - component: {fileID: 1449744418}
   - component: {fileID: 1449744419}
   - component: {fileID: 1449744420}
+  - component: {fileID: 1449744418}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -1254,7 +1254,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.14, y: 0.29}
 --- !u!212 &1449744419
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1629,7 +1629,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1994280783
+  randomSeed: -868112544
   InitialModule:
     serializedVersion: 3
     enabled: 1
