@@ -1387,6 +1387,8 @@ MonoBehaviour:
   inBattle: 0
   creature: {fileID: 0}
   BattleUI: {fileID: 1621439150}
+  model: {fileID: 1449744416}
+  modelAnimator: {fileID: 1449744420}
 --- !u!4 &1465230843 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,

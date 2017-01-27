@@ -8,11 +8,21 @@ public class Main : MonoBehaviour {
 	public bool inBattle;
 	public GameObject creature;
 	public GameObject BattleUI;
+	public GameObject model;
+	public Animator modelAnimator;
 	float playerSpeed = 4f;
 
 	void Start () {
+		modelAnimator = model.GetComponent<Animator> ();
 	}
 		
+	void Update()
+	{
+		float hor = Input.GetAxisRaw ("Horizontal");
+		float ver = Input.GetAxisRaw ("Vertical");
+		modelAnimator.SetFloat ("Horizontal", hor);
+		modelAnimator.SetFloat ("Vertical", ver);
+	}
 
 	void FixedUpdate () {
 		Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
