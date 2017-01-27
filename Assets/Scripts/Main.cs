@@ -14,6 +14,7 @@ public class Main : MonoBehaviour {
 
 	void Start () {
 		modelAnimator = model.GetComponent<Animator> ();
+		StartCoroutine ("StartBattle");
 	}
 		
 	void Update()
