@@ -62,7 +62,11 @@ public class Main : MonoBehaviour {
 			}
 		}
 		if (canMove) {
-		
+			if (GetComponent<Rigidbody2D> ().velocity.x == 0 && GetComponent<Rigidbody2D> ().velocity.y == 0) {
+				modelAnimator.enabled = false;
+			} else {
+				modelAnimator.enabled = true;
+			}
 			float hor = Input.GetAxisRaw ("Horizontal");
 			float ver = Input.GetAxisRaw ("Vertical");
 			modelAnimator.SetFloat ("Horizontal", hor);
