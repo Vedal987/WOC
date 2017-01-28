@@ -50,7 +50,7 @@ public class Ariel : MonoBehaviour {
 			d = 0;
 		}
 		if (dia == "Follow me.") {
-			this.GetComponent<Animation>().Play("FollowMe");
+			this.GetComponent<Animator> ().SetTrigger ("FollowMe");
 			StartCoroutine ("FollowMeWait");
 		}
 		if (dia == "*Ariel mutturs random words*") {
@@ -79,6 +79,8 @@ public class Ariel : MonoBehaviour {
 		player.GetComponent<Main> ().canMove = true;
 		player.GetComponent<Main> ().dialogue = false;
 		player.GetComponent<Main> ().DialogueBox.SetActive (false);
+		yield return new WaitForSeconds (0.3f);
+		transform.position = new Vector3 (-9.56f, -8.53f, 0f);
 		Dialogue = dialogue3;
 		d = 0;
 	}
