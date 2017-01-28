@@ -76,15 +76,33 @@ public class Main : MonoBehaviour {
 				if (direction == "D") {
 					dir = Vector2.right;
 				}
-				RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 0.5f);
+				RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1f);
 				if (hit.collider != null) {
-					if (hit.collider.gameObject.tag == "PlayerModel") {
-						print ("Test!");
-					}
 					if (hit.collider.gameObject.GetComponent<InteractObject> ()) {
 						hit.collider.gameObject.SendMessage ("Interact");
 					}
+				} else {
+					float y = transform.position.y + 0.5f;
+					Vector3 pos = new Vector3 (transform.position.x, y, transform.position.z);
+					RaycastHit2D hit2 = Physics2D.Raycast (pos, dir, 1f);
+					if (hit2.collider != null) {
+						if (hit2.collider.gameObject.GetComponent<InteractObject> ()) {
+							hit2.collider.gameObject.SendMessage ("Interact");
+
+						}
+					} else {
+						float y2 = transform.position.y - 0.5f;
+						Vector3 pos2 = new Vector3 (transform.position.x, y, transform.position.z);
+						RaycastHit2D hit3 = Physics2D.Raycast (pos, dir, 1f);
+						if (hit3.collider != null) {
+							if (hit3.collider.gameObject.GetComponent<InteractObject> ()) {
+								hit3.collider.gameObject.SendMessage ("Interact");
+
+							}
+						}
+					}
 				}
+
 			}
 		} else {
 			if (dialogue) {
@@ -101,7 +119,7 @@ public class Main : MonoBehaviour {
 					if (direction == "D") {
 						dir = Vector2.right;
 					}
-					RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 0.5f);
+					RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1f);
 					if (hit.collider != null) {
 						if (hit.collider.gameObject.GetComponent<InteractObject> ()) {
 							hit.collider.gameObject.SendMessage ("Interact");
