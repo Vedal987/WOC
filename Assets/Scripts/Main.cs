@@ -10,12 +10,17 @@ public class Main : MonoBehaviour {
 	public bool start = true;
 	public GameObject creature;
 	public GameObject BattleUI;
+	public GameObject BagUI;
+	public GameObject BagText;
 	public GameObject model;
 	public GameObject DialogueBox;
 	public GameObject DialogueText;
 	public GameObject Flash;
 	public Animator modelAnimator;
 	float playerSpeed = 4f;
+
+	public string[] Bag;
+	public bool isBag;
 
 	public string LastKeyPress;
 	public string direction;
@@ -36,7 +41,25 @@ public class Main : MonoBehaviour {
 			}
 			return;
 		}
+		if (!dialogue) {
+			if (Input.GetKeyDown(KeyCode.Q)) {
+				isBag = !isBag;
+			}
+			if (isBag) {
+				canMove = false;
+				BagUI.SetActive (true);
+				string Items = "";
+				foreach (string item in Bag) {
+					Items = Items + item + "\n";
+				}
+				BagText.GetComponent<Text> ().text = Items;
+			} else {
+				canMove = true;
+				BagUI.SetActive (false);
+			}
+		}
 		if (canMove) {
+		
 			float hor = Input.GetAxisRaw ("Horizontal");
 			float ver = Input.GetAxisRaw ("Vertical");
 			modelAnimator.SetFloat ("Horizontal", hor);
