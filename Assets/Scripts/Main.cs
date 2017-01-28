@@ -54,6 +54,15 @@ public class Main : MonoBehaviour {
 			} else if (Input.GetKeyDown (KeyCode.D)) {
 				direction = "D";
 			}
+//			if (!Input.GetKey (KeyCode.W)) {
+//				if (!Input.GetKey (KeyCode.A)) {
+//					if (!Input.GetKey (KeyCode.S)) {
+//						if (!Input.GetKey (KeyCode.D)) {
+//							modelAnimator.SetTrigger ("Reset");
+//						}
+//					}
+//				}
+//			}
 			if (Input.GetKeyDown (KeyCode.E)) {
 				if (direction == "W") {
 					dir = Vector2.up;
