@@ -78,6 +78,9 @@ public class Main : MonoBehaviour {
 				}
 				RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 0.5f);
 				if (hit.collider != null) {
+					if (hit.collider.gameObject.tag == "PlayerModel") {
+						print ("Test!");
+					}
 					if (hit.collider.gameObject.GetComponent<InteractObject> ()) {
 						hit.collider.gameObject.SendMessage ("Interact");
 					}
