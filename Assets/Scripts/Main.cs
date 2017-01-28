@@ -197,6 +197,12 @@ public class Main : MonoBehaviour {
 			start = false;
 			return;
 		}
+		if(d.Contains("[NAME]"))
+		{
+			string name = PlayerPrefs.GetString ("Name");
+			print (name);
+			d = d.Replace ("[NAME]", name);
+		}
 		DialogueBox.SetActive (true);
 		canMove = false;
 		dialogue = true;
