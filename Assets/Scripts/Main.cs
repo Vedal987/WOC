@@ -108,7 +108,7 @@ public class Main : MonoBehaviour {
 				if (direction == "D") {
 					dir = Vector2.right;
 				}
-				RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.5f);
+				RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
 				if (hit.collider != null) {
 					if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
 						hit.collider.gameObject.SendMessage ("Interact");
@@ -131,7 +131,7 @@ public class Main : MonoBehaviour {
 					if (direction == "D") {
 						dir = -Vector2.left;
 					}
-					RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.5f);
+					RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
 					if (hit.collider != null) {
 						if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
 							hit.collider.gameObject.SendMessage ("Interact");
