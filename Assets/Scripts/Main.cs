@@ -7,11 +7,13 @@ public class Main : MonoBehaviour {
 
 	public bool canMove = true;
 	public bool dialogue = false;
+	public bool start = true;
 	public GameObject creature;
 	public GameObject BattleUI;
 	public GameObject model;
 	public GameObject DialogueBox;
 	public GameObject DialogueText;
+	public GameObject Flash;
 	public Animator modelAnimator;
 	float playerSpeed = 4f;
 
@@ -23,10 +25,17 @@ public class Main : MonoBehaviour {
 	void Start () {
 		modelAnimator = model.GetComponent<Animator> ();
 		//StartCoroutine ("StartBattle");
+		Flash.SetActive(true);
 	}
 		
 	void Update()
 	{
+		if (start) {
+			if (Input.GetKeyDown(KeyCode.E)) {
+				Flash.SendMessage ("Interact");
+			}
+			return;
+		}
 		if (canMove) {
 			float hor = Input.GetAxisRaw ("Horizontal");
 			float ver = Input.GetAxisRaw ("Vertical");
@@ -164,6 +173,14 @@ public class Main : MonoBehaviour {
 			DialogueBox.SetActive (false);
 			canMove = true;
 			dialogue = false;
+			return;
+		}
+		if (d=="x7Start") {
+			DialogueBox.SetActive (false);
+			Flash.GetComponent<Animation> ().Play ();
+			canMove = true;
+			dialogue = false;
+			start = false;
 			return;
 		}
 		DialogueBox.SetActive (true);
