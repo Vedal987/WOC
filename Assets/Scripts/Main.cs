@@ -113,26 +113,6 @@ public class Main : MonoBehaviour {
 					if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
 						hit.collider.gameObject.SendMessage ("Interact");
 					}
-				} else {
-					float y = transform.position.y + 0.5f;
-					Vector3 pos = new Vector3 (transform.position.x, y, transform.position.z);
-					RaycastHit2D hit2 = Physics2D.Raycast (pos, dir, 1f);
-					if (hit2.collider != null) {
-						if (hit2.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
-							hit2.collider.gameObject.SendMessage ("Interact");
-
-						}
-					} else {
-						float y2 = transform.position.y - 0.5f;
-						Vector3 pos2 = new Vector3 (transform.position.x, y2, transform.position.z);
-						RaycastHit2D hit3 = Physics2D.Raycast (pos2, dir, 1f);
-						if (hit3.collider != null) {
-							if (hit3.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
-								hit3.collider.gameObject.SendMessage ("Interact");
-
-							}
-						}
-					}
 				}
 
 			}
@@ -146,10 +126,10 @@ public class Main : MonoBehaviour {
 						dir = Vector2.left;
 					}
 					if (direction == "S") {
-						dir = Vector2.down;
+						dir = -Vector2.up;
 					}
 					if (direction == "D") {
-						dir = Vector2.right;
+						dir = -Vector2.left;
 					}
 					RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1f);
 					if (hit.collider != null) {
