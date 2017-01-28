@@ -7064,7 +7064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - It's a wooden box.
-  - Line 2.
+  - Nothing special.
 --- !u!1001 &2064778836
 Prefab:
   m_ObjectHideFlags: 0
