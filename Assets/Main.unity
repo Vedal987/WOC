@@ -610,6 +610,25 @@ MonoBehaviour:
   - It's a box...
   - Unfortunately, nothing special happened.
   StartGame: 0
+--- !u!1 &218890324 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1836810622}
+--- !u!114 &218890327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218890324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - The barrel is surrounded by water.
+  StartGame: 0
 --- !u!1001 &220721231
 Prefab:
   m_ObjectHideFlags: 0
@@ -798,6 +817,25 @@ MonoBehaviour:
   - Stay still.
   - '...'
   - '*Ariel mutturs random words*'
+--- !u!1 &277082805 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1055422808}
+--- !u!114 &277082808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 277082805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - The barrel is surrounded by water.
+  StartGame: 0
 --- !u!1001 &281263464
 Prefab:
   m_ObjectHideFlags: 0
@@ -1485,6 +1523,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72c65cfcd31909b43b26183dbcbee485, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &627144895 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 290518512}
+--- !u!114 &627144898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 627144895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - The barrel is surrounded by water.
+  StartGame: 0
 --- !u!1 &647875675
 GameObject:
   m_ObjectHideFlags: 0
@@ -7691,6 +7748,25 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &2095942559 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 220721231}
+--- !u!114 &2095942562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095942559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - The barrel is surrounded by water.
+  StartGame: 0
 --- !u!1 &2110670136
 GameObject:
   m_ObjectHideFlags: 0
