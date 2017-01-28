@@ -2078,7 +2078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - You tap the wall, your are scared by a spider that came out.
+  - You tap the wall, you are scared by a spider that came out.
   StartGame: 0
 --- !u!1001 &890947351
 Prefab:
