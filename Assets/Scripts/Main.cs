@@ -44,37 +44,7 @@ public class Main : MonoBehaviour {
 			if (Input.GetKeyUp (KeyCode.D)) {
 				LastKeyPress = "D";
 			}
-			if (!Input.anyKey) {
-				if (LastKeyPress == "W") {
-					modelAnimator.SetBool ("IdleUp", true);
-					modelAnimator.SetBool ("IdleRight", false);
-					modelAnimator.SetBool ("IdleDown", false);
-					modelAnimator.SetBool ("IdleLeft", false);
-				}
-				if (LastKeyPress == "A") {
-					modelAnimator.SetBool ("IdleLeft", true);
-					modelAnimator.SetBool ("IdleRight", false);
-					modelAnimator.SetBool ("IdleDown", false);
-					modelAnimator.SetBool ("IdleUp", false);
-				}
-				if (LastKeyPress == "S") {
-					modelAnimator.SetBool ("IdleDown", true);
-					modelAnimator.SetBool ("IdleRight", false);
-					modelAnimator.SetBool ("IdleLeft", false);
-					modelAnimator.SetBool ("IdleUp", false);
-				}
-				if (LastKeyPress == "D") {
-					modelAnimator.SetBool ("IdleRight", true);
-					modelAnimator.SetBool ("IdleDown", false);
-					modelAnimator.SetBool ("IdleLeft", false);
-					modelAnimator.SetBool ("IdleUp", false);
-				}
-			} else {
-				modelAnimator.SetBool ("IdleRight", false);
-				modelAnimator.SetBool ("IdleDown", false);
-				modelAnimator.SetBool ("IdleLeft", false);
-				modelAnimator.SetBool ("IdleUp", false);
-			}
+
 			if (Input.GetKeyDown (KeyCode.W)) {
 				direction = "W";
 			} else if (Input.GetKeyDown (KeyCode.A)) {
@@ -128,6 +98,37 @@ public class Main : MonoBehaviour {
 				}
 				
 			}
+		}
+		if (!Input.anyKey) {
+			if (LastKeyPress == "W") {
+				modelAnimator.SetBool ("IdleUp", true);
+				modelAnimator.SetBool ("IdleRight", false);
+				modelAnimator.SetBool ("IdleDown", false);
+				modelAnimator.SetBool ("IdleLeft", false);
+			}
+			if (LastKeyPress == "A") {
+				modelAnimator.SetBool ("IdleLeft", true);
+				modelAnimator.SetBool ("IdleRight", false);
+				modelAnimator.SetBool ("IdleDown", false);
+				modelAnimator.SetBool ("IdleUp", false);
+			}
+			if (LastKeyPress == "S") {
+				modelAnimator.SetBool ("IdleDown", true);
+				modelAnimator.SetBool ("IdleRight", false);
+				modelAnimator.SetBool ("IdleLeft", false);
+				modelAnimator.SetBool ("IdleUp", false);
+			}
+			if (LastKeyPress == "D") {
+				modelAnimator.SetBool ("IdleRight", true);
+				modelAnimator.SetBool ("IdleDown", false);
+				modelAnimator.SetBool ("IdleLeft", false);
+				modelAnimator.SetBool ("IdleUp", false);
+			}
+		} else {
+			modelAnimator.SetBool ("IdleRight", false);
+			modelAnimator.SetBool ("IdleDown", false);
+			modelAnimator.SetBool ("IdleLeft", false);
+			modelAnimator.SetBool ("IdleUp", false);
 		}
 
 	}
