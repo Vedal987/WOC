@@ -124,12 +124,7 @@ public class Main : MonoBehaviour {
 				modelAnimator.SetBool ("IdleLeft", false);
 				modelAnimator.SetBool ("IdleUp", false);
 			}
-		} else {
-			modelAnimator.SetBool ("IdleRight", false);
-			modelAnimator.SetBool ("IdleDown", false);
-			modelAnimator.SetBool ("IdleLeft", false);
-			modelAnimator.SetBool ("IdleUp", false);
-		}
+		} 
 
 	}
 
