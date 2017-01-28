@@ -19,7 +19,7 @@ public class Main : MonoBehaviour {
 	public Animator modelAnimator;
 	float playerSpeed = 4f;
 
-	public string[] Bag;
+	public List<string> Bag;
 	public bool isBag;
 
 	public string LastKeyPress;
@@ -124,8 +124,8 @@ public class Main : MonoBehaviour {
 						}
 					} else {
 						float y2 = transform.position.y - 0.5f;
-						Vector3 pos2 = new Vector3 (transform.position.x, y, transform.position.z);
-						RaycastHit2D hit3 = Physics2D.Raycast (pos, dir, 1f);
+						Vector3 pos2 = new Vector3 (transform.position.x, y2, transform.position.z);
+						RaycastHit2D hit3 = Physics2D.Raycast (pos2, dir, 1f);
 						if (hit3.collider != null) {
 							if (hit3.collider.gameObject.GetComponent<InteractObject> ()) {
 								hit3.collider.gameObject.SendMessage ("Interact");
@@ -192,6 +192,17 @@ public class Main : MonoBehaviour {
 
 	public void Dialogue(string d)
 	{
+		if(d.Contains("x7Item"))
+		{
+			d = "You found a" + d.Replace ("x7Item", "");
+			string Item = d.Remove (0, 12);
+			if (Bag.Count == 8) {
+				d = d + "\nBut your bag is full.";
+			} else {
+				Bag.Add (Item);
+			}
+
+		}
 		if (d=="x7Finish") {
 			DialogueBox.SetActive (false);
 			canMove = true;
