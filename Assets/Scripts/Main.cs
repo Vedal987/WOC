@@ -46,6 +46,8 @@ public class Main : MonoBehaviour {
 				isBag = !isBag;
 			}
 			if (isBag) {
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+				modelAnimator.enabled = false;
 				canMove = false;
 				BagUI.SetActive (true);
 				string Items = "";
@@ -54,6 +56,7 @@ public class Main : MonoBehaviour {
 				}
 				BagText.GetComponent<Text> ().text = Items;
 			} else {
+				modelAnimator.enabled = true;
 				canMove = true;
 				BagUI.SetActive (false);
 			}
@@ -118,7 +121,9 @@ public class Main : MonoBehaviour {
 			}
 		} else {
 			if (dialogue) {
-				if (Input.GetKeyDown(KeyCode.E)) {
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+				modelAnimator.enabled = false;
+				if (Input.GetKeyDown (KeyCode.E)) {
 					if (direction == "W") {
 						dir = Vector2.up;
 					}
@@ -139,6 +144,8 @@ public class Main : MonoBehaviour {
 					}
 				}
 				
+			} else {
+				modelAnimator.enabled = true;
 			}
 		}
 		if (!Input.anyKey) {
@@ -200,7 +207,6 @@ public class Main : MonoBehaviour {
 		if(d.Contains("[NAME]"))
 		{
 			string name = PlayerPrefs.GetString ("Name");
-			print (name);
 			d = d.Replace ("[NAME]", name);
 		}
 		DialogueBox.SetActive (true);
