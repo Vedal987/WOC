@@ -4,11 +4,10 @@ Meet Ariel, asks if you are OK.
 
 Look around for a bit, find an item (Unknown as of now)
 
-Ask Ariel her name, what happened etc. (Explains the story as to why you are down there)
+Ask Ariel her name, what happened etc. (Explains the story as to how she found you)
+Explains the war
 
-Only human left???
-
-Teleports you out of there, says you are now safe.
+Leads you out of there, says you are now safe.
 
 Stay in the Titan house.
 
