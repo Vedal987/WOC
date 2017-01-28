@@ -1360,6 +1360,27 @@ Transform:
   m_Father: {fileID: 1674951428}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &550359628 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1836810622}
+--- !u!114 &550359631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550359628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - You look at the water flowing around the barrel.
+  - You throw a pebble at the barrel.
+  - Your aiming is awful, you feel ashamed.
+  StartGame: 0
 --- !u!1001 &565752187
 Prefab:
   m_ObjectHideFlags: 0
@@ -1606,6 +1627,27 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &654886059 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 220721231}
+--- !u!114 &654886062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654886059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - You look at the water flowing around the barrel.
+  - You throw a pebble at the barrel.
+  - Your aiming is awful, you feel ashamed.
+  StartGame: 0
 --- !u!1 &703119596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703119598}
   - component: {fileID: 703119597}
+  - component: {fileID: 703119599}
   m_Layer: 0
   m_Name: dungeon_tiles_3
   m_TagString: Untagged
@@ -1664,12 +1707,28 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 703119596}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.697792, y: 0.4833644, z: 0}
+  m_LocalPosition: {x: 16.56, y: 0.56, z: 0}
   m_LocalScale: {x: 15.236615, y: 15.236615, z: 0.76183075}
   m_Children: []
   m_Father: {fileID: 1674951428}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &703119599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 703119596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - You look at the water flowing around the barrel.
+  - You throw a pebble at the barrel.
+  - Your aiming is awful, you feel ashamed.
+  StartGame: 0
 --- !u!1 &733867210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,11 +2528,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.64
+      value: 16.57
       objectReference: {fileID: 0}
     - target: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.44
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2505,11 +2564,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.8
+      value: 5.842164
       objectReference: {fileID: 0}
     - target: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 17.3
+      value: 16.865763
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
@@ -2675,6 +2734,27 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1156466933 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1055422808}
+--- !u!114 &1156466936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156466933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - You look at the water flowing around the barrel.
+  - You throw a pebble at the barrel.
+  - Your aiming is awful, you feel ashamed.
+  StartGame: 0
 --- !u!1001 &1175710407
 Prefab:
   m_ObjectHideFlags: 0
@@ -3933,7 +4013,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 840025533
+  randomSeed: -1266268428
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6993,7 +7073,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1721505615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.707792, y: 0.44336444, z: 0}
+  m_LocalPosition: {x: 16.6, y: 0.44336444, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1674951428}
@@ -7363,6 +7443,27 @@ Transform:
   m_Father: {fileID: 1674951428}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1947528213 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1249129427605834, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
+    type: 2}
+  m_PrefabInternal: {fileID: 290518512}
+--- !u!114 &1947528216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1947528213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - You look at the water flowing around the barrel.
+  - You throw a pebble at the barrel.
+  - Your aiming is awful, you feel ashamed.
+  StartGame: 0
 --- !u!1 &1952410315
 GameObject:
   m_ObjectHideFlags: 0
