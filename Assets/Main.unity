@@ -675,7 +675,6 @@ GameObject:
   - component: {fileID: 222568518}
   - component: {fileID: 222568517}
   - component: {fileID: 222568520}
-  - component: {fileID: 222568519}
   - component: {fileID: 222568521}
   m_Layer: 0
   m_Name: Ariel
@@ -708,6 +707,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 9aae54538d80c584a98f0c3a16131f90, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 9aae54538d80c584a98f0c3a16131f90, type: 2}
+  - {fileID: 7400000, guid: b56d8da81f42bc74da75067c0d94dccd, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -747,22 +747,6 @@ SpriteRenderer:
   m_Color: {r: 0.7941176, g: 0.7941176, b: 0.7941176, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!114 &222568519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 222568515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dialogue:
-  - Are you sure you're not hurt?
-  - Ok then, well make sure you take a look around and make yourself compfortable.
-  - You won't be able to get back any time soon.
-  StartGame: 0
 --- !u!61 &222568520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -788,7 +772,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9bf4cb5e3fef149ade8cfd0351bd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IO: {fileID: 222568519}
+  Dialogue:
+  - Are you sure you're not hurt?
+  - Ok then, well make sure you take a look around and make yourself compfortable.
+  - You won't be able to get back any time soon.
+  d: 0
+  switched: 0
+  StartGame: 0
   dialogue2:
   - Alright we should get going before they find us.
   - Before who will find us?
@@ -800,10 +790,14 @@ MonoBehaviour:
   - Are you sure you don't remember this?
   - Er OK well, we - the Titans are at war against the d-demons.
   - But you are a human, from Earth right?
-  - Yes of course! Sorry.
+  - Yes of course. Sorry.
   - What was that noise?
   - We need to move, I'll explain the rest later.
   - Follow me.
+  dialogue3:
+  - Stay still.
+  - '...'
+  - '*Ariel mutturs random words*'
 --- !u!1001 &281263464
 Prefab:
   m_ObjectHideFlags: 0
