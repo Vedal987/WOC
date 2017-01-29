@@ -223,8 +223,18 @@ public class Main : MonoBehaviour {
 			DialogueBox.SetActive (true);
 			canMove = false;
 			dialogue = true;
+			if (d == "*Ariel mutturs random words*") {
+				
+			}
 			StartCoroutine (AnimateText (d));
 		}
+	}
+
+	IEnumerator FlashCamera()
+	{
+		Flash.GetComponent<SpriteRenderer> ().color = Color.white;
+		yield return new WaitForSeconds (1f);
+		Flash.GetComponent<Animation> ().Play ();
 	}
 
 	IEnumerator AnimateText(string strComplete){

@@ -54,10 +54,20 @@ public class Ariel : MonoBehaviour {
 				StartCoroutine ("FollowMeWait");
 			}
 			if (dia == "*Ariel mutturs random words*") {
-			
+			Vector3 newpos = new Vector3(-10.5f, -60.3f);
+			player.transform.position = newpos;
+			StartCoroutine ("TeleportWait");
 			}
 			player.GetComponent<Main> ().Dialogue (dia);
 
+	}
+
+	IEnumerator TeleportWait()
+	{
+		yield return new WaitForSeconds (1f);
+		player.GetComponent<Main> ().canMove = true;
+		player.GetComponent<Main> ().dialogue = false;
+		player.GetComponent<Main> ().DialogueBox.SetActive (false);
 	}
 
 	public string[] dialogue2;
