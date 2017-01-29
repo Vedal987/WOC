@@ -8,26 +8,13 @@ public class InteractObject : MonoBehaviour {
 	private int d = 0;
 	private GameObject player;
 	public bool StartGame;
-	public bool OnAwake;
-	public bool IgnoreRaycast;
 
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
-		if (OnAwake) {
+		if (StartGame) {
 			Interact ();
 
-		}
-	}
-
-	void Update()
-	{
-		if(player.GetComponent<Main>().canSkip && IgnoreRaycast)
-		{
-			if(Input.GetKeyDown(KeyCode.E))
-			{
-				Interact ();	
-			}
 		}
 	}
 
@@ -43,6 +30,7 @@ public class InteractObject : MonoBehaviour {
 			}
 			string dia = Dialogue [d];
 			d++;
+
 			player.GetComponent<Main> ().Dialogue (dia);
 
 	}
