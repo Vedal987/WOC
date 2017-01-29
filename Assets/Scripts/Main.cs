@@ -19,6 +19,10 @@ public class Main : MonoBehaviour {
 	public Animator modelAnimator;
 	float playerSpeed = 4f;
 
+	public GameObject demonAttackCamera;
+	public GameObject camera;
+	private Animator daAnimator;
+
 	public List<string> Bag;
 	public bool isBag;
 
@@ -215,6 +219,10 @@ public class Main : MonoBehaviour {
 				start = false;
 				canSkip = true;
 				return;
+			}
+			if (d == "ARAGGHHH") {
+				daAnimator.SetTrigger ("2");
+
 			}
 			if (d.Contains ("[NAME]")) {
 				string name = PlayerPrefs.GetString ("Name");
