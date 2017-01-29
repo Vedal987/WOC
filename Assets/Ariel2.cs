@@ -62,7 +62,7 @@ public class Ariel2 : MonoBehaviour {
 
 	IEnumerator DemonAttackWait()
 	{
-		yield return new WaitForSeconds (20);
+		yield return new WaitForSeconds (80);
 		camera.SetActive (false);
 		demonAttackCamera.SetActive (true);
 		daAnimator.SetTrigger ("1");
