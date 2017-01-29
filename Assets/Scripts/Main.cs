@@ -26,6 +26,9 @@ public class Main : MonoBehaviour {
 	public string direction;
 	Vector2 dir;
 
+	private string str;
+
+	public bool canSkip = true;
 
 	void Start () {
 		modelAnimator = model.GetComponent<Animator> ();
@@ -183,40 +186,52 @@ public class Main : MonoBehaviour {
 
 	public void Dialogue(string d)
 	{
-		if(d.Contains("x7Item"))
-		{
-			d = "You found a" + d.Replace ("x7Item", "");
-			string Item = d.Remove (0, 12);
-			if (Bag.Count == 8) {
-				d = d + "\nBut your bag is full.";
-			} else {
-				Bag.Add (Item);
-			}
+		if (canSkip) {
+			if (d.Contains ("x7Item")) {
+				d = "You found a" + d.Replace ("x7Item", "") + ".";
+				string Item = d.Remove (0, 12);
+				if (Bag.Count == 8) {
+					d = d + "\nBut your bag is full.";
+				} else {
+					Bag.Add (Item);
+				}
 
+			}
+			if (d == "x7Finish") {
+				DialogueBox.SetActive (false);
+				canMove = true;
+				dialogue = false;
+				return;
+			}
+			if (d == "x7Start") {
+				DialogueBox.SetActive (false);
+				Flash.GetComponent<Animation> ().Play ();
+				canMove = true;
+				dialogue = false;
+				start = false;
+				return;
+			}
+			if (d.Contains ("[NAME]")) {
+				string name = PlayerPrefs.GetString ("Name");
+				d = d.Replace ("[NAME]", name);
+			}
+			DialogueBox.SetActive (true);
+			canMove = false;
+			dialogue = true;
+			canSkip = false;
+			StartCoroutine (AnimateText (d));
 		}
-		if (d=="x7Finish") {
-			DialogueBox.SetActive (false);
-			canMove = true;
-			dialogue = false;
-			return;
+	}
+
+	IEnumerator AnimateText(string strComplete){
+		int i = 0;
+		str = "";
+		while( i < strComplete.Length ){
+			str += strComplete[i++];
+			DialogueText.GetComponent<Text> ().text = str;
+			yield return new WaitForSeconds(0.05F);
 		}
-		if (d=="x7Start") {
-			DialogueBox.SetActive (false);
-			Flash.GetComponent<Animation> ().Play ();
-			canMove = true;
-			dialogue = false;
-			start = false;
-			return;
-		}
-		if(d.Contains("[NAME]"))
-		{
-			string name = PlayerPrefs.GetString ("Name");
-			d = d.Replace ("[NAME]", name);
-		}
-		DialogueBox.SetActive (true);
-		canMove = false;
-		dialogue = true;
-		DialogueText.GetComponent<Text> ().text = d;
+		canSkip = true;
 	}
 
 	void FixedUpdate () {

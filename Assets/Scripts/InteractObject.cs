@@ -20,16 +20,18 @@ public class InteractObject : MonoBehaviour {
 
 	public void Interact()
 	{
-		if (d == Dialogue.Length) {
-			if (StartGame) {
-				player.GetComponent<Main> ().Dialogue ("x7Start");
+			if (d == Dialogue.Length) {
+				if (StartGame) {
+					player.GetComponent<Main> ().Dialogue ("x7Start");
+					return;
+				}
+				player.GetComponent<Main> ().Dialogue ("x7Finish");
 				return;
 			}
-			player.GetComponent<Main> ().Dialogue ("x7Finish");
-			return;
-		}
-		string dia = Dialogue [d];
-		d++;
-		player.GetComponent<Main> ().Dialogue (dia);
+			string dia = Dialogue [d];
+			d++;
+
+			player.GetComponent<Main> ().Dialogue (dia);
+
 	}
 }

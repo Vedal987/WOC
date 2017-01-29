@@ -24,39 +24,40 @@ public class Ariel : MonoBehaviour {
 
 	public void Interact()
 	{
-		if (needBottle) {
-			string needBottle = "Take a look around, What can you find?";
-			d++;
-			if (d == 2) {
+			if (needBottle) {
+				string needBottle = "Take a look around, what can you find?";
+				d++;
+				if (d == 2) {
+					player.GetComponent<Main> ().Dialogue ("x7Finish");
+					d = 0;
+					return;
+				}
+				player.GetComponent<Main> ().Dialogue (needBottle);
+				return;
+			}
+			if (d == Dialogue.Length) {
+				if (StartGame) {
+					player.GetComponent<Main> ().Dialogue ("x7Start");
+					return;
+				}
 				player.GetComponent<Main> ().Dialogue ("x7Finish");
+				return;
+			}
+			string dia = Dialogue [d];
+			d++;
+			if (dia == "You won't be able to get back any time soon.") {
+				needBottle = true;
 				d = 0;
-				return;
 			}
-			player.GetComponent<Main> ().Dialogue (needBottle);
-			return;
-		}
-		if (d == Dialogue.Length) {
-			if (StartGame) {
-				player.GetComponent<Main> ().Dialogue ("x7Start");
-				return;
+			if (dia == "Follow me.") {
+				this.GetComponent<Animator> ().SetTrigger ("FollowMe");
+				StartCoroutine ("FollowMeWait");
 			}
-			player.GetComponent<Main> ().Dialogue ("x7Finish");
-			return;
-		}
-		string dia = Dialogue [d];
-		d++;
-		if (dia == "You won't be able to get back any time soon.") {
-			needBottle = true;
-			d = 0;
-		}
-		if (dia == "Follow me.") {
-			this.GetComponent<Animator> ().SetTrigger ("FollowMe");
-			StartCoroutine ("FollowMeWait");
-		}
-		if (dia == "*Ariel mutturs random words*") {
+			if (dia == "*Ariel mutturs random words*") {
 			
-		}
-		player.GetComponent<Main> ().Dialogue (dia);
+			}
+			player.GetComponent<Main> ().Dialogue (dia);
+
 	}
 
 	public string[] dialogue2;
