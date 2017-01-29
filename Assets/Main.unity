@@ -6162,7 +6162,7 @@ MonoBehaviour:
   - But me, I've met humans before. Very interesting creatures. You seem like the
     nice kind.
   - '*You say something about the titan being the nice kind, it blushes*'
-  - Oh, why thank you, thank you very much. *The titan starts to giggle uncontrolably*
+  - Oh, why thank you, thank you very much. *The titan starts to giggle uncontrollably*
   - You decide not to interrupt it's giggling.
   StartGame: 0
   OnAwake: 0
