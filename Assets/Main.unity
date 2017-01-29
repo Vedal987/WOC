@@ -858,7 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - Are you sure you're not hurt?
-  - Ok then, well make sure you take a look around and make yourself compfortable.
+  - Ok then, well make sure you take a look around and make yourself comfortable.
   - You won't be able to get back any time soon.
   d: 0
   switched: 0
@@ -1322,7 +1322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &488070337
 Transform:
   m_ObjectHideFlags: 0

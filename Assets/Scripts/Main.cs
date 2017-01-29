@@ -128,25 +128,27 @@ public class Main : MonoBehaviour {
 			}
 		} else {
 			if (dialogue) {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
-				modelAnimator.enabled = false;
-				if (Input.GetKeyDown (KeyCode.E)) {
-					if (direction == "W") {
-						dir = Vector2.up;
-					}
-					if (direction == "A") {
-						dir = Vector2.left;
-					}
-					if (direction == "S") {
-						dir = -Vector2.up;
-					}
-					if (direction == "D") {
-						dir = -Vector2.left;
-					}
-					RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
-					if (hit.collider != null) {
-						if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
-							hit.collider.gameObject.SendMessage ("Interact");
+				if (canSkip) {
+					GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+					modelAnimator.enabled = false;
+					if (Input.GetKeyDown (KeyCode.E)) {
+						if (direction == "W") {
+							dir = Vector2.up;
+						}
+						if (direction == "A") {
+							dir = Vector2.left;
+						}
+						if (direction == "S") {
+							dir = -Vector2.up;
+						}
+						if (direction == "D") {
+							dir = -Vector2.left;
+						}
+						RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
+						if (hit.collider != null) {
+							if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
+								hit.collider.gameObject.SendMessage ("Interact");
+							}
 						}
 					}
 				}
@@ -187,8 +189,9 @@ public class Main : MonoBehaviour {
 	public void Dialogue(string d)
 	{
 		if (canSkip) {
+			canSkip = false;
 			if (d.Contains ("x7Item")) {
-				d = "You found a" + d.Replace ("x7Item", "") + ".";
+				d = "You found a" + d.Replace ("x7Item", "");
 				string Item = d.Remove (0, 12);
 				if (Bag.Count == 8) {
 					d = d + "\nBut your bag is full.";
@@ -201,6 +204,7 @@ public class Main : MonoBehaviour {
 				DialogueBox.SetActive (false);
 				canMove = true;
 				dialogue = false;
+				canSkip = true;
 				return;
 			}
 			if (d == "x7Start") {
@@ -209,6 +213,7 @@ public class Main : MonoBehaviour {
 				canMove = true;
 				dialogue = false;
 				start = false;
+				canSkip = true;
 				return;
 			}
 			if (d.Contains ("[NAME]")) {
@@ -218,7 +223,6 @@ public class Main : MonoBehaviour {
 			DialogueBox.SetActive (true);
 			canMove = false;
 			dialogue = true;
-			canSkip = false;
 			StartCoroutine (AnimateText (d));
 		}
 	}
