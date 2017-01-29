@@ -4075,7 +4075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - Let us fight...
+  - Haha, a human, what a joke!
+  - Anyway, let us fight...
   - '[FIGHT]'
   StartGame: 0
   OnAwake: 0
