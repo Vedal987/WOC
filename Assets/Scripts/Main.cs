@@ -239,6 +239,9 @@ public class Main : MonoBehaviour {
 				canSkip = true;
 				return;
 			}
+			if (d == "*Ariel mutturs random words*") {
+				StartCoroutine ("FlashCamera");
+			}
 			DialogueBox.SetActive (true);
 			canMove = false;
 			dialogue = true;
@@ -261,7 +264,7 @@ public class Main : MonoBehaviour {
 	IEnumerator FlashCamera()
 	{
 		Flash.GetComponent<SpriteRenderer> ().color = Color.white;
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (5f);
 		Flash.GetComponent<Animation> ().Play ();
 	}
 

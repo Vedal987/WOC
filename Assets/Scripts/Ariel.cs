@@ -64,7 +64,7 @@ public class Ariel : MonoBehaviour {
 
 	IEnumerator TeleportWait()
 	{
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (5f);
 		player.GetComponent<Main> ().canMove = true;
 		player.GetComponent<Main> ().dialogue = false;
 		player.GetComponent<Main> ().DialogueBox.SetActive (false);
