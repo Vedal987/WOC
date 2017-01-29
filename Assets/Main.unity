@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 488144579}
   - component: {fileID: 488144578}
   - component: {fileID: 488144580}
+  - component: {fileID: 488144581}
   m_Layer: 0
   m_Name: NPC1
   m_TagString: Untagged
@@ -1495,6 +1496,24 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.31999996, y: 0.47999996}
+--- !u!114 &488144581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488144577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - Why hello there, I haven't seen you around here befo-
+  - Wait, y...you're human right?
+  - What is Ariel doing letting in humans like this? It's just careless!
+  - '*The titan walks around in circles frantically*'
+  - Something tells you that you shouldn't speak anymore.
+  StartGame: 0
 --- !u!1001 &488243438
 Prefab:
   m_ObjectHideFlags: 0
@@ -2325,6 +2344,7 @@ GameObject:
   - component: {fileID: 796428554}
   - component: {fileID: 796428553}
   - component: {fileID: 796428552}
+  - component: {fileID: 796428555}
   m_Layer: 0
   m_Name: NPC1 (1)
   m_TagString: Untagged
@@ -2394,6 +2414,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796428555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 796428551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - Hello there...
+  - I guess you have met my cousin.
+  - Why do I know this? He started shouting and walking around frantically.
+  - He does that whenever he meets a new species around here.
+  - Me, however, have met humans before. You seem like the nice kind.
+  - '*You said something about the titan being nice and it blushed*'
+  - Ohhh, why thank you. *It starts giggling to itself*
+  - It's too busy giggling to talk.
+  StartGame: 0
 --- !u!1 &879890951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,6 +3011,7 @@ GameObject:
   - component: {fileID: 992273624}
   - component: {fileID: 992273626}
   - component: {fileID: 992273625}
+  - component: {fileID: 992273628}
   m_Layer: 0
   m_Name: snow_tiles_9
   m_TagString: Untagged
@@ -3039,6 +3081,22 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &992273628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 992273623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - The chest has gold crawling out the top of the chest.
+  - Ariel gives you a funny look.
+  - You slowly back away from the chest.
+  StartGame: 0
 --- !u!1 &1001035056
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,6 +4070,7 @@ GameObject:
   - component: {fileID: 1252113824}
   - component: {fileID: 1252113826}
   - component: {fileID: 1252113825}
+  - component: {fileID: 1252113827}
   m_Layer: 0
   m_Name: snow_tiles_12
   m_TagString: Untagged
@@ -4081,6 +4140,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1252113827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1252113823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - The barrel wobbles around and snarls at you.
+  - You are confused yet too frightened to see what it is.
+  StartGame: 0
 --- !u!1 &1268307567
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4535,7 @@ GameObject:
   - component: {fileID: 1369709063}
   - component: {fileID: 1369709065}
   - component: {fileID: 1369709064}
+  - component: {fileID: 1369709066}
   m_Layer: 0
   m_Name: snow_tiles_10
   m_TagString: Untagged
@@ -4530,6 +4605,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1369709066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1369709062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - If you hadn't guessed, it is a...
+  - Box!!!!
+  StartGame: 0
 --- !u!1 &1370804957
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,7 +5567,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 323101938
+  randomSeed: 1510151722
   InitialModule:
     serializedVersion: 3
     enabled: 1
