@@ -715,11 +715,77 @@ MonoBehaviour:
   Dialogue:
   - Just looking at the drop makes you nauseous.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!4 &122107034 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
     type: 2}
   m_PrefabInternal: {fileID: 1838732815}
+--- !u!1 &128911383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 128911384}
+  - component: {fileID: 128911385}
+  m_Layer: 0
+  m_Name: snow_tiles_36 (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &128911384
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 128911383}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.15, y: -27.2, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 518681040}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &128911385
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 128911383}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: -19
+  m_Sprite: {fileID: 21300072, guid: 7d32bd267610daa42994d8c446f32a07, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!4 &163826192 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4703760484822178, guid: 72c65cfcd31909b43b26183dbcbee485,
@@ -837,7 +903,7 @@ Transform:
   - {fileID: 686485673}
   - {fileID: 122107034}
   m_Father: {fileID: 1356618953}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197922721
 GameObject:
@@ -935,6 +1001,8 @@ MonoBehaviour:
   - It's a box...
   - Unfortunately, nothing special happened.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &215471459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1728,8 @@ MonoBehaviour:
   Dialogue:
   - It's a drop.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &308986178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,7 +2075,7 @@ RectTransform:
   - {fileID: 1687035622}
   - {fileID: 1679684121}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2361,6 +2431,8 @@ MonoBehaviour:
   - '*The titan walks around in circles frantically*'
   - Something tells you that you shouldn't speak anymore.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1001 &488243438
 Prefab:
   m_ObjectHideFlags: 0
@@ -2548,9 +2620,11 @@ Transform:
   - {fileID: 1131351756}
   - {fileID: 575058557}
   - {fileID: 308986179}
-  - {fileID: 748736180}
+  - {fileID: 748736182}
   - {fileID: 621316112}
   - {fileID: 888180111}
+  - {fileID: 1700764486}
+  - {fileID: 128911384}
   m_Father: {fileID: 1356618953}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2583,7 +2657,7 @@ Transform:
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 1356618953}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &565471265
 MonoBehaviour:
@@ -2600,6 +2674,8 @@ MonoBehaviour:
   - You cannot pass. The King forbids passing through here at this time.
   - It's too dangerous.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!61 &565471266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3291,6 +3367,8 @@ MonoBehaviour:
   - You throw a pebble at the barrel.
   - Your aiming is awful, you feel ashamed.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &671077554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,6 +3519,8 @@ MonoBehaviour:
   - You throw a pebble at the barrel.
   - Your aiming is awful, you feel ashamed.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &706421956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3705,7 +3785,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 748736182}
-  - component: {fileID: 748736180}
   - component: {fileID: 748736181}
   m_Layer: 0
   m_Name: snow_tiles_36 (11)
@@ -3714,19 +3793,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &748736180
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 748736179}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.082209, y: -27.2, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
-  m_Children: []
-  m_Father: {fileID: 518681040}
-  m_RootOrder: 39
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &748736181
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3772,8 +3838,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 518681040}
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &766781938
 GameObject:
@@ -3967,6 +4033,67 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &861539962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 861539963}
+  - component: {fileID: 861539965}
+  - component: {fileID: 861539964}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &861539963
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861539962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1677607670}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861539964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861539962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - Let us fight...
+  - '[FIGHT]'
+  StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
+--- !u!61 &861539965
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861539962}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0.74}
+  serializedVersion: 2
+  m_Size: {x: 7.1, y: 3.79}
 --- !u!1 &879890951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,6 +4223,8 @@ MonoBehaviour:
   Dialogue:
   - You tap the wall, you are scared by a spider that came out.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &888180110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,6 +4371,8 @@ MonoBehaviour:
   Dialogue:
   - It's a drop.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1001 &907543789
 Prefab:
   m_ObjectHideFlags: 0
@@ -4817,10 +4948,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - The chest has gold crawling out the top of the chest.
+  - The chest has gold crawling out the top.
   - Ariel gives you a funny look.
   - You slowly back away from the chest.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &1001035056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5164,6 +5297,8 @@ MonoBehaviour:
   Dialogue:
   - It's a drop.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &1074029418
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,7 +5428,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1084533545
 GameObject:
@@ -5340,6 +5475,8 @@ MonoBehaviour:
   Dialogue:
   - x7Item Bottle Of Healing
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!61 &1084533548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5691,6 +5828,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue: []
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!95 &1141711804
 Animator:
   serializedVersion: 3
@@ -5776,6 +5915,12 @@ MonoBehaviour:
   - This is where we, the titans, live.
   - Go talk to some people, make yourself at home.
   StartGame: 0
+  IgnoreRaycast: 0
+  dialogue2:
+  - '[NAME], over here! Can you fight?'
+  - Well we're about to find out, [NAME] help us protect our village!
+  - '*You recieved Ariel*'
+  - Now go show those demons who's boss!
 --- !u!1001 &1149461304
 Prefab:
   m_ObjectHideFlags: 0
@@ -5995,7 +6140,7 @@ Transform:
   - {fileID: 1577429948}
   - {fileID: 1356618953}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1197443139
 Prefab:
@@ -6407,6 +6552,8 @@ MonoBehaviour:
   - The barrel wobbles around and snarls at you.
   - You are confused yet too frightened to see what it is.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &1268307567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,6 +7088,8 @@ MonoBehaviour:
   - If you hadn't guessed, it is a...
   - Box!!!!
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &1370804957
 GameObject:
   m_ObjectHideFlags: 0
@@ -6975,6 +7124,8 @@ MonoBehaviour:
   - You wait a bit...
   - It's still locked...
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!61 &1370804959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7124,7 +7275,7 @@ Transform:
   m_Children:
   - {fileID: 2081419859}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1374775111
 MonoBehaviour:
@@ -7225,6 +7376,8 @@ MonoBehaviour:
   Dialogue:
   - It's a normal wall, or is it?
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1001 &1397936279
 Prefab:
   m_ObjectHideFlags: 0
@@ -7593,7 +7746,7 @@ Transform:
   m_Children:
   - {fileID: 1449744417}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1451680141
 Rigidbody2D:
@@ -7652,8 +7805,10 @@ MonoBehaviour:
   DialogueText: {fileID: 1342280091}
   Flash: {fileID: 2081419858}
   modelAnimator: {fileID: 1449744420}
-  demonAttackCamera: {fileID: 0}
-  camera: {fileID: 0}
+  demonAttackCamera: {fileID: 1572508542}
+  camera: {fileID: 1374775105}
+  demons: {fileID: 1677607669}
+  Ariel2: {fileID: 1141711801}
   Bag: []
   isBag: 0
   LastKeyPress: 
@@ -7833,7 +7988,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1356618953}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1572508544
 Animator:
@@ -11105,6 +11260,8 @@ MonoBehaviour:
   - Dust fills the air, you cough loudly as the dust flies up your nose.
   - You decide not to look anymore.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!212 &1676293406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11197,8 +11354,9 @@ Transform:
   - {fileID: 1649924904}
   - {fileID: 1864345714}
   - {fileID: 224886529}
+  - {fileID: 861539963}
   m_Father: {fileID: 1356618953}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1677607671
 Animator:
@@ -11232,7 +11390,9 @@ MonoBehaviour:
   - I AM HERE.
   - THE MIGHTY KRONOS OF DEMONS HAS COME TO CLAIM THIS LAND!
   - ARAGGHHH
-  StartGame: 1
+  StartGame: 0
+  OnAwake: 1
+  IgnoreRaycast: 1
 --- !u!1 &1679684120
 GameObject:
   m_ObjectHideFlags: 0
@@ -11631,6 +11791,70 @@ Transform:
   m_Father: {fileID: 1674951428}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1700764485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1700764486}
+  - component: {fileID: 1700764487}
+  m_Layer: 0
+  m_Name: snow_tiles_36 (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1700764486
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700764485}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -16.01, y: -27.2, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 518681040}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1700764487
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700764485}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: -19
+  m_Sprite: {fileID: 21300072, guid: 7d32bd267610daa42994d8c446f32a07, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &1720550899
 Prefab:
   m_ObjectHideFlags: 0
@@ -13269,6 +13493,8 @@ MonoBehaviour:
   - You look inside...
   - Nothing happens.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1001 &2002680525
 Prefab:
   m_ObjectHideFlags: 0
@@ -13528,6 +13754,8 @@ MonoBehaviour:
   - There's a hole in the wall!
   - You look through it but see only darkness.
   StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
 --- !u!1 &2081419858
 GameObject:
   m_ObjectHideFlags: 0
@@ -13576,6 +13804,8 @@ MonoBehaviour:
   - It will be OK.
   - '...'
   StartGame: 1
+  OnAwake: 1
+  IgnoreRaycast: 0
 --- !u!212 &2081419861
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class Main : MonoBehaviour {
 	public GameObject demonAttackCamera;
 	public GameObject camera;
 	private Animator daAnimator;
+	public GameObject demons;
+	public GameObject Ariel2;
 
 	public List<string> Bag;
 	public bool isBag;
@@ -38,6 +40,7 @@ public class Main : MonoBehaviour {
 		modelAnimator = model.GetComponent<Animator> ();
 		//StartCoroutine ("StartBattle");
 		Flash.SetActive(true);
+		daAnimator = demonAttackCamera.GetComponent<Animator> ();
 	}
 		
 	void Update()
@@ -222,20 +225,37 @@ public class Main : MonoBehaviour {
 			}
 			if (d == "ARAGGHHH") {
 				daAnimator.SetTrigger ("2");
-
+				demons.GetComponent<Animator> ().SetTrigger ("Jump");
+				StartCoroutine("DemonJumpWait");
 			}
 			if (d.Contains ("[NAME]")) {
 				string name = PlayerPrefs.GetString ("Name");
 				d = d.Replace ("[NAME]", name);
 			}
+			if (d == "[FIGHT]") {
+				StartCoroutine ("StartBattle");
+				canMove = false;
+				dialogue = false;
+				canSkip = true;
+				return;
+			}
 			DialogueBox.SetActive (true);
 			canMove = false;
 			dialogue = true;
-			if (d == "*Ariel mutturs random words*") {
-				
-			}
 			StartCoroutine (AnimateText (d));
 		}
+	}
+
+	IEnumerator DemonJumpWait()
+	{
+		yield return new WaitForSeconds (3);
+		demonAttackCamera.SetActive (false);
+		camera.SetActive (true);
+		DialogueBox.SetActive (false);
+		canMove = true;
+		dialogue = false;
+		canSkip = true;
+		Ariel2.SendMessage ("StartDemonHelp");
 	}
 
 	IEnumerator FlashCamera()
