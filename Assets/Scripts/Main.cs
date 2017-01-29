@@ -272,6 +272,11 @@ public class Main : MonoBehaviour {
 			str += strComplete[i++];
 			DialogueText.GetComponent<Text> ().text = str;
 			yield return new WaitForSeconds(0.05F);
+			if (Input.GetKey (KeyCode.E) && i > 4) {
+				canSkip = true;
+				DialogueText.GetComponent<Text> ().text = strComplete;
+				yield break;
+			}
 		}
 		canSkip = true;
 	}
