@@ -4561,6 +4561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - It's locked.
+  - You wait a bit...
   - It's still locked...
   StartGame: 0
 --- !u!61 &1370804959
