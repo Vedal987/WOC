@@ -9,6 +9,7 @@ public class Main : MonoBehaviour {
 	public bool dialogue = false;
 	public bool start = true;
 	public GameObject creature;
+	public GameObject creatureAgainst;
 	public GameObject BattleUI;
 	public GameObject BagUI;
 	public GameObject BagText;
@@ -41,6 +42,12 @@ public class Main : MonoBehaviour {
 	private string str;
 
 	public bool canSkip = true;
+
+
+
+	//InBattle
+
+	List<BattleMove> Moves = new List<BattleMove>();
 
 	void Start () {
 		modelAnimator = model.GetComponent<Animator> ();
@@ -314,6 +321,14 @@ public class Main : MonoBehaviour {
 		inBattle = true;
 		BattleUI.GetComponent<RectTransform> ().localScale.Set (1, 1, 1);
 		Battle.SetActive (true);
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name1, creature.GetComponent<Creature>().damage1, creature.GetComponent<Creature>().heal1, creature.GetComponent<Creature>().details1));
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name2, creature.GetComponent<Creature>().damage2, creature.GetComponent<Creature>().heal2, creature.GetComponent<Creature>().details2));
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name3, creature.GetComponent<Creature>().damage3, creature.GetComponent<Creature>().heal3, creature.GetComponent<Creature>().details3));
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name4, creature.GetComponent<Creature>().damage4, creature.GetComponent<Creature>().heal4, creature.GetComponent<Creature>().details4));
+		BattleFight.transform.GetChild (0).transform.GetChild (0).GetComponent<Text> ().text = Moves [0].name;
+		BattleFight.transform.GetChild (1).transform.GetChild (0).GetComponent<Text> ().text = Moves [1].name;
+		BattleFight.transform.GetChild (2).transform.GetChild (0).GetComponent<Text> ().text = Moves [2].name;
+		BattleFight.transform.GetChild (3).transform.GetChild (0).GetComponent<Text> ().text = Moves [3].name;
 	}
 
 	public void FightButton()
@@ -327,6 +342,23 @@ public class Main : MonoBehaviour {
 	{
 		BattleMenu.SetActive (false);
 		this.GetComponent <AudioSource> ().Play ();
+	}
+
+	public void Move1()
+	{
+		
+	}
+	public void Move2()
+	{
+
+	}
+	public void Move3()
+	{
+
+	}
+	public void Move4()
+	{
+
 	}
 }
 
