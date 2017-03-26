@@ -294,6 +294,7 @@ public class Main : MonoBehaviour {
 	IEnumerator StartBattle()
 	{
 		canMove = false;
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		BattleUI.GetComponent<Animation> ().Play ("BattleUI_Enter");
 		yield return new WaitForSeconds (1);
 		BattleUI.GetComponent<RectTransform> ().localScale.Set (1, 1, 1);

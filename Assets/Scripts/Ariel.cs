@@ -66,6 +66,7 @@ public class Ariel : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (5f);
 		player.GetComponent<Main> ().canMove = true;
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		player.GetComponent<Main> ().dialogue = false;
 		player.GetComponent<Main> ().DialogueBox.SetActive (false);
 	}

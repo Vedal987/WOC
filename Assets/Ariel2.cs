@@ -18,6 +18,10 @@ public class Ariel2 : MonoBehaviour {
 	public bool IgnoreRaycast;
 	public string[] dialogue2;
 
+	public bool demonWaiting;
+
+	public ManagerTitanHQ Manager;
+
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -32,6 +36,12 @@ public class Ariel2 : MonoBehaviour {
 		if (player.GetComponent<Main> ().canSkip && IgnoreRaycast) {
 			if (Input.GetKeyDown (KeyCode.E)) {
 				Interact ();
+			}
+		}
+		if (demonWaiting) {
+			if (Manager.cousin && Manager.chest && Manager.weirdo && Manager.guard) {
+				StartCoroutine ("DemonAttackWait");
+				demonWaiting = false;
 			}
 		}
 	}
@@ -49,7 +59,7 @@ public class Ariel2 : MonoBehaviour {
 
 		string dia = Dialogue [d];
 		if (dia == "Go talk to some people, make yourself at home.") {
-			StartCoroutine ("DemonAttackWait");
+			demonWaiting = true;
 		}
 		if (dia == "*You recieved Ariel*") {
 			this.GetComponent<SpriteRenderer> ().enabled = false;
@@ -62,7 +72,8 @@ public class Ariel2 : MonoBehaviour {
 
 	IEnumerator DemonAttackWait()
 	{
-		yield return new WaitForSeconds (80);
+		yield return new WaitForSeconds (3f);
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		camera.SetActive (false);
 		demonAttackCamera.SetActive (true);
 		daAnimator.SetTrigger ("1");
