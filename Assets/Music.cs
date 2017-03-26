@@ -13,7 +13,7 @@ public class Music : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ChangeMusic ();
+
 	}
 	
 	// Update is called once per frame
@@ -23,9 +23,24 @@ public class Music : MonoBehaviour {
 
 	public void ChangeMusic()
 	{
-		audios.clip = clips [currentM];
+		StartCoroutine (FadeClip (clips [currentM]));
+	}
+
+	IEnumerator FadeClip(AudioClip clip)
+	{
+		audios.clip = clip;
+		audios.volume = 0.3f;
+		yield return new WaitForSeconds(0.1f);
+		audios.volume = 0.2f;
+		yield return new WaitForSeconds(0.1f);
+		audios.volume = 0.1f;
+		yield return new WaitForSeconds(0.1f);
 		audios.Play ();
 		currentM++;
+		audios.volume = 0.2f;
+		yield return new WaitForSeconds(0.1f);
+		audios.volume = 0.4f;
+		yield return new WaitForSeconds(0.1f);
 	}
 
 	public void BattleMusic()
