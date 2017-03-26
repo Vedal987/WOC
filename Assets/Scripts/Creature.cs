@@ -1,8 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Creature : MonoBehaviour {
+
+	public GameObject Health;
+
+	[Space(10)]
 
 	public string name1;
 	public int damage1;
@@ -45,7 +50,7 @@ public class Creature : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Health.GetComponent<Text> ().text = health.ToString() + "/500";
 	}
 		
 }

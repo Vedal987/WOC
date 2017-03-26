@@ -30,6 +30,8 @@ public class Main : MonoBehaviour {
 	public GameObject demons;
 	public GameObject Ariel2;
 
+	public GameObject BattleText;
+
 	public List<string> Bag;
 	public bool isBag;
 
@@ -48,6 +50,8 @@ public class Main : MonoBehaviour {
 	//InBattle
 
 	List<BattleMove> Moves = new List<BattleMove>();
+	List<BattleMove> EnemyMoves = new List<BattleMove>();
+	public bool isTurn;
 
 	void Start () {
 		modelAnimator = model.GetComponent<Animator> ();
@@ -59,10 +63,15 @@ public class Main : MonoBehaviour {
 	void Update()
 	{
 		if (inBattle) {
-			if (Input.GetKeyDown (KeyCode.Q)) {
-				BattleMenu.SetActive (true);
+			if (isTurn) {
+				if (Input.GetKeyDown (KeyCode.Q)) {
+					BattleMenu.SetActive (true);
+					BattleFight.SetActive (false);
+					this.GetComponent <AudioSource> ().Play ();
+				}
+			} else {
+				BattleMenu.SetActive (false);
 				BattleFight.SetActive (false);
-				this.GetComponent <AudioSource> ().Play ();
 			}
 		}
 		if (start) {
@@ -321,6 +330,7 @@ public class Main : MonoBehaviour {
 		inBattle = true;
 		BattleUI.GetComponent<RectTransform> ().localScale.Set (1, 1, 1);
 		Battle.SetActive (true);
+		BattleText.GetComponent<Text> ().text = creatureAgainst.GetComponent<Creature> ().CreatureName + " appears.";
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name1, creature.GetComponent<Creature>().damage1, creature.GetComponent<Creature>().heal1, creature.GetComponent<Creature>().details1));
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name2, creature.GetComponent<Creature>().damage2, creature.GetComponent<Creature>().heal2, creature.GetComponent<Creature>().details2));
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name3, creature.GetComponent<Creature>().damage3, creature.GetComponent<Creature>().heal3, creature.GetComponent<Creature>().details3));
@@ -329,6 +339,10 @@ public class Main : MonoBehaviour {
 		BattleFight.transform.GetChild (1).transform.GetChild (0).GetComponent<Text> ().text = Moves [1].name;
 		BattleFight.transform.GetChild (2).transform.GetChild (0).GetComponent<Text> ().text = Moves [2].name;
 		BattleFight.transform.GetChild (3).transform.GetChild (0).GetComponent<Text> ().text = Moves [3].name;
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name1, creatureAgainst.GetComponent<Creature>().damage1, creatureAgainst.GetComponent<Creature>().heal1, creatureAgainst.GetComponent<Creature>().details1));
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name2, creatureAgainst.GetComponent<Creature>().damage2, creatureAgainst.GetComponent<Creature>().heal2, creatureAgainst.GetComponent<Creature>().details2));
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name3, creatureAgainst.GetComponent<Creature>().damage3, creatureAgainst.GetComponent<Creature>().heal3, creatureAgainst.GetComponent<Creature>().details3));
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name4, creatureAgainst.GetComponent<Creature>().damage4, creatureAgainst.GetComponent<Creature>().heal4, creatureAgainst.GetComponent<Creature>().details4));
 	}
 
 	public void FightButton()
@@ -346,19 +360,41 @@ public class Main : MonoBehaviour {
 
 	public void Move1()
 	{
-		
+		creatureAgainst.GetComponent<Creature> ().health -= Moves [0].damage;
+		creature.GetComponent<Creature> ().health += Moves [0].heal;
+		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [0].name;
+		EnemyTurn ();
 	}
 	public void Move2()
 	{
-
+		creatureAgainst.GetComponent<Creature> ().health -= Moves [1].damage;
+		creature.GetComponent<Creature> ().health += Moves [1].heal;
+		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [1].name;
+		EnemyTurn ();
 	}
 	public void Move3()
 	{
-
+		creatureAgainst.GetComponent<Creature> ().health -= Moves [2].damage;
+		creature.GetComponent<Creature> ().health += Moves [2].heal;
+		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [2].name;
+		EnemyTurn ();
 	}
 	public void Move4()
 	{
+		creatureAgainst.GetComponent<Creature> ().health -= Moves [3].damage;
+		creature.GetComponent<Creature> ().health += Moves [3].heal;
+		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [3].name;
+		EnemyTurn ();
+	}
 
+	public void EnemyTurn()
+	{
+		isTurn = false;
+		int RandomMove = Random.Range (0, 3);
+		creature.GetComponent<Creature> ().health -= EnemyMoves [RandomMove].damage;
+		creatureAgainst.GetComponent<Creature> ().health += EnemyMoves [RandomMove].heal;
+		BattleText.GetComponent<Text> ().text = creatureAgainst.GetComponent<Creature> ().CreatureName + " used " + EnemyMoves [3].name;
+		isTurn = true;
 	}
 }
 
