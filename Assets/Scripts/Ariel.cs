@@ -49,6 +49,10 @@ public class Ariel : MonoBehaviour {
 				needBottle = true;
 				d = 0;
 			}
+		if(dia == "Ok then, well make sure you take a look around and make yourself comfortable.")
+			{
+				GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+			}
 			if (dia == "Yes of course. Sorry.") {
 				GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 			}
