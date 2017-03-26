@@ -19,6 +19,10 @@ public class Main : MonoBehaviour {
 	public Animator modelAnimator;
 	float playerSpeed = 4f;
 
+	public GameObject Battle;
+	public GameObject BattleMenu;
+	public GameObject BattleFight;
+
 	public GameObject demonAttackCamera;
 	public GameObject camera;
 	private Animator daAnimator;
@@ -27,6 +31,8 @@ public class Main : MonoBehaviour {
 
 	public List<string> Bag;
 	public bool isBag;
+
+	public bool inBattle;
 
 	public string LastKeyPress;
 	public string direction;
@@ -45,6 +51,12 @@ public class Main : MonoBehaviour {
 		
 	void Update()
 	{
+		if (inBattle) {
+			if (Input.GetKeyDown (KeyCode.Q)) {
+				BattleMenu.SetActive (true);
+				BattleFight.SetActive (false);
+			}
+		}
 		if (start) {
 			if (Input.GetKeyDown(KeyCode.E)) {
 				Flash.SendMessage ("Interact");
@@ -52,7 +64,7 @@ public class Main : MonoBehaviour {
 			return;
 		}
 		if (!dialogue) {
-			if (Input.GetKeyDown(KeyCode.Q)) {
+			if (Input.GetKeyDown(KeyCode.Q) && !inBattle) {
 				isBag = !isBag;
 			}
 			if (isBag) {
@@ -297,10 +309,21 @@ public class Main : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		BattleUI.GetComponent<Animation> ().Play ("BattleUI_Enter");
 		yield return new WaitForSeconds (1);
+		inBattle = true;
 		BattleUI.GetComponent<RectTransform> ().localScale.Set (1, 1, 1);
+		Battle.SetActive (true);
 	}
 
+	public void FightButton()
+	{
+		BattleMenu.SetActive (false);
+		BattleFight.SetActive (true);
+	}
 
+	public void BagButton()
+	{
+		BattleMenu.SetActive (false);
+	}
 }
 
 

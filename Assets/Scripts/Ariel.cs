@@ -49,11 +49,16 @@ public class Ariel : MonoBehaviour {
 				needBottle = true;
 				d = 0;
 			}
+			if (dia == "Yes of course. Sorry.") {
+				GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+			}
 			if (dia == "Follow me.") {
 				this.GetComponent<Animator> ().SetTrigger ("FollowMe");
+				GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 				StartCoroutine ("FollowMeWait");
 			}
 			if (dia == "*Ariel mutturs random words*") {
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 			Vector3 newpos = new Vector3(-10.5f, -60.3f);
 			player.transform.position = newpos;
 			StartCoroutine ("TeleportWait");
