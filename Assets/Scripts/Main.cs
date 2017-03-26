@@ -55,6 +55,7 @@ public class Main : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.Q)) {
 				BattleMenu.SetActive (true);
 				BattleFight.SetActive (false);
+				this.GetComponent <AudioSource> ().Play ();
 			}
 		}
 		if (start) {
@@ -66,6 +67,7 @@ public class Main : MonoBehaviour {
 		if (!dialogue) {
 			if (Input.GetKeyDown(KeyCode.Q) && !inBattle) {
 				isBag = !isBag;
+				this.GetComponent <AudioSource> ().Play ();
 			}
 			if (isBag) {
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
@@ -318,11 +320,13 @@ public class Main : MonoBehaviour {
 	{
 		BattleMenu.SetActive (false);
 		BattleFight.SetActive (true);
+		this.GetComponent <AudioSource> ().Play ();
 	}
 
 	public void BagButton()
 	{
 		BattleMenu.SetActive (false);
+		this.GetComponent <AudioSource> ().Play ();
 	}
 }
 
