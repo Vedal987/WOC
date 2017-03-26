@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - Why hello there, I haven't seen you around here befo-
+  - Why hello there, I haven't seen you around here before, my name is And-
   - Wait, y...you're human right?
   - What is Ariel doing letting in humans like this? It's just careless!
   - '*The titan walks around in circles frantically*'
@@ -7654,9 +7654,12 @@ MonoBehaviour:
   Option: 2
   Option2:
   - Hey there.
-  - My names Sam.
+  - My name's Winter.
   - Nice to meet you.
-  - I love meeting new people. I have a cousin that doesn't though.
+  - I love seeing new faces around here. But my cousin, REALLY does't like new faces
+    at all.
+  - He isn't dangerous but he sure has a short temper.
+  - Really, he's just shy but he wouldn't admit that.
 --- !u!61 &1179013548
 BoxCollider2D:
   m_ObjectHideFlags: 0
