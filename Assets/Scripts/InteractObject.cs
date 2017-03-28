@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractObject : MonoBehaviour {
 
 	public string[] Dialogue;
-	private int d = 0;
+	public int d = 0;
 	private GameObject player;
 	public bool StartGame;
 	public bool OnAwake;
@@ -59,7 +59,9 @@ public class InteractObject : MonoBehaviour {
 			}
 			string dia = Option2 [d];
 			d++;
-
+			if (dia == "[BYE]") {
+				this.gameObject.SetActive (false);
+			}
 			player.GetComponent<Main> ().Dialogue (dia);
 		}
 

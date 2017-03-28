@@ -63,6 +63,17 @@ public class Main : MonoBehaviour {
 	void Update()
 	{
 		if (inBattle) {
+			if (creatureAgainst.GetComponent<Creature> ().health < 1) {
+				inBattle = false;
+				Vector3 scale = BattleUI.GetComponent<RectTransform> ().localScale;
+				scale.x = 0;
+				scale.y = 0;
+				BattleUI.GetComponent<RectTransform> ().localScale = scale;
+				Battle.SetActive (false);
+				canMove = true;
+				dialogue = false;
+				demons.GetComponent<InteractObject> ().Option = 2;
+				demons.GetComponent<InteractObject> ().d = 0;			}
 			if (isTurn) {
 				if (Input.GetKeyDown (KeyCode.Q)) {
 					BattleMenu.SetActive (true);
