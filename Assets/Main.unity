@@ -244,6 +244,8 @@ RectTransform:
   - {fileID: 902375142}
   - {fileID: 1614985574}
   - {fileID: 1251228562}
+  - {fileID: 1632384490}
+  - {fileID: 772374669}
   m_Father: {fileID: 440032936}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1113,7 +1115,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 172562288}
   m_OnClick:
     m_PersistentCalls:
@@ -3795,18 +3797,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 03cd13f2d1414ef499a0f98042c105a0, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 55
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Defend 1
-
-'
+  m_Text: Defend 1
 --- !u!222 &647469709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4637,14 +4637,14 @@ RectTransform:
   m_GameObject: {fileID: 772374668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.9}
   m_Children: []
-  m_Father: {fileID: 1251228562}
-  m_RootOrder: 0
+  m_Father: {fileID: 13048892}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.9, y: -73}
+  m_AnchoredPosition: {x: -205.40001, y: -403.1}
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772374670
@@ -5840,7 +5840,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9485294, g: 0.9485294, b: 0.9485294, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.8392157, g: 0.8392157, b: 0.8392157, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -6452,7 +6452,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1059387237}
   m_OnClick:
     m_PersistentCalls:
@@ -6550,9 +6550,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 03cd13f2d1414ef499a0f98042c105a0, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 55
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6776,7 +6776,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9485294, g: 0.9485294, b: 0.9485294, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.83823526, g: 0.83823526, b: 0.83823526, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -8031,8 +8031,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
-  m_Children:
-  - {fileID: 772374669}
+  m_Children: []
   m_Father: {fileID: 13048892}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8103,22 +8102,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 772374668}
   name1: Kick
-  damage1: 60
+  damage1: 80
   heal1: 0
   details1: 
   name2: Energy Blast
-  damage2: 120
+  damage2: 150
   heal2: -30
   details2: 
   name3: Holy Punch
   damage3: 50
-  heal3: 20
+  heal3: 30
   details3: 
   name4: Pray
   damage4: 0
-  heal4: 60
-  details4: 
-  health: 500
+  heal4: 90
+  details4: Peace
+  health: 900
+  MaxHealth: 900
   AI: 0
   CreatureName: Ariel
 --- !u!1 &1251494312
@@ -8356,7 +8356,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9485294, g: 0.9485294, b: 0.9485294, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.8392157, g: 0.8392157, b: 0.8392157, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -8882,9 +8882,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 03cd13f2d1414ef499a0f98042c105a0, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 55
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -9236,7 +9236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1451680140}
-  damping: 0.5
+  damping: 0.3
   lookAheadFactor: 2
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
@@ -9591,7 +9591,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9485294, g: 0.9485294, b: 0.9485294, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.8392157, g: 0.8392157, b: 0.8392157, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -10428,8 +10428,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
-  m_Children:
-  - {fileID: 1632384490}
+  m_Children: []
   m_Father: {fileID: 13048892}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10500,22 +10499,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1632384489}
   name1: Blood Smash
-  damage1: 100
+  damage1: 140
   heal1: -50
   details1: 
   name2: Wing Swipe
-  damage2: 70
-  heal2: -5
+  damage2: 110
+  heal2: -10
   details2: 
-  name3: Recharge
-  damage3: 0
-  heal3: 5
-  details3: 
-  name4: Blood Rain
-  damage4: 10
-  heal4: 40
-  details4: 
-  health: 500
+  name3: Blood Rain
+  damage3: 30
+  heal3: 60
+  details3: NoMove
+  name4: Recharge
+  damage4: 0
+  heal4: 10
+  details4: Peace
+  health: 1000
+  MaxHealth: 1000
   AI: 1
   CreatureName: Kronos
 --- !u!1 &1618217862
@@ -13414,7 +13414,7 @@ GameObject:
   - component: {fileID: 1632384492}
   - component: {fileID: 1632384491}
   m_Layer: 5
-  m_Name: Health
+  m_Name: EnemyHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13428,14 +13428,14 @@ RectTransform:
   m_GameObject: {fileID: 1632384489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1614985574}
-  m_RootOrder: 0
+  m_Father: {fileID: 13048892}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.9, y: -69.88}
+  m_AnchoredPosition: {x: 245.59998, y: -68.520004}
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632384491
@@ -13665,9 +13665,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 03cd13f2d1414ef499a0f98042c105a0, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 55
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

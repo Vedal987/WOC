@@ -49,8 +49,8 @@ public class Main : MonoBehaviour {
 
 	//InBattle
 
-	List<BattleMove> Moves = new List<BattleMove>();
-	List<BattleMove> EnemyMoves = new List<BattleMove>();
+	public List<BattleMove> Moves = new List<BattleMove>();
+	public List<BattleMove> EnemyMoves = new List<BattleMove>();
 	public bool isTurn;
 
 	void Start () {
@@ -363,38 +363,69 @@ public class Main : MonoBehaviour {
 		creatureAgainst.GetComponent<Creature> ().health -= Moves [0].damage;
 		creature.GetComponent<Creature> ().health += Moves [0].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [0].name;
-		EnemyTurn ();
+		StartCoroutine(EnemyTurn (Moves [0].details));
 	}
 	public void Move2()
 	{
 		creatureAgainst.GetComponent<Creature> ().health -= Moves [1].damage;
 		creature.GetComponent<Creature> ().health += Moves [1].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [1].name;
-		EnemyTurn ();
+		StartCoroutine(EnemyTurn (Moves [1].details));
 	}
 	public void Move3()
 	{
 		creatureAgainst.GetComponent<Creature> ().health -= Moves [2].damage;
 		creature.GetComponent<Creature> ().health += Moves [2].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [2].name;
-		EnemyTurn ();
+		StartCoroutine(EnemyTurn (Moves [2].details));
 	}
 	public void Move4()
 	{
 		creatureAgainst.GetComponent<Creature> ().health -= Moves [3].damage;
 		creature.GetComponent<Creature> ().health += Moves [3].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [3].name;
-		EnemyTurn ();
+		StartCoroutine(EnemyTurn (Moves [3].details));
 	}
+		
 
-	public void EnemyTurn()
+	IEnumerator EnemyTurn(string details)
 	{
 		isTurn = false;
+		if (details == "Peace") {
+			creature.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (2f);
+		} else if (details == "NoMove") {
+			creature.GetComponent<Animator> ().SetTrigger ("Hit");
+			creatureAgainst.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (2f);
+		} else {
+			creature.GetComponent<Animator> ().SetTrigger ("Attack");
+			yield return new WaitForSeconds (0.15f);
+			creatureAgainst.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (1.85f);
+		}
 		int RandomMove = Random.Range (0, 3);
 		creature.GetComponent<Creature> ().health -= EnemyMoves [RandomMove].damage;
 		creatureAgainst.GetComponent<Creature> ().health += EnemyMoves [RandomMove].heal;
-		BattleText.GetComponent<Text> ().text = creatureAgainst.GetComponent<Creature> ().CreatureName + " used " + EnemyMoves [3].name;
+		BattleText.GetComponent<Text> ().text = creatureAgainst.GetComponent<Creature> ().CreatureName + " used " + EnemyMoves [RandomMove].name;
+		string EnemyDetails = EnemyMoves [RandomMove].details;
+
+		if (EnemyDetails == "Peace") {
+			creatureAgainst.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (2f);
+		} else if (EnemyDetails == "NoMove") {
+			creatureAgainst.GetComponent<Animator> ().SetTrigger ("Hit");
+			creature.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (2f);
+		} else {
+			creatureAgainst.GetComponent<Animator> ().SetTrigger ("Attack");
+			yield return new WaitForSeconds (0.2f);
+			creature.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (1.8f);
+		}
 		isTurn = true;
+		BattleMenu.SetActive (true);
+		BattleFight.SetActive (false);
 	}
 }
 

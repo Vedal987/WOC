@@ -38,6 +38,7 @@ public class Creature : MonoBehaviour {
 	[Space(10)]
 
 	public int health;
+	public int MaxHealth;
 
 	public bool AI;
 
@@ -50,7 +51,7 @@ public class Creature : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Health.GetComponent<Text> ().text = health.ToString() + "/500";
+		Health.GetComponent<Text> ().text = health.ToString() + "/" + MaxHealth.ToString();
 	}
 		
 }
