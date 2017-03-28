@@ -73,7 +73,11 @@ public class Main : MonoBehaviour {
 				canMove = true;
 				dialogue = false;
 				demons.GetComponent<InteractObject> ().Option = 2;
-				demons.GetComponent<InteractObject> ().d = 0;			}
+				demons.GetComponent<InteractObject> ().d = 0;			
+			}
+			if (creature.GetComponent<Creature> ().health < 1) {
+				Application.LoadLevel ("Main");
+			}
 			if (isTurn) {
 				if (Input.GetKeyDown (KeyCode.Q)) {
 					BattleMenu.SetActive (true);
