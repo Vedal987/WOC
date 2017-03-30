@@ -891,6 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - Just looking at the drop makes you nauseous.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -1305,6 +1306,7 @@ MonoBehaviour:
   - What's this?
   - It's a box...
   - Unfortunately, nothing special happened.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -2034,6 +2036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - It's a drop.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -2857,6 +2860,7 @@ MonoBehaviour:
   - What is Ariel doing letting in humans like this? It's just careless!
   - '*The titan walks around in circles frantically*'
   - Something tells you that you shouldn't speak anymore.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -3116,6 +3120,7 @@ MonoBehaviour:
   Dialogue:
   - You cannot pass. The King forbids passing through here at this time.
   - It's too dangerous.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -3914,7 +3919,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb55489518f54dd43b1c034d591a2d7f, type: 3}
   - {fileID: 8300000, guid: e1ca81bc9c2c60141985b80ef61dbd7b, type: 3}
   - {fileID: 8300000, guid: d28f83ac755657640bf759ee08f1907c, type: 3}
-  - {fileID: 8300000, guid: 58b037bebb888dd4ebe4b463302e95f9, type: 3}
+  - {fileID: 8300000, guid: 547279772bf06cf4884f99cecdb5555e, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   battle: {fileID: 8300000, guid: 46cb12004452c2c4fb8e5e0f64ea7644, type: 3}
@@ -4033,6 +4038,7 @@ MonoBehaviour:
   - You look at the water flowing around the barrel.
   - You throw a pebble at the barrel.
   - Your aiming is awful, you feel ashamed.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -4224,6 +4230,7 @@ MonoBehaviour:
   - You look at the water flowing around the barrel.
   - You throw a pebble at the barrel.
   - Your aiming is awful, you feel ashamed.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -4862,6 +4869,7 @@ MonoBehaviour:
   - Haha, a human, what a joke!
   - Anyway, let us fight...
   - '[FIGHT]'
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -5053,6 +5061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - You tap the wall, you are scared by a spider that came out.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -5203,6 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - It's a drop.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -6015,6 +6025,7 @@ MonoBehaviour:
   - The chest has gold crawling out the top.
   - Ariel gives you a funny look.
   - You slowly back away from the chest.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -6146,6 +6157,125 @@ SpriteRenderer:
   m_SortingOrder: 12
   m_Sprite: {fileID: 21300076, guid: 7c5d125ce8211134da5c59e17b276e9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!1 &1022545412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1022545413}
+  - component: {fileID: 1022545417}
+  - component: {fileID: 1022545416}
+  - component: {fileID: 1022545415}
+  - component: {fileID: 1022545414}
+  m_Layer: 0
+  m_Name: Ariel3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1022545413
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022545412}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.89, y: -39.38, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1356618953}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1022545414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022545412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue:
+  - '[NAME], you have helped us.'
+  - For that I must thank you.
+  - Come with me...
+  d: 0
+  StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
+  Option: 1
+  Option2: []
+--- !u!95 &1022545415
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022545412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 481ed23710b97f14aa59ad9f54f5a136, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!61 &1022545416
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022545412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.20999998, y: 0.41999996}
+--- !u!212 &1022545417
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022545412}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: 74279db37a66b0a438e4919b9d29cb25, type: 3}
+  m_Color: {r: 0.7941176, g: 0.7941176, b: 0.7941176, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1 &1023939187
@@ -6362,6 +6492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - It's a drop.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -6891,6 +7022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - x7Item Bottle Of Healing
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -7246,6 +7378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue: []
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -7649,6 +7782,7 @@ MonoBehaviour:
   - '*You say something about the titan being the nice kind, it blushes*'
   - Oh, why thank you, thank you very much. *The titan starts to giggle uncontrollably*
   - You decide not to interrupt it's giggling.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -8280,6 +8414,7 @@ MonoBehaviour:
   Dialogue:
   - The barrel wobbles around and snarls at you.
   - You are confused yet too frightened to see what it is.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -8934,6 +9069,7 @@ Transform:
   - {fileID: 1677607670}
   - {fileID: 1179013546}
   - {fileID: 877434579}
+  - {fileID: 1022545413}
   m_Father: {fileID: 1194639374}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9031,6 +9167,7 @@ MonoBehaviour:
   Dialogue:
   - If you hadn't guessed, it is a...
   - Box!!!!
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -9069,6 +9206,7 @@ MonoBehaviour:
   - It's locked.
   - You wait a bit...
   - It's still locked...
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -9323,6 +9461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - It's a normal wall, or is it?
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -9901,6 +10040,7 @@ MonoBehaviour:
   camera: {fileID: 1374775105}
   demons: {fileID: 1677607669}
   Ariel2: {fileID: 1141711801}
+  Ariel3: {fileID: 1022545412}
   BattleText: {fileID: 1783180547}
   Bag: []
   isBag: 0
@@ -13782,6 +13922,7 @@ MonoBehaviour:
   - You peek inside...
   - Dust fills the air, you cough loudly as the dust flies up your nose.
   - You decide not to look anymore.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -13916,6 +14057,7 @@ MonoBehaviour:
   - I AM HERE.
   - THE MIGHTY KRONOS OF DEMONS HAS COME TO CLAIM THIS LAND!
   - ARAGGHHH
+  d: 0
   StartGame: 0
   OnAwake: 1
   IgnoreRaycast: 1
@@ -16098,6 +16240,7 @@ MonoBehaviour:
   - It's a wooden box.
   - You look inside...
   - Nothing happens.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -16361,6 +16504,7 @@ MonoBehaviour:
   Dialogue:
   - There's a hole in the wall!
   - You look through it but see only darkness.
+  d: 0
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
@@ -16413,6 +16557,7 @@ MonoBehaviour:
   - Here take this.
   - It will be OK.
   - '...'
+  d: 0
   StartGame: 1
   OnAwake: 1
   IgnoreRaycast: 0

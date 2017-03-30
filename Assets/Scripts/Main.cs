@@ -29,6 +29,7 @@ public class Main : MonoBehaviour {
 	private Animator daAnimator;
 	public GameObject demons;
 	public GameObject Ariel2;
+	public GameObject Ariel3;
 
 	public GameObject BattleText;
 
@@ -73,7 +74,10 @@ public class Main : MonoBehaviour {
 				canMove = true;
 				dialogue = false;
 				demons.GetComponent<InteractObject> ().Option = 2;
-				demons.GetComponent<InteractObject> ().d = 0;			
+				demons.GetComponent<InteractObject> ().d = 0;	
+				Ariel3.SetActive (true);
+				GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+
 			}
 			if (creature.GetComponent<Creature> ().health < 1) {
 				Application.LoadLevel ("Main");
@@ -441,6 +445,24 @@ public class Main : MonoBehaviour {
 		isTurn = true;
 		BattleMenu.SetActive (true);
 		BattleFight.SetActive (false);
+		if (direction == "W") {
+			dir = Vector2.up;
+		}
+		if (direction == "A") {
+			dir = Vector2.left;
+		}
+		if (direction == "S") {
+			dir = -Vector2.up;
+		}
+		if (direction == "D") {
+			dir = -Vector2.left;
+		}
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
+		if (hit.collider != null) {
+			if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
+				hit.collider.gameObject.SendMessage ("Interact");
+			}
+		}
 	}
 }
 

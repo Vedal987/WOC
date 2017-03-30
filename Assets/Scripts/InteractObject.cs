@@ -61,6 +61,7 @@ public class InteractObject : MonoBehaviour {
 			d++;
 			if (dia == "[BYE]") {
 				this.gameObject.SetActive (false);
+				return;
 			}
 			player.GetComponent<Main> ().Dialogue (dia);
 		}
