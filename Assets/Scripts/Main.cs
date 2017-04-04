@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour {
 
@@ -80,7 +81,7 @@ public class Main : MonoBehaviour {
 
 			}
 			if (creature.GetComponent<Creature> ().health < 1) {
-				Application.LoadLevel ("Main");
+				SceneManager.LoadScene ("Main");
 			}
 			if (isTurn) {
 				if (Input.GetKeyDown (KeyCode.Q)) {
@@ -162,16 +163,16 @@ public class Main : MonoBehaviour {
 //				}
 //			}
 			if (Input.GetKeyDown (KeyCode.E)) {
-				if (direction == "W") {
+				if (LastKeyPress == "W") {
 					dir = Vector2.up;
 				}
-				if (direction == "A") {
+				if (LastKeyPress == "A") {
 					dir = Vector2.left;
 				}
-				if (direction == "S") {
+				if (LastKeyPress == "S") {
 					dir = Vector2.down;
 				}
-				if (direction == "D") {
+				if (LastKeyPress == "D") {
 					dir = Vector2.right;
 				}
 				RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
@@ -188,16 +189,16 @@ public class Main : MonoBehaviour {
 					GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
 					modelAnimator.enabled = false;
 					if (Input.GetKeyDown (KeyCode.E)) {
-						if (direction == "W") {
+						if (LastKeyPress == "W") {
 							dir = Vector2.up;
 						}
-						if (direction == "A") {
+						if (LastKeyPress == "A") {
 							dir = Vector2.left;
 						}
-						if (direction == "S") {
+						if (LastKeyPress == "S") {
 							dir = -Vector2.up;
 						}
-						if (direction == "D") {
+						if (LastKeyPress == "D") {
 							dir = -Vector2.left;
 						}
 						RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
@@ -445,16 +446,16 @@ public class Main : MonoBehaviour {
 		isTurn = true;
 		BattleMenu.SetActive (true);
 		BattleFight.SetActive (false);
-		if (direction == "W") {
+		if (LastKeyPress == "W") {
 			dir = Vector2.up;
 		}
-		if (direction == "A") {
+		if (LastKeyPress == "A") {
 			dir = Vector2.left;
 		}
-		if (direction == "S") {
+		if (LastKeyPress == "S") {
 			dir = -Vector2.up;
 		}
-		if (direction == "D") {
+		if (LastKeyPress == "D") {
 			dir = -Vector2.left;
 		}
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);

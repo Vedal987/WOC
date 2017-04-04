@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
 
@@ -20,7 +21,7 @@ public class Manager : MonoBehaviour {
 	public void NewGame()
 	{
 		PlayerPrefs.SetString ("Name", nameInput.GetComponent<Text> ().text);
-		Application.LoadLevel ("Main");
+		SceneManager.LoadScene ("Main");
 	}
 
 	public void ContinueGame()
