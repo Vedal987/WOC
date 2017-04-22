@@ -57,7 +57,9 @@ public class Main : MonoBehaviour {
 	public List<BattleMove> EnemyMoves = new List<BattleMove>();
 	public bool isTurn;
 
+
 	void Start () {
+		
 		modelAnimator = model.GetComponent<Animator> ();
 		//StartCoroutine ("StartBattle");
 		Flash.SetActive(true);
@@ -435,6 +437,7 @@ public class Main : MonoBehaviour {
 
 	IEnumerator EnemyTurn(string details)
 	{
+		StartCoroutine (TooltipExit ());
 		isTurn = false;
 		if (details == "Peace") {
 			creature.GetComponent<Animator> ().SetTrigger ("Hit");
