@@ -13,6 +13,7 @@ public class Creature : MonoBehaviour {
 	public int damage1;
 	public int heal1;
 	public string details1;
+	public string tooltip1;
 
 	[Space(10)]
 
@@ -20,6 +21,7 @@ public class Creature : MonoBehaviour {
 	public int damage2;
 	public int heal2;
 	public string details2;
+	public string tooltip2;
 
 	[Space(10)]
 
@@ -27,6 +29,7 @@ public class Creature : MonoBehaviour {
 	public int damage3;
 	public int heal3;
 	public string details3;
+	public string tooltip3;
 
 	[Space(10)]
 
@@ -34,6 +37,7 @@ public class Creature : MonoBehaviour {
 	public int damage4;
 	public int heal4;
 	public string details4;
+	public string tooltip4;
 
 	[Space(10)]
 

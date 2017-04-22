@@ -33,11 +33,13 @@ public class Main : MonoBehaviour {
 	public GameObject Ariel3;
 
 	public GameObject BattleText;
+	public GameObject BattleTooltip;
 
 	public List<string> Bag;
 	public bool isBag;
 
 	public bool inBattle;
+	public bool BattleSkip;
 
 	public string LastKeyPress;
 	public string direction;
@@ -66,19 +68,7 @@ public class Main : MonoBehaviour {
 	{
 		if (inBattle) {
 			if (creatureAgainst.GetComponent<Creature> ().health < 1) {
-				inBattle = false;
-				Vector3 scale = BattleUI.GetComponent<RectTransform> ().localScale;
-				scale.x = 0;
-				scale.y = 0;
-				BattleUI.GetComponent<RectTransform> ().localScale = scale;
-				Battle.SetActive (false);
-				canMove = true;
-				dialogue = false;
-				demons.GetComponent<InteractObject> ().Option = 2;
-				demons.GetComponent<InteractObject> ().d = 0;	
-				Ariel3.SetActive (true);
-				GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
-
+				StartCoroutine (ExitBattle ());
 			}
 			if (creature.GetComponent<Creature> ().health < 1) {
 				SceneManager.LoadScene ("Main");
@@ -340,7 +330,42 @@ public class Main : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().velocity = targetVelocity * playerSpeed;
 		}
 	}
-
+	IEnumerator ExitBattle()
+	{
+		creatureAgainst.GetComponent<Creature> ().health = 0;
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Pause ();
+		yield return new WaitForSeconds (2f);
+		inBattle = false;
+		Vector3 scale = BattleUI.GetComponent<RectTransform> ().localScale;
+		scale.x = 0;
+		scale.y = 0;
+		BattleUI.GetComponent<RectTransform> ().localScale = scale;
+		Battle.SetActive (false);
+		canMove = true;
+		dialogue = false;
+		demons.GetComponent<InteractObject> ().Option = 2;
+		demons.GetComponent<InteractObject> ().d = 0;	
+		Ariel3.SetActive (true);
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+		if (LastKeyPress == "W") {
+			dir = Vector2.up;
+		}
+		if (LastKeyPress == "A") {
+			dir = Vector2.left;
+		}
+		if (LastKeyPress == "S") {
+			dir = -Vector2.up;
+		}
+		if (LastKeyPress == "D") {
+			dir = -Vector2.left;
+		}
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
+		if (hit.collider != null) {
+			if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
+				hit.collider.gameObject.SendMessage ("Interact");
+			}
+		}
+	}
 	IEnumerator StartBattle()
 	{
 		canMove = false;
@@ -418,6 +443,15 @@ public class Main : MonoBehaviour {
 			creature.GetComponent<Animator> ().SetTrigger ("Hit");
 			creatureAgainst.GetComponent<Animator> ().SetTrigger ("Hit");
 			yield return new WaitForSeconds (2f);
+		} else if (details == "Blank") {
+			creature.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (2f);
+		} else if (details == "SkipSelf") {
+			creature.GetComponent<Animator> ().SetTrigger ("Attack");
+			yield return new WaitForSeconds (0.15f);
+			creatureAgainst.GetComponent<Animator> ().SetTrigger ("Hit");
+			yield return new WaitForSeconds (1.85f);
+			BattleSkip = true;
 		} else {
 			creature.GetComponent<Animator> ().SetTrigger ("Attack");
 			yield return new WaitForSeconds (0.15f);
@@ -443,9 +477,15 @@ public class Main : MonoBehaviour {
 			creature.GetComponent<Animator> ().SetTrigger ("Hit");
 			yield return new WaitForSeconds (1.8f);
 		}
-		isTurn = true;
-		BattleMenu.SetActive (true);
-		BattleFight.SetActive (false);
+		if (BattleSkip) {
+			BattleSkip = false;
+			BattleText.GetComponent<Text> ().text = "Ariel is recovering...";
+			StartCoroutine (EnemyTurn ("Blank"));
+		} else {
+			isTurn = true;
+			BattleMenu.SetActive (true);
+			BattleFight.SetActive (false);
+		}
 		if (LastKeyPress == "W") {
 			dir = Vector2.up;
 		}
@@ -464,6 +504,61 @@ public class Main : MonoBehaviour {
 				hit.collider.gameObject.SendMessage ("Interact");
 			}
 		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//Battle Tooltips
+	public void Attack1Enter()
+	{
+		BattleTooltip.GetComponent<Text> ().text = creature.GetComponent<Creature> ().tooltip1;
+	}
+	public void Attack2Enter()
+	{
+		BattleTooltip.GetComponent<Text> ().text = creature.GetComponent<Creature> ().tooltip2;
+	}
+	public void Defend1Enter()
+	{
+		BattleTooltip.GetComponent<Text> ().text = creature.GetComponent<Creature> ().tooltip3;
+	}
+	public void Defend2Enter()
+	{
+		BattleTooltip.GetComponent<Text> ().text = creature.GetComponent<Creature> ().tooltip4;
+	}
+	public void TooltipExit()
+	{
+		BattleTooltip.GetComponent<Text> ().text = "";
 	}
 }
 

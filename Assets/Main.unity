@@ -246,6 +246,7 @@ RectTransform:
   - {fileID: 1251228562}
   - {fileID: 1632384490}
   - {fileID: 772374669}
+  - {fileID: 2035153244}
   m_Father: {fileID: 440032936}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3915,7 +3916,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cf1e6cdeef6c83b499c4895c3ecf2f83, type: 3}
   - {fileID: 8300000, guid: 311bb7bc6c436e84393c16f7d656cd01, type: 3}
   - {fileID: 8300000, guid: c936a3c76862d3e46b6e967377569f46, type: 3}
-  - {fileID: 8300000, guid: f7fe813818729824cb29e60ca499aced, type: 3}
+  - {fileID: 8300000, guid: e27212b23d5530c409287e94b92fae7a, type: 3}
   - {fileID: 8300000, guid: eb55489518f54dd43b1c034d591a2d7f, type: 3}
   - {fileID: 8300000, guid: e1ca81bc9c2c60141985b80ef61dbd7b, type: 3}
   - {fileID: 8300000, guid: d28f83ac755657640bf759ee08f1907c, type: 3}
@@ -4653,7 +4654,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -205.40001, y: -287}
-  m_SizeDelta: {x: 200, y: 67}
+  m_SizeDelta: {x: 250, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772374670
 MonoBehaviour:
@@ -4687,7 +4688,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '500/500
+  m_Text: 'Loading...
 
 '
 --- !u!222 &772374671
@@ -5791,6 +5792,7 @@ GameObject:
   - component: {fileID: 983037243}
   - component: {fileID: 983037242}
   - component: {fileID: 983037241}
+  - component: {fileID: 983037245}
   m_Layer: 5
   m_Name: Defend1
   m_TagString: Untagged
@@ -5902,8 +5904,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 79f8134a97524ba4285dacdba5496423, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5916,6 +5918,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 983037239}
+--- !u!114 &983037245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983037239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: Defend2Enter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: TooltipExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &992273623
 GameObject:
   m_ObjectHideFlags: 0
@@ -6848,6 +6897,7 @@ GameObject:
   - component: {fileID: 1075734091}
   - component: {fileID: 1075734090}
   - component: {fileID: 1075734089}
+  - component: {fileID: 1075734093}
   m_Layer: 5
   m_Name: Attack1
   m_TagString: Untagged
@@ -6959,8 +7009,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 79f8134a97524ba4285dacdba5496423, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6973,6 +7023,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1075734087}
+--- !u!114 &1075734093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075734087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: Attack1Enter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: TooltipExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!4 &1078289749 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4703760484822178, guid: 72c65cfcd31909b43b26183dbcbee485,
@@ -8240,20 +8337,25 @@ MonoBehaviour:
   damage1: 80
   heal1: 0
   details1: 
+  tooltip1: A kick that deals 80 damage.
   name2: Energy Blast
-  damage2: 150
+  damage2: 220
   heal2: -30
-  details2: 
+  details2: SkipSelf
+  tooltip2: A blast that deals 220 damage to the opponent and 30 damage to you, takes
+    1 turn to recover from.
   name3: Holy Punch
   damage3: 50
   heal3: 30
   details3: 
+  tooltip3: A punch that deals 50 damage and heals you for 30.
   name4: Pray
   damage4: 0
-  heal4: 90
+  heal4: 120
   details4: Peace
-  health: 900
-  MaxHealth: 900
+  tooltip4: Pray to recieve 120 health.
+  health: 2000
+  MaxHealth: 2000
   AI: 0
   CreatureName: Ariel
 --- !u!1 &1251494312
@@ -8432,6 +8534,7 @@ GameObject:
   - component: {fileID: 1257059018}
   - component: {fileID: 1257059017}
   - component: {fileID: 1257059016}
+  - component: {fileID: 1257059020}
   m_Layer: 5
   m_Name: Defend2
   m_TagString: Untagged
@@ -8543,8 +8646,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 79f8134a97524ba4285dacdba5496423, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8557,6 +8660,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1257059014}
+--- !u!114 &1257059020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257059014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: Defend1Enter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: TooltipExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1268307567
 GameObject:
   m_ObjectHideFlags: 0
@@ -9671,6 +9821,7 @@ GameObject:
   - component: {fileID: 1435491243}
   - component: {fileID: 1435491242}
   - component: {fileID: 1435491241}
+  - component: {fileID: 1435491245}
   m_Layer: 5
   m_Name: Attack2
   m_TagString: Untagged
@@ -9782,8 +9933,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 79f8134a97524ba4285dacdba5496423, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9796,6 +9947,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435491239}
+--- !u!114 &1435491245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1435491239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: Attack2Enter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1451680143}
+          m_MethodName: TooltipExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1443942171
 GameObject:
   m_ObjectHideFlags: 0
@@ -10042,9 +10240,11 @@ MonoBehaviour:
   Ariel2: {fileID: 1141711801}
   Ariel3: {fileID: 1022545412}
   BattleText: {fileID: 1783180547}
+  BattleTooltip: {fileID: 2035153243}
   Bag: []
   isBag: 0
   inBattle: 0
+  BattleSkip: 0
   LastKeyPress: 
   direction: 
   canSkip: 1
@@ -10640,23 +10840,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 1632384489}
   name1: Blood Smash
-  damage1: 140
-  heal1: -50
+  damage1: 100
+  heal1: -40
   details1: 
+  tooltip1: 
   name2: Wing Swipe
-  damage2: 110
-  heal2: -10
+  damage2: 80
+  heal2: -20
   details2: 
+  tooltip2: 
   name3: Blood Rain
   damage3: 30
-  heal3: 60
+  heal3: 50
   details3: NoMove
+  tooltip3: 
   name4: Recharge
   damage4: 0
   heal4: 10
   details4: Peace
-  health: 1000
-  MaxHealth: 1000
+  tooltip4: 
+  health: 2500
+  MaxHealth: 2500
   AI: 1
   CreatureName: Kronos
 --- !u!1 &1618217862
@@ -13577,7 +13781,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 245.59998, y: 45}
-  m_SizeDelta: {x: 200, y: 73}
+  m_SizeDelta: {x: 250, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632384491
 MonoBehaviour:
@@ -13611,9 +13815,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '500/500
-
-'
+  m_Text: Loading...
 --- !u!222 &1632384492
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14876,8 +15078,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -194.6, y: 123.4}
-  m_SizeDelta: {x: 327.5, y: 185.1}
+  m_AnchoredPosition: {x: -196, y: 237}
+  m_SizeDelta: {x: 325, y: 71}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1783180549
 MonoBehaviour:
@@ -14900,7 +15102,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 03cd13f2d1414ef499a0f98042c105a0, type: 3}
-    m_FontSize: 30
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -16366,6 +16568,80 @@ Transform:
   m_PrefabParentObject: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
     type: 2}
   m_PrefabInternal: {fileID: 2023250494}
+--- !u!1 &2035153243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2035153244}
+  - component: {fileID: 2035153246}
+  - component: {fileID: 2035153245}
+  m_Layer: 5
+  m_Name: Tooltip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2035153244
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035153243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 13048892}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -198, y: 130}
+  m_SizeDelta: {x: 320, y: 99}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &2035153245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035153243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9705882, g: 0.9705882, b: 0.9705882, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 03cd13f2d1414ef499a0f98042c105a0, type: 3}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 7
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &2035153246
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035153243}
 --- !u!1001 &2043533657
 Prefab:
   m_ObjectHideFlags: 0
