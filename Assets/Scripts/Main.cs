@@ -437,7 +437,7 @@ public class Main : MonoBehaviour {
 
 	IEnumerator EnemyTurn(string details)
 	{
-		StartCoroutine (TooltipExit ());
+		TooltipExit ();
 		isTurn = false;
 		if (details == "Peace") {
 			creature.GetComponent<Animator> ().SetTrigger ("Hit");
