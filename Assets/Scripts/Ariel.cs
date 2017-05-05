@@ -61,7 +61,7 @@ public class Ariel : MonoBehaviour {
 				GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 				StartCoroutine ("FollowMeWait");
 			}
-			if (dia == "*Ariel mutturs random words*") {
+			if (dia == "*Ariel mutters random words*") {
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 			Vector3 newpos = new Vector3(-10.5f, -60.3f);
 			player.transform.position = newpos;

@@ -281,7 +281,7 @@ public class Main : MonoBehaviour {
 				canSkip = true;
 				return;
 			}
-			if (d == "*Ariel mutturs random words*") {
+			if (d == "*Ariel mutters random words*") {
 				StartCoroutine ("FlashCamera");
 			}
 			DialogueBox.SetActive (true);
@@ -316,7 +316,7 @@ public class Main : MonoBehaviour {
 		while( i < strComplete.Length ){
 			str += strComplete[i++];
 			DialogueText.GetComponent<Text> ().text = str;
-			yield return new WaitForSeconds(0.05F);
+			yield return new WaitForSeconds(0.03F);
 			if (Input.GetKey (KeyCode.E) && i > 4) {
 				canSkip = true;
 				DialogueText.GetComponent<Text> ().text = strComplete;

@@ -18,8 +18,10 @@ public class FireballSpawner : MonoBehaviour {
 
 	public void Spawn()
 	{
-		GameObject fb = GameObject.Instantiate (Fireball, this.transform.position, Quaternion.identity);
-		int z = Random.Range (0, 150);
-		fb.transform.Rotate (0, 0, z);
+		if (this.transform.parent.gameObject.activeSelf == true) {
+			GameObject fb = GameObject.Instantiate (Fireball, this.transform.position, Quaternion.identity);
+			int z = Random.Range (0, 150);
+			fb.transform.Rotate (0, 0, z);
+		}
 	}
 }
