@@ -411,6 +411,7 @@ public class Main : MonoBehaviour {
 		creature.GetComponent<Creature> ().health += Moves [0].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [0].name;
 		StartCoroutine(EnemyTurn (Moves [0].details));
+		this.GetComponent <AudioSource> ().Play ();
 	}
 	public void Move2()
 	{
@@ -418,6 +419,7 @@ public class Main : MonoBehaviour {
 		creature.GetComponent<Creature> ().health += Moves [1].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [1].name;
 		StartCoroutine(EnemyTurn (Moves [1].details));
+		this.GetComponent <AudioSource> ().Play ();
 	}
 	public void Move3()
 	{
@@ -425,6 +427,7 @@ public class Main : MonoBehaviour {
 		creature.GetComponent<Creature> ().health += Moves [2].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [2].name;
 		StartCoroutine(EnemyTurn (Moves [2].details));
+		this.GetComponent <AudioSource> ().Play ();
 	}
 	public void Move4()
 	{
@@ -432,6 +435,7 @@ public class Main : MonoBehaviour {
 		creature.GetComponent<Creature> ().health += Moves [3].heal;
 		BattleText.GetComponent<Text> ().text = creature.GetComponent<Creature> ().CreatureName + " used " + Moves [3].name;
 		StartCoroutine(EnemyTurn (Moves [3].details));
+		this.GetComponent <AudioSource> ().Play ();
 	}
 		
 
