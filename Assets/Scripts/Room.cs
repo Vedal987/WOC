@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicRoom : MonoBehaviour {
+public class Room : MonoBehaviour {
 
 	public AudioClip music;
 

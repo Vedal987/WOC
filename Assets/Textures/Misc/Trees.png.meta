@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d7d2b3ca765b75446bf615861c7f49ba
-timeCreated: 1494082332
+timeCreated: 1494094623
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -84,9 +84,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 72
-        height: 96
+        y: 3
+        width: 31
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -96,10 +96,10 @@ TextureImporter:
       name: Trees_1
       rect:
         serializedVersion: 2
-        x: 72
-        y: 0
-        width: 72
-        height: 96
+        x: 40
+        y: 3
+        width: 31
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
