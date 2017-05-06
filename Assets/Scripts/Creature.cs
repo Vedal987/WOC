@@ -7,6 +7,8 @@ public class Creature : MonoBehaviour {
 
 	public GameObject Health;
 
+	public string Name;
+
 	[Space(10)]
 
 	public string name1;
@@ -43,6 +45,7 @@ public class Creature : MonoBehaviour {
 
 	public int health;
 	public int MaxHealth;
+	public int Level;
 
 	public bool AI;
 

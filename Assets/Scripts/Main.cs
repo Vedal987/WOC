@@ -1,10 +1,14 @@
 ﻿using System.Collections;
+using System.Xml.Serialization;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour {
+
+	public const string path = "Creature";
 
 	public bool canMove = true;
 	public bool dialogue = false;
@@ -293,10 +297,47 @@ public class Main : MonoBehaviour {
 			if (d == "*Ariel mutters random words*") {
 				StartCoroutine ("FlashCamera");
 			}
+			if (d == "*You recieved Kai*") {
+				LoadCreature ("Kai");
+			}
 			DialogueBox.SetActive (true);
 			canMove = false;
 			dialogue = true;
 			StartCoroutine (AnimateText (d));
+		}
+	}
+
+	public void LoadCreature(string cname)
+	{
+		CreatureContainer cc = CreatureContainer.Load (path);
+		foreach (CreatureTemplate creaturev in cc.creatures) {
+			if (creaturev.Name = cname) {
+				creature.GetComponent<Creature> ().Name = cname;
+
+				creature.GetComponent<Creature> ().name1 = creaturev.name1;
+				creature.GetComponent<Creature> ().damage1 = creaturev.damage1;
+				creature.GetComponent<Creature> ().heal1 = creaturev.heal1;
+				creature.GetComponent<Creature> ().details1 = creaturev.details1;
+				creature.GetComponent<Creature> ().tooltip1 = creaturev.tooltip1;
+
+				creature.GetComponent<Creature> ().name2 = creaturev.name2;
+				creature.GetComponent<Creature> ().damage2 = creaturev.damage2;
+				creature.GetComponent<Creature> ().heal2 = creaturev.heal2;
+				creature.GetComponent<Creature> ().details2 = creaturev.details2;
+				creature.GetComponent<Creature> ().tooltip2 = creaturev.tooltip2;
+
+				creature.GetComponent<Creature> ().name3 = creaturev.name3;
+				creature.GetComponent<Creature> ().damage3 = creaturev.damage3;
+				creature.GetComponent<Creature> ().heal3 = creaturev.heal3;
+				creature.GetComponent<Creature> ().details3 = creaturev.details3;
+				creature.GetComponent<Creature> ().tooltip3 = creaturev.tooltip3;
+
+				creature.GetComponent<Creature> ().name4 = creaturev.name4;
+				creature.GetComponent<Creature> ().damage4 = creaturev.damage4;
+				creature.GetComponent<Creature> ().heal4 = creaturev.heal4;
+				creature.GetComponent<Creature> ().details4 = creaturev.details4;
+				creature.GetComponent<Creature> ().tooltip4 = creaturev.tooltip4;
+			}
 		}
 	}
 

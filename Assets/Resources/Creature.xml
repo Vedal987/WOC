@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CreatureCollection>
+	<Creatures>
+
+
+		<Creature Name="Kai">
+
+		<name1>Punch</name1>
+		<damage1>20</damage1>
+		<heal1>0</heal1>
+		<details1></details1>
+		<tooltip1>A basic punch dealing 20 damage</tooltip1>
+
+		<name2></name2>
+		<damage2>0</damage2>
+		<heal2>0</heal2>
+		<details2></details2>
+		<tooltip2></tooltip2>
+
+		<name3></name3>
+		<damage3>0</damage3>
+		<heal3>0</heal3>
+		<details3></details3>
+		<tooltip3></tooltip3>
+
+		<name4></name4>
+		<damage4>0</damage4>
+		<heal4>0</heal4>
+		<details4></details4>
+		<tooltip4></tooltip4>
+
+		<health>50</health>
+		<MaxHealth>50</MaxHealth>
+		<Level>5</Level>
+
+		</Creature>
+
+
+
+		<Creature Name="Omega">
+
+		<name1>Hyper Blast</name1>
+		<damage1>800</damage1>
+		<heal1>-100</heal1>
+		<details1></details1>
+		<tooltip1>A blast from the power of the Earth dealing 800 damage to the enemy and 100 to you.</tooltip1>
+
+		<name2>Gem Smash</name2>
+		<damage2>3000</damage2>
+		<heal2>-3000</heal2>
+		<details2></details2>
+		<tooltip2>Deals 3000 damage to the enemy and yourself. Last resort.</tooltip2>
+
+		<name3></name3>
+		<damage3>0</damage3>
+		<heal3>0</heal3>
+		<details3></details3>
+		<tooltip3></tooltip3>
+
+		<name4></name4>
+		<damage4>0</damage4>
+		<heal4>0</heal4>
+		<details4></details4>
+		<tooltip4></tooltip4>
+
+		<health>10000</health>
+		<MaxHealth>10000</MaxHealth>
+		<Level>100</Level>
+
+		</Creature>
+
+
+
+		<Creature Name="Ariel">
+
+		<name1>Kick</name1>
+		<damage1>80</damage1>
+		<heal1>0</heal1>
+		<details1></details1>
+		<tooltip1>A kick that deals 80 damage.</tooltip1>
+
+		<name2>Energy Blast</name2>
+		<damage2>220</damage2>
+		<heal2>-30</heal2>
+		<details2>SkipSelf</details2>
+		<tooltip2>A blast that deals 220 damage to the opponent and 30 damage to you, takes 1 turn to recover from.</tooltip2>
+
+		<name3>Holy Punch</name3>
+		<damage3>80</damage3>
+		<heal3>50</heal3>
+		<details3></details3>
+		<tooltip3>A punch that deals 80 damage and heals you for 50.</tooltip3>
+
+		<name4>Pray</name4>
+		<damage4>0</damage4>
+		<heal4>120</heal4>
+		<details4>Peace</details4>
+		<tooltip4>Pray to recieve 120 health.</tooltip4>
+
+		<health>2000</health>
+		<MaxHealth>2000</MaxHealth>
+		<Level>40</Level>
+
+		</Creature>
+
+
+	</Creatures>
+</CreatureCollection>
