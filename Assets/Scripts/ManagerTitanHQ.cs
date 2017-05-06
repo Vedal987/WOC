@@ -9,6 +9,7 @@ public class ManagerTitanHQ : MonoBehaviour {
 	public bool cousin;
 	public bool weirdo;
 	public bool guard;
+	public bool FinFight;
 
 	// Use this for initialization
 	void Start () {

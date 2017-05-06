@@ -45,7 +45,19 @@ public class InteractObject : MonoBehaviour {
 			}
 			string dia = Dialogue [d];
 			d++;
-
+			if (dia == "[FIGHT]") {
+				player.GetComponent<Main> ().Dialogue (dia);
+				this.gameObject.transform.parent.gameObject.SetActive (false);
+				return;
+			}
+			if (dia == "[BYE]") {
+				this.gameObject.SetActive (false);
+				return;
+			}
+			if (dia == "[ANIM]") {
+				this.GetComponent<Animator> ().SetTrigger ("Trigger");
+				return;
+			}
 			player.GetComponent<Main> ().Dialogue (dia);
 		} else {
 			if (d == Option2.Length) {
@@ -61,6 +73,15 @@ public class InteractObject : MonoBehaviour {
 			d++;
 			if (dia == "[BYE]") {
 				this.gameObject.SetActive (false);
+				return;
+			}
+			if (dia == "[ANIM]") {
+				this.GetComponent<Animator> ().SetTrigger ("Trigger");
+				return;
+			}
+			if (dia == "[FIGHT]") {
+				player.GetComponent<Main> ().Dialogue (dia);
+				this.gameObject.transform.parent.gameObject.SetActive (false);
 				return;
 			}
 			player.GetComponent<Main> ().Dialogue (dia);

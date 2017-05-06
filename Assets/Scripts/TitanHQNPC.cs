@@ -33,5 +33,8 @@ public class TitanHQNPC : MonoBehaviour {
 		if (Name == "chest") {
 			Manager.chest = true;
 		}
+		if (Name == "FinFight") {
+			Manager.FinFight = true;
+		}
 	}
 }

@@ -25,12 +25,16 @@ public class Main : MonoBehaviour {
 	public GameObject BattleMenu;
 	public GameObject BattleFight;
 
+
+	//TitanHQ
+	public GameObject TitanManager;
 	public GameObject demonAttackCamera;
 	public GameObject camera;
 	private Animator daAnimator;
 	public GameObject demons;
 	public GameObject Ariel2;
 	public GameObject Ariel3;
+	public GameObject guard;
 
 	public GameObject BattleText;
 	public GameObject BattleTooltip;
@@ -40,6 +44,7 @@ public class Main : MonoBehaviour {
 
 	public bool inBattle;
 	public bool BattleSkip;
+	public bool exitingBattle;
 
 	public string LastKeyPress;
 	public string direction;
@@ -68,9 +73,13 @@ public class Main : MonoBehaviour {
 		
 	void Update()
 	{
+		if (TitanManager.GetComponent<ManagerTitanHQ> ().FinFight) {
+			guard.GetComponent<InteractObject> ().Option = 2;
+		}
 		if (inBattle) {
-			if (creatureAgainst.GetComponent<Creature> ().health < 1) {
+			if (creatureAgainst.GetComponent<Creature> ().health < 1 && !exitingBattle) {
 				StartCoroutine (ExitBattle ());
+				exitingBattle = true;
 			}
 			if (creature.GetComponent<Creature> ().health < 1) {
 				SceneManager.LoadScene ("Main");
@@ -349,6 +358,7 @@ public class Main : MonoBehaviour {
 		demons.GetComponent<InteractObject> ().d = 0;	
 		Ariel3.SetActive (true);
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
 		if (LastKeyPress == "W") {
 			dir = Vector2.up;
 		}
@@ -361,6 +371,8 @@ public class Main : MonoBehaviour {
 		if (LastKeyPress == "D") {
 			dir = -Vector2.left;
 		}
+		creatureAgainst.GetComponent<Creature> ().health = creatureAgainst.GetComponent<Creature> ().MaxHealth;
+		exitingBattle = false;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1.8f);
 		if (hit.collider != null) {
 			if (hit.collider.gameObject.GetComponent<InteractObject> () || hit.collider.gameObject.GetComponent<Ariel> ()) {
