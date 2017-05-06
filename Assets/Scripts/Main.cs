@@ -311,7 +311,7 @@ public class Main : MonoBehaviour {
 	{
 		CreatureContainer cc = CreatureContainer.Load (path);
 		foreach (CreatureTemplate creaturev in cc.creatures) {
-			if (creaturev.Name = cname) {
+			if (creaturev.Name == cname) {
 				creature.GetComponent<Creature> ().Name = cname;
 
 				creature.GetComponent<Creature> ().name1 = creaturev.name1;
@@ -337,6 +337,12 @@ public class Main : MonoBehaviour {
 				creature.GetComponent<Creature> ().heal4 = creaturev.heal4;
 				creature.GetComponent<Creature> ().details4 = creaturev.details4;
 				creature.GetComponent<Creature> ().tooltip4 = creaturev.tooltip4;
+
+				creature.GetComponent<Creature> ().health = creaturev.health;
+				creature.GetComponent<Creature> ().MaxHealth = creaturev.MaxHealth;
+				creature.GetComponent<Creature> ().Level = creaturev.Level;
+
+				ChangeMoves ();
 			}
 		}
 	}
@@ -421,6 +427,14 @@ public class Main : MonoBehaviour {
 			}
 		}
 	}
+
+	public void ChangeMoves()
+	{
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name1, creature.GetComponent<Creature>().damage1, creature.GetComponent<Creature>().heal1, creature.GetComponent<Creature>().details1));
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name2, creature.GetComponent<Creature>().damage2, creature.GetComponent<Creature>().heal2, creature.GetComponent<Creature>().details2));
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name3, creature.GetComponent<Creature>().damage3, creature.GetComponent<Creature>().heal3, creature.GetComponent<Creature>().details3));
+		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name4, creature.GetComponent<Creature>().damage4, creature.GetComponent<Creature>().heal4, creature.GetComponent<Creature>().details4));
+	}
 	IEnumerator StartBattle()
 	{
 		canMove = false;
@@ -435,9 +449,21 @@ public class Main : MonoBehaviour {
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name2, creature.GetComponent<Creature>().damage2, creature.GetComponent<Creature>().heal2, creature.GetComponent<Creature>().details2));
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name3, creature.GetComponent<Creature>().damage3, creature.GetComponent<Creature>().heal3, creature.GetComponent<Creature>().details3));
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name4, creature.GetComponent<Creature>().damage4, creature.GetComponent<Creature>().heal4, creature.GetComponent<Creature>().details4));
+		if (Moves [0].name == "") {
+			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
+		}
 		BattleFight.transform.GetChild (0).transform.GetChild (0).GetComponent<Text> ().text = Moves [0].name;
+		if (Moves [1].name == "") {
+			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
+		}
 		BattleFight.transform.GetChild (1).transform.GetChild (0).GetComponent<Text> ().text = Moves [1].name;
+		if (Moves [2].name == "") {
+			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
+		}
 		BattleFight.transform.GetChild (2).transform.GetChild (0).GetComponent<Text> ().text = Moves [2].name;
+		if (Moves [3].name == "") {
+			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
+		}
 		BattleFight.transform.GetChild (3).transform.GetChild (0).GetComponent<Text> ().text = Moves [3].name;
 		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name1, creatureAgainst.GetComponent<Creature>().damage1, creatureAgainst.GetComponent<Creature>().heal1, creatureAgainst.GetComponent<Creature>().details1));
 		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name2, creatureAgainst.GetComponent<Creature>().damage2, creatureAgainst.GetComponent<Creature>().heal2, creatureAgainst.GetComponent<Creature>().details2));

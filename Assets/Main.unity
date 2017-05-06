@@ -6507,7 +6507,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300056, guid: 7d32bd267610daa42994d8c446f32a07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10918,7 +10918,7 @@ GameObject:
   - component: {fileID: 952907501}
   - component: {fileID: 952907500}
   m_Layer: 0
-  m_Name: MusicRoom
+  m_Name: MusicRoomPalace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10949,7 +10949,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 14.61, y: 41.2}
+  m_Size: {x: 14.65, y: 1.7}
 --- !u!4 &952907502
 Transform:
   m_ObjectHideFlags: 0
@@ -10957,7 +10957,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 952907499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 104.78, y: -23.2, z: 0}
+  m_LocalPosition: {x: 104.78, y: -37.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15183,6 +15183,62 @@ Transform:
   m_PrefabParentObject: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
     type: 2}
   m_PrefabInternal: {fileID: 1209283345}
+--- !u!1 &1210474662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1210474665}
+  - component: {fileID: 1210474664}
+  - component: {fileID: 1210474663}
+  m_Layer: 0
+  m_Name: MusicRoomPalace (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1210474663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210474662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9836f7c79c3aa3f4a9648b1212e6aa23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: b48eb0523039970428e3d0374fb8f623, type: 3}
+--- !u!61 &1210474664
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210474662}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 14.65, y: 1.7}
+--- !u!4 &1210474665
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210474662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 104.78, y: -3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1216363642
 GameObject:
   m_ObjectHideFlags: 0
@@ -15794,6 +15850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 772374668}
+  Name: 
   name1: Kick
   damage1: 80
   heal1: 0
@@ -15817,6 +15874,7 @@ MonoBehaviour:
   tooltip4: Pray to recieve 120 health.
   health: 2000
   MaxHealth: 2000
+  Level: 0
   AI: 0
   CreatureName: Ariel
 --- !u!114 &1251228567
@@ -18805,7 +18863,6 @@ GameObject:
   - component: {fileID: 1451680141}
   - component: {fileID: 1451680143}
   - component: {fileID: 1451680144}
-  - component: {fileID: 1451680145}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -18820,7 +18877,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451680139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 95.53, y: -47.45, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1449744417}
@@ -18986,17 +19043,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &1451680145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1451680139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee4ca81b951fe284b8a83c0cf3075722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1462524989
 GameObject:
   m_ObjectHideFlags: 0
@@ -20295,6 +20341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 1632384489}
+  Name: 
   name1: Blood Smash
   damage1: 100
   heal1: -40
@@ -20317,6 +20364,7 @@ MonoBehaviour:
   tooltip4: 
   health: 2500
   MaxHealth: 2500
+  Level: 0
   AI: 1
   CreatureName: Kronos
 --- !u!114 &1614985579
@@ -27985,7 +28033,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 83.4, y: 72.9}
+  m_Size: {x: 6.5, y: 2.64}
 --- !u!4 &1981347052
 Transform:
   m_ObjectHideFlags: 0
@@ -27993,7 +28041,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981347049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 124.4, y: 42.8, z: 0}
+  m_LocalPosition: {x: 105.6, y: 8.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -28178,7 +28226,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: -0.0000009536743, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.32000002, y: 0.32}
+  m_Size: {x: 0.32000002, y: 0.38}
 --- !u!1 &2001414470
 GameObject:
   m_ObjectHideFlags: 0
