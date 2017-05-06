@@ -10,6 +10,7 @@ public class InteractObject : MonoBehaviour {
 	public bool StartGame;
 	public bool OnAwake;
 	public bool IgnoreRaycast;
+	public bool SecondDialogue;
 	public int Option = 1;
 	public string[] Option2;
 
@@ -39,6 +40,10 @@ public class InteractObject : MonoBehaviour {
 					player.GetComponent<Main> ().Dialogue ("x7Start");
 					return;
 				}
+				if (SecondDialogue) {
+					Option = 2;
+					d = 0;
+				}
 				player.GetComponent<Main> ().Dialogue ("x7Finish");
 				ImportantStuff ();
 				return;
@@ -56,6 +61,7 @@ public class InteractObject : MonoBehaviour {
 			}
 			if (dia == "[ANIM]") {
 				this.GetComponent<Animator> ().SetTrigger ("Trigger");
+				player.GetComponent<Main> ().Dialogue ("x7Finish");
 				return;
 			}
 			player.GetComponent<Main> ().Dialogue (dia);

@@ -20,7 +20,6 @@ public class MusicTrigger : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D player)
 	{
-		Debug.Log ("test");
 		if (!hasBeenTriggered) {
 			hasBeenTriggered = true;
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
