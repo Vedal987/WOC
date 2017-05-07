@@ -63,6 +63,8 @@ public class Main : MonoBehaviour {
 
 	public AudioClip Grass;
 
+	public bool canEncounter;
+
 	//InBattle
 
 	public List<BattleMove> Moves = new List<BattleMove>();
@@ -317,6 +319,8 @@ public class Main : MonoBehaviour {
 			}
 			if (d.Contains ("[GRASS]")) {
 				PlayerPrefs.SetString ("SaveArea", "GRASS");
+				a = d.Replace ("[GRASS]", "");
+				d = a;
 			}
 			if (d == "ARAGGHHH") {
 				daAnimator.SetTrigger ("2");
@@ -444,8 +448,17 @@ public class Main : MonoBehaviour {
 		demons.GetComponent<InteractObject> ().Option = 2;
 		demons.GetComponent<InteractObject> ().d = 0;	
 		Ariel3.SetActive (true);
-		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
-		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+		if (PlayerPrefs.GetString ("SaveArea") == "GRASS") {
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().clip = Grass;
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+		} else if (Ariel3.GetComponent<InteractObject> ().d == Ariel3.GetComponent<InteractObject> ().Dialogue.Length) {
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().clip = Grass;
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+		} else {
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+		}
+
 		if (LastKeyPress == "W") {
 			dir = Vector2.up;
 		}

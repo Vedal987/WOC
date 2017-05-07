@@ -19,14 +19,22 @@ public class Menu : MonoBehaviour {
 		
 	}
 
-	public void Go()
+	public void New()
 	{
 		if (name.GetComponent<Text> ().text != "") {
+			PlayerPrefs.DeleteAll ();
 			PlayerPrefs.SetString ("Name", name.GetComponent<Text> ().text);
 			Flash.SetActive (true);
 			Flash.GetComponent<Animation> ().Play ();
 			StartCoroutine (LoadScene ());
 		}
+	}
+
+	public void Continue()
+	{
+		Flash.SetActive (true);
+		Flash.GetComponent<Animation> ().Play ();
+		StartCoroutine (LoadScene ());
 	}
 
 	IEnumerator LoadScene()
