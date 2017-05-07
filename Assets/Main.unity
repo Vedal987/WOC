@@ -8816,6 +8816,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ba29d65a8089ee4bb9aac51a5055117, type: 3}
   - {fileID: 8300000, guid: 9f9373d67cca9e54a9472a715ca10d57, type: 3}
   - {fileID: 8300000, guid: b48eb0523039970428e3d0374fb8f623, type: 3}
+  - {fileID: 8300000, guid: b9bba025fcca53b4494fcc843b7c163e, type: 3}
   - {fileID: 0}
   battle: {fileID: 8300000, guid: 46cb12004452c2c4fb8e5e0f64ea7644, type: 3}
   audios: {fileID: 654836332}
@@ -17524,7 +17525,9 @@ Transform:
   - {fileID: 1915469790}
   - {fileID: 1119050777}
   - {fileID: 1887639521}
+  - {fileID: 1855682717}
   - {fileID: 1638564039}
+  - {fileID: 1901114266}
   m_Father: {fileID: 1194639374}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27266,7 +27269,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1187917316}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -37.39, z: 0}
 --- !u!61 &1638564040
 BoxCollider2D:
@@ -31497,7 +31500,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1187917316}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1901114267
 MonoBehaviour:
