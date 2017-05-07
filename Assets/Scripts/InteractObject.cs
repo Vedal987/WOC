@@ -11,6 +11,7 @@ public class InteractObject : MonoBehaviour {
 	public bool OnAwake;
 	public bool IgnoreRaycast;
 	public bool SecondDialogue;
+	public bool InfiniteDialogue;
 	public int Option = 1;
 	public string[] Option2;
 
@@ -37,21 +38,24 @@ public class InteractObject : MonoBehaviour {
 		if (Option == 1) {
 			if (d == Dialogue.Length) {
 				if (StartGame) {
-					player.GetComponent<Main> ().Dialogue ("x7Start");
+					player.GetComponent<Main> ().Dialogue ("x7Start", this.gameObject);
 					return;
 				}
 				if (SecondDialogue) {
 					Option = 2;
 					d = 0;
 				}
-				player.GetComponent<Main> ().Dialogue ("x7Finish");
+				player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
+				if (InfiniteDialogue) {
+					d = 0;
+				}
 				ImportantStuff ();
 				return;
 			}
 			string dia = Dialogue [d];
 			d++;
 			if (dia == "[FIGHT]") {
-				player.GetComponent<Main> ().Dialogue (dia);
+				player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
 				this.gameObject.transform.parent.gameObject.SetActive (false);
 				return;
 			}
@@ -61,17 +65,17 @@ public class InteractObject : MonoBehaviour {
 			}
 			if (dia == "[ANIM]") {
 				this.GetComponent<Animator> ().SetTrigger ("Trigger");
-				player.GetComponent<Main> ().Dialogue ("x7Finish");
+				player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
 				return;
 			}
-			player.GetComponent<Main> ().Dialogue (dia);
+			player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
 		} else {
 			if (d == Option2.Length) {
 				if (StartGame) {
-					player.GetComponent<Main> ().Dialogue ("x7Start");
+					player.GetComponent<Main> ().Dialogue ("x7Start", this.gameObject);
 					return;
 				}
-				player.GetComponent<Main> ().Dialogue ("x7Finish");
+				player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
 				ImportantStuff ();
 				return;
 			}
@@ -86,11 +90,11 @@ public class InteractObject : MonoBehaviour {
 				return;
 			}
 			if (dia == "[FIGHT]") {
-				player.GetComponent<Main> ().Dialogue (dia);
+				player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
 				this.gameObject.transform.parent.gameObject.SetActive (false);
 				return;
 			}
-			player.GetComponent<Main> ().Dialogue (dia);
+			player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
 		}
 
 	}

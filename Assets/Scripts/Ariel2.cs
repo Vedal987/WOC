@@ -50,10 +50,10 @@ public class Ariel2 : MonoBehaviour {
 	{
 		if (d == Dialogue.Length) {
 			if (StartGame) {
-				player.GetComponent<Main> ().Dialogue ("x7Start");
+				player.GetComponent<Main> ().Dialogue ("x7Start", this.gameObject);
 				return;
 			}
-			player.GetComponent<Main> ().Dialogue ("x7Finish");
+			player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
 			return;
 		}
 
@@ -66,7 +66,7 @@ public class Ariel2 : MonoBehaviour {
 		}
 		d++;
 
-		player.GetComponent<Main> ().Dialogue (dia);
+		player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
 
 	}
 

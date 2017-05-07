@@ -25,6 +25,8 @@ public class Main : MonoBehaviour {
 	public Animator modelAnimator;
 	float playerSpeed = 4f;
 
+	public GameObject lastInteract;
+
 	public GameObject Battle;
 	public GameObject BattleMenu;
 	public GameObject BattleFight;
@@ -57,8 +59,9 @@ public class Main : MonoBehaviour {
 	private string str;
 
 	public bool canSkip = true;
+	public bool canBack = false;
 
-
+	public AudioClip Grass;
 
 	//InBattle
 
@@ -71,8 +74,20 @@ public class Main : MonoBehaviour {
 		
 		modelAnimator = model.GetComponent<Animator> ();
 		//StartCoroutine ("StartBattle");
-		Flash.SetActive(true);
+		Flash.SetActive (true);
 		daAnimator = demonAttackCamera.GetComponent<Animator> ();
+	}
+
+	void Awake()
+	{
+		Vector3 newPos = new Vector3(PlayerPrefs.GetFloat ("PlayerXPos"), PlayerPrefs.GetFloat ("PlayerYPos"), 0);
+		Vector3 newCamPos = new Vector3(PlayerPrefs.GetFloat ("PlayerXPos"), PlayerPrefs.GetFloat ("PlayerYPos"), -10);
+		this.gameObject.transform.position = newPos;
+		camera.gameObject.transform.position = newCamPos;
+		if (PlayerPrefs.GetString ("SaveArea") == "GRASS") {
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>().clip = Grass;
+			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+		}
 	}
 		
 	void Update()
@@ -213,6 +228,13 @@ public class Main : MonoBehaviour {
 							}
 						}
 					}
+					if (Input.GetKeyDown (KeyCode.Q) && canBack == true) {
+						lastInteract.GetComponent<InteractObject> ().d = 0;
+						DialogueBox.SetActive (false);
+						canMove = true;
+						dialogue = false;
+						canSkip = true;
+					}
 				}
 				
 			} else {
@@ -248,8 +270,18 @@ public class Main : MonoBehaviour {
 
 	}
 
-	public void Dialogue(string d)
+	public void Dialogue(string d, GameObject interact)
 	{
+		string a;
+		lastInteract = interact;
+		if(d.Contains("[BACK]"))
+		{
+			canBack = true;
+			a = d.Replace ("[BACK]", "");
+			d = a;
+		} else {
+			canBack = false;
+		}
 		if (canSkip) {
 			canSkip = false;
 			if (d.Contains ("x7Item")) {
@@ -277,6 +309,14 @@ public class Main : MonoBehaviour {
 				start = false;
 				canSkip = true;
 				return;
+			}
+			if (d.Contains("*Game Saved*")) {
+				PlayerPrefs.SetFloat ("PlayerXPos", this.gameObject.transform.position.x);
+				PlayerPrefs.SetFloat ("PlayerYPos", this.gameObject.transform.position.y);
+				PlayerPrefs.SetInt ("Flash", 1);
+			}
+			if (d.Contains ("[GRASS]")) {
+				PlayerPrefs.SetString ("SaveArea", "GRASS");
 			}
 			if (d == "ARAGGHHH") {
 				daAnimator.SetTrigger ("2");

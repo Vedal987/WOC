@@ -28,19 +28,19 @@ public class Ariel : MonoBehaviour {
 				string needBottle = "Take a look around, what can you find?";
 				d++;
 				if (d == 2) {
-					player.GetComponent<Main> ().Dialogue ("x7Finish");
+				player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
 					d = 0;
 					return;
 				}
-				player.GetComponent<Main> ().Dialogue (needBottle);
+			player.GetComponent<Main> ().Dialogue (needBottle, this.gameObject);
 				return;
 			}
 			if (d == Dialogue.Length) {
 				if (StartGame) {
-					player.GetComponent<Main> ().Dialogue ("x7Start");
+				player.GetComponent<Main> ().Dialogue ("x7Start", this.gameObject);
 					return;
 				}
-				player.GetComponent<Main> ().Dialogue ("x7Finish");
+			player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
 				return;
 			}
 			string dia = Dialogue [d];
@@ -67,7 +67,7 @@ public class Ariel : MonoBehaviour {
 			player.transform.position = newpos;
 			StartCoroutine ("TeleportWait");
 			}
-			player.GetComponent<Main> ().Dialogue (dia);
+		player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
 
 	}
 

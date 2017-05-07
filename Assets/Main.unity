@@ -1596,6 +1596,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!4 &122107034 stripped
@@ -2510,6 +2511,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &199168600
@@ -3704,6 +3706,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &308986178
@@ -5405,6 +5408,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!114 &488144582
@@ -5529,6 +5533,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 1
+  InfiniteDialogue: 0
   Option: 1
   Option2:
   - '......'
@@ -6190,6 +6195,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2:
   - You cannot pass. The Kin-
@@ -7534,6 +7540,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1001 &660686692
@@ -8146,6 +8153,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &706421956
@@ -9796,6 +9804,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!61 &861539965
@@ -10118,6 +10127,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &888180110
@@ -10270,6 +10280,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &902375141
@@ -10686,6 +10697,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 1
+  InfiniteDialogue: 0
   Option: 1
   Option2:
   - You might not believe it but, it's still a tree.
@@ -11650,6 +11662,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 1
+  InfiniteDialogue: 0
   Option: 1
   Option2:
   - '......'
@@ -11815,6 +11828,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1001 &999729576
@@ -12195,6 +12209,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!95 &1022545415
@@ -12495,6 +12510,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &1031879745
@@ -12818,6 +12834,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 1
+  InfiniteDialogue: 0
   Option: 1
   Option2:
   - Go on.
@@ -13503,6 +13520,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!61 &1084533548
@@ -14248,6 +14266,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!95 &1141711804
@@ -14857,6 +14876,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 2
   Option2:
   - Hey there.
@@ -16051,6 +16071,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &1257059014
@@ -17569,6 +17590,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &1370804957
@@ -17609,6 +17631,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!61 &1370804959
@@ -18057,6 +18080,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1001 &1397936279
@@ -18880,7 +18904,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451680139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 105.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1449744417}
@@ -18945,6 +18969,7 @@ MonoBehaviour:
   DialogueText: {fileID: 1342280091}
   Flash: {fileID: 2081419858}
   modelAnimator: {fileID: 1449744420}
+  lastInteract: {fileID: 0}
   Battle: {fileID: 13048891}
   BattleMenu: {fileID: 687451399}
   BattleFight: {fileID: 902375141}
@@ -18965,6 +18990,8 @@ MonoBehaviour:
   LastKeyPress: 
   direction: 
   canSkip: 1
+  canBack: 0
+  Grass: {fileID: 8300000, guid: 33a553d0cf702c448b1f1673b6f33040, type: 3}
   isTurn: 1
 --- !u!82 &1451680144
 AudioSource:
@@ -23434,9 +23461,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621883738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3970cdd9068bb3c4c969f051d5eb4cff, type: 3}
+  m_Script: {fileID: 11500000, guid: d1f33b2374a91784386ee18dda4f46a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dialogue:
+  - A gem, with powers from other worlds.
+  - It asks if you would like to save your game? (Q is NO, E is YES)[BACK]
+  - '*Game Saved*[GRASS]'
+  d: 0
+  StartGame: 0
+  OnAwake: 0
+  IgnoreRaycast: 0
+  SecondDialogue: 0
+  InfiniteDialogue: 1
+  Option: 1
+  Option2: []
 --- !u!61 &1621883743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23984,6 +24023,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!212 &1676293406
@@ -24120,6 +24160,7 @@ MonoBehaviour:
   OnAwake: 1
   IgnoreRaycast: 1
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2:
   - YOU?
@@ -28101,6 +28142,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &1981347049
@@ -28145,7 +28187,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 6.5, y: 2.64}
+  m_Size: {x: 8.99, y: 2.77}
 --- !u!4 &1981347052
 Transform:
   m_ObjectHideFlags: 0
@@ -28322,6 +28364,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 1
+  InfiniteDialogue: 0
   Option: 1
   Option2:
   - Come on. We haven't the time for this.
@@ -28752,6 +28795,7 @@ MonoBehaviour:
   OnAwake: 0
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!1 &2066763690
@@ -28926,6 +28970,7 @@ MonoBehaviour:
   OnAwake: 1
   IgnoreRaycast: 0
   SecondDialogue: 0
+  InfiniteDialogue: 0
   Option: 1
   Option2: []
 --- !u!212 &2081419861
