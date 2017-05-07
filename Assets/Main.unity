@@ -31517,6 +31517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - ERGLABELLELLLL!
+  - '[FIGHT]'
   d: 0
   StartGame: 0
   OnAwake: 0

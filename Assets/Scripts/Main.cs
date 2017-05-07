@@ -101,6 +101,7 @@ public class Main : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>().clip = Grass;
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
 		}
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM = PlayerPrefs.GetInt("Music"));
 	}
 		
 	void Update()
@@ -327,6 +328,7 @@ public class Main : MonoBehaviour {
 				PlayerPrefs.SetFloat ("PlayerXPos", this.gameObject.transform.position.x);
 				PlayerPrefs.SetFloat ("PlayerYPos", this.gameObject.transform.position.y);
 				PlayerPrefs.SetInt ("Flash", 1);
+				PlayerPrefs.SetInt ("Music", GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM);
 			}
 			if (d.Contains ("[GRASS]")) {
 				PlayerPrefs.SetString ("SaveArea", "GRASS");
@@ -376,7 +378,49 @@ public class Main : MonoBehaviour {
 	{
 		SeaDemon.SetActive (true);
 		yield return new WaitForSeconds (3f);
+		LoadEnemyCreature("SeaDemon");
 		SeaDemon.GetComponent<InteractObject> ().enabled = true;
+	}
+
+	public void LoadEnemyCreature(string cname)
+	{
+		CreatureContainer cc = CreatureContainer.Load (path);
+		foreach (CreatureTemplate creaturev in cc.creatures) {
+			if (creaturev.Name == cname) {
+				creatureAgainst.GetComponent<Creature> ().Name = cname;
+
+				creatureAgainst.GetComponent<Creature> ().name1 = creaturev.name1;
+				creatureAgainst.GetComponent<Creature> ().damage1 = creaturev.damage1;
+				creatureAgainst.GetComponent<Creature> ().heal1 = creaturev.heal1;
+				creatureAgainst.GetComponent<Creature> ().details1 = creaturev.details1;
+				creatureAgainst.GetComponent<Creature> ().tooltip1 = creaturev.tooltip1;
+
+				creatureAgainst.GetComponent<Creature> ().name2 = creaturev.name2;
+				creatureAgainst.GetComponent<Creature> ().damage2 = creaturev.damage2;
+				creatureAgainst.GetComponent<Creature> ().heal2 = creaturev.heal2;
+				creatureAgainst.GetComponent<Creature> ().details2 = creaturev.details2;
+				creatureAgainst.GetComponent<Creature> ().tooltip2 = creaturev.tooltip2;
+
+				creatureAgainst.GetComponent<Creature> ().name3 = creaturev.name3;
+				creatureAgainst.GetComponent<Creature> ().damage3 = creaturev.damage3;
+				creatureAgainst.GetComponent<Creature> ().heal3 = creaturev.heal3;
+				creatureAgainst.GetComponent<Creature> ().details3 = creaturev.details3;
+				creatureAgainst.GetComponent<Creature> ().tooltip3 = creaturev.tooltip3;
+
+				creatureAgainst.GetComponent<Creature> ().name4 = creaturev.name4;
+				creatureAgainst.GetComponent<Creature> ().damage4 = creaturev.damage4;
+				creatureAgainst.GetComponent<Creature> ().heal4 = creaturev.heal4;
+				creatureAgainst.GetComponent<Creature> ().details4 = creaturev.details4;
+				creatureAgainst.GetComponent<Creature> ().tooltip4 = creaturev.tooltip4;
+
+				creatureAgainst.GetComponent<Creature> ().health = creaturev.health;
+				creatureAgainst.GetComponent<Creature> ().MaxHealth = creaturev.MaxHealth;
+				creatureAgainst.GetComponent<Creature> ().Level = creaturev.Level;
+
+				ChangeEnemyMoves();
+
+			}
+		}
 	}
 
 	public void LoadCreature(string cname)
@@ -520,8 +564,18 @@ public class Main : MonoBehaviour {
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name3, creature.GetComponent<Creature>().damage3, creature.GetComponent<Creature>().heal3, creature.GetComponent<Creature>().details3));
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name4, creature.GetComponent<Creature>().damage4, creature.GetComponent<Creature>().heal4, creature.GetComponent<Creature>().details4));
 	}
+
+	public void ChangeEnemyMoves()
+	{
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name1, creatureAgainst.GetComponent<Creature>().damage1, creatureAgainst.GetComponent<Creature>().heal1, creatureAgainst.GetComponent<Creature>().details1));
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name2, creatureAgainst.GetComponent<Creature>().damage2, creatureAgainst.GetComponent<Creature>().heal2, creatureAgainst.GetComponent<Creature>().details2));
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name3, creatureAgainst.GetComponent<Creature>().damage3, creatureAgainst.GetComponent<Creature>().heal3, creatureAgainst.GetComponent<Creature>().details3));
+		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name4, creatureAgainst.GetComponent<Creature>().damage4, creatureAgainst.GetComponent<Creature>().heal4, creatureAgainst.GetComponent<Creature>().details4));
+	}
+
 	IEnumerator StartBattle()
 	{
+		DialogueBox.SetActive (false);
 		canMove = false;
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		BattleUI.GetComponent<Animation> ().Play ("BattleUI_Enter");
