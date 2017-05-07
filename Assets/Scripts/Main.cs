@@ -88,7 +88,17 @@ public class Main : MonoBehaviour {
 		
 		modelAnimator = model.GetComponent<Animator> ();
 		//StartCoroutine ("StartBattle");
-		Flash.SetActive (true);
+		if (PlayerPrefs.GetInt ("Flash") == 1) {
+			Flash.SetActive (true);
+			DialogueBox.SetActive (false);
+			Flash.GetComponent<Animation> ().Play ();
+			canMove = true;
+			dialogue = false;
+			start = false;
+			canSkip = true;
+		} else {
+			Flash.SetActive (true);
+		}
 		daAnimator = demonAttackCamera.GetComponent<Animator> ();
 	}
 
@@ -426,7 +436,7 @@ public class Main : MonoBehaviour {
 		CreatureContainer cc = CreatureContainer.Load (path);
 		foreach (CreatureTemplate creaturev in cc.creatures) {
 			if (creaturev.Name == cname) {
-				creatureAgainst.GetComponent<Creature> ().Name = cname;
+				creatureAgainst.GetComponent<Creature> ().CreatureName = cname;
 
 				creatureAgainst.GetComponent<Creature> ().name1 = creaturev.name1;
 				creatureAgainst.GetComponent<Creature> ().damage1 = creaturev.damage1;
@@ -467,7 +477,7 @@ public class Main : MonoBehaviour {
 		CreatureContainer cc = CreatureContainer.Load (path);
 		foreach (CreatureTemplate creaturev in cc.creatures) {
 			if (creaturev.Name == cname) {
-				creature.GetComponent<Creature> ().Name = cname;
+				creature.GetComponent<Creature> ().CreatureName = cname;
 
 				creature.GetComponent<Creature> ().name1 = creaturev.name1;
 				creature.GetComponent<Creature> ().damage1 = creaturev.damage1;

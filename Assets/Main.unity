@@ -13693,7 +13693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &990609770
 Transform:
   m_ObjectHideFlags: 0
@@ -13702,7 +13702,7 @@ Transform:
   m_GameObject: {fileID: 990609769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 114.409, y: 75.51, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 1187917316}
   m_RootOrder: 9
@@ -13740,7 +13740,7 @@ MonoBehaviour:
   - I'm Gwen, and I just saved your life.
   - Here, give me your creature.
   - '*Kai was healed to full health*'
-  - Now, come with me, my house is over to the south-west.
+  - Now, come with me, my house is over to the south-east.
   - '[ANIM]'
   d: 0
   StartGame: 0
@@ -14841,14 +14841,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1048272840
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1048272839}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.323, y: -0.0066635134, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
