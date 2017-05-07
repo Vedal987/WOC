@@ -56,7 +56,12 @@ public class InteractObject : MonoBehaviour {
 			d++;
 			if (dia == "[FIGHT]") {
 				player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
+
 				this.gameObject.transform.parent.gameObject.SetActive (false);
+				return;
+			}
+			if (dia == "[FIGHT2]") {
+				player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
 				return;
 			}
 			if (dia == "[BYE]") {

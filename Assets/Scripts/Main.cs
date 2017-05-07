@@ -47,6 +47,7 @@ public class Main : MonoBehaviour {
 	//GrassArea
 
 	public GameObject SeaDemon;
+	public bool SeaBattle;
 
 	public GameObject BattleText;
 	public GameObject BattleTooltip;
@@ -103,6 +104,12 @@ public class Main : MonoBehaviour {
 		}
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM = PlayerPrefs.GetInt("Music");
 	}
+
+	IEnumerator Death()
+	{
+		yield return new WaitForSeconds (2f);
+		SceneManager.LoadScene ("Main");
+	}
 		
 	void Update()
 	{
@@ -114,8 +121,13 @@ public class Main : MonoBehaviour {
 				StartCoroutine (ExitBattle ());
 				exitingBattle = true;
 			}
-			if (creature.GetComponent<Creature> ().health < 1) {
-				SceneManager.LoadScene ("Main");
+			if (creature.GetComponent<Creature> ().health < 1 && !exitingBattle) {
+				if (SeaBattle) {
+					StartCoroutine (SeaBattleAfter());
+					exitingBattle = true;
+					return;
+				}
+				StartCoroutine (Death ());
 			}
 			if (isTurn) {
 				if (Input.GetKeyDown (KeyCode.Q)) {
@@ -284,6 +296,25 @@ public class Main : MonoBehaviour {
 
 	}
 
+	IEnumerator SeaBattleAfter()
+	{
+		yield return new WaitForSeconds (2f);
+		inBattle = false;
+		SeaBattle = false;
+		Vector3 scale = BattleUI.GetComponent<RectTransform> ().localScale;
+		scale.x = 0;
+		scale.y = 0;
+		BattleUI.GetComponent<RectTransform> ().localScale = scale;
+		Battle.SetActive (false);
+		canMove = true;
+		dialogue = false;
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+		creatureAgainst.GetComponent<Creature> ().health = creatureAgainst.GetComponent<Creature> ().MaxHealth;
+		exitingBattle = false;
+		SeaDemon.GetComponent<Animator> ().SetTrigger ("Spawn");
+		creature.GetComponent<Creature> ().health = creature.GetComponent<Creature> ().MaxHealth;
+	}
+
 	public void Dialogue(string d, GameObject interact)
 	{
 		string a;
@@ -344,7 +375,7 @@ public class Main : MonoBehaviour {
 				string name = PlayerPrefs.GetString ("Name");
 				d = d.Replace ("[NAME]", name);
 			}
-			if (d == "[FIGHT]") {
+			if (d == "[FIGHT]" || d == "[FIGHT2]") {
 				StartCoroutine ("StartBattle");
 				canMove = false;
 				dialogue = false;
@@ -377,7 +408,9 @@ public class Main : MonoBehaviour {
 	public IEnumerator AnimateSeaDemon()
 	{
 		SeaDemon.SetActive (true);
+		SeaBattle = true;
 		yield return new WaitForSeconds (3f);
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		LoadEnemyCreature("SeaDemon");
 		SeaDemon.GetComponent<InteractObject> ().enabled = true;
 	}
@@ -514,6 +547,7 @@ public class Main : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Pause ();
 		yield return new WaitForSeconds (2f);
 		inBattle = false;
+		SeaBattle = false;
 		Vector3 scale = BattleUI.GetComponent<RectTransform> ().localScale;
 		scale.x = 0;
 		scale.y = 0;
@@ -575,6 +609,7 @@ public class Main : MonoBehaviour {
 
 	IEnumerator StartBattle()
 	{
+		LoadCreature (PlayerPrefs.GetString ("Creature"));
 		DialogueBox.SetActive (false);
 		canMove = false;
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
@@ -588,22 +623,23 @@ public class Main : MonoBehaviour {
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name2, creature.GetComponent<Creature>().damage2, creature.GetComponent<Creature>().heal2, creature.GetComponent<Creature>().details2));
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name3, creature.GetComponent<Creature>().damage3, creature.GetComponent<Creature>().heal3, creature.GetComponent<Creature>().details3));
 		Moves.Add( new BattleMove(creature.GetComponent<Creature>().name4, creature.GetComponent<Creature>().damage4, creature.GetComponent<Creature>().heal4, creature.GetComponent<Creature>().details4));
-		if (Moves [0].name == "") {
-			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
-		}
+
 		BattleFight.transform.GetChild (0).transform.GetChild (0).GetComponent<Text> ().text = Moves [0].name;
-		if (Moves [1].name == "") {
+		if (BattleFight.transform.GetChild (0).transform.GetChild (0).GetComponent<Text> ().text == "") {
 			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
 		}
 		BattleFight.transform.GetChild (1).transform.GetChild (0).GetComponent<Text> ().text = Moves [1].name;
-		if (Moves [2].name == "") {
-			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
+		if (BattleFight.transform.GetChild (1).transform.GetChild (0).GetComponent<Text> ().text == "") {
+			BattleFight.transform.GetChild (1).GetComponent<Button> ().interactable = false;
 		}
 		BattleFight.transform.GetChild (2).transform.GetChild (0).GetComponent<Text> ().text = Moves [2].name;
-		if (Moves [3].name == "") {
-			BattleFight.transform.GetChild (0).GetComponent<Button> ().interactable = false;
+		if (BattleFight.transform.GetChild (2).transform.GetChild (0).GetComponent<Text> ().text == "") {
+			BattleFight.transform.GetChild (2).GetComponent<Button> ().interactable = false;
 		}
 		BattleFight.transform.GetChild (3).transform.GetChild (0).GetComponent<Text> ().text = Moves [3].name;
+		if (BattleFight.transform.GetChild (3).transform.GetChild (0).GetComponent<Text> ().text == "") {
+			BattleFight.transform.GetChild (3).GetComponent<Button> ().interactable = false;
+		}
 		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name1, creatureAgainst.GetComponent<Creature>().damage1, creatureAgainst.GetComponent<Creature>().heal1, creatureAgainst.GetComponent<Creature>().details1));
 		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name2, creatureAgainst.GetComponent<Creature>().damage2, creatureAgainst.GetComponent<Creature>().heal2, creatureAgainst.GetComponent<Creature>().details2));
 		EnemyMoves.Add( new BattleMove(creatureAgainst.GetComponent<Creature>().name3, creatureAgainst.GetComponent<Creature>().damage3, creatureAgainst.GetComponent<Creature>().heal3, creatureAgainst.GetComponent<Creature>().details3));
