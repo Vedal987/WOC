@@ -101,7 +101,7 @@ public class Main : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>().clip = Grass;
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
 		}
-		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM = PlayerPrefs.GetInt("Music"));
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM = PlayerPrefs.GetInt("Music");
 	}
 		
 	void Update()
