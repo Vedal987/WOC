@@ -19,20 +19,158 @@ Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.
 Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.513 seconds
+- Completed reload, in  0.085 seconds
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 5760x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.705148 ms
+UnloadTime: 0.769022 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.157891 ms
+UnloadTime: 0.168622 ms
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1192.
-Total: 0.874026 ms (FindLiveObjects: 0.044199 ms CreateObjectMapping: 0.019417 ms MarkObjects: 0.200814 ms  DeleteObjects: 0.609084 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 396.
+Total: 0.796103 ms (FindLiveObjects: 0.015584 ms CreateObjectMapping: 0.009964 ms MarkObjects: 0.112415 ms  DeleteObjects: 0.657373 ms)
+
+The referenced script on this Behaviour (Game Object 'Battle') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'BagText') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Fight') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Talk') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Canvas') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Menu') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Health') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'FightMenu') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Overlay') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Defend1') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Flee') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Attack1') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'EventSystem') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'CreatureFor') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Defend2') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Title') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Attack2') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'CreatureAgainst') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'BattleUI') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'EnemyHealth') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'BagUI') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'DialogueBox') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'BattleDialogueText') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Tooltip') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Bag') is missing!
+ 
+(Filename:  Line: 1754)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.979784 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1876.
+Total: 0.587880 ms (FindLiveObjects: 0.058251 ms CreateObjectMapping: 0.029381 ms MarkObjects: 0.296367 ms  DeleteObjects: 0.203624 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 363c -> priority: 1 
-  Thread -> id: 2e84 -> priority: 1 
+  Thread -> id: b90 -> priority: 1 
+  Thread -> id: 38d4 -> priority: 1 
