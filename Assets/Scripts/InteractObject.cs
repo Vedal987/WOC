@@ -12,6 +12,8 @@ public class InteractObject : MonoBehaviour {
 	public bool IgnoreRaycast;
 	public bool SecondDialogue;
 	public bool InfiniteDialogue;
+	public bool ChangeDialogue;
+	public InteractObject changer;
 	public int Option = 1;
 	public string[] Option2;
 
@@ -46,6 +48,10 @@ public class InteractObject : MonoBehaviour {
 					d = 0;
 				}
 				player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
+				if (ChangeDialogue) {
+					changer.Option = 2;
+					changer.d = 0;
+				}
 				if (InfiniteDialogue) {
 					d = 0;
 				}
@@ -71,6 +77,10 @@ public class InteractObject : MonoBehaviour {
 			if (dia == "[ANIM]") {
 				this.GetComponent<Animator> ().SetTrigger ("Trigger");
 				player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
+				if (ChangeDialogue) {
+					changer.Option = 2;
+					changer.d = 0;
+				}
 				return;
 			}
 			player.GetComponent<Main> ().Dialogue (dia, this.gameObject);
@@ -81,6 +91,10 @@ public class InteractObject : MonoBehaviour {
 					return;
 				}
 				player.GetComponent<Main> ().Dialogue ("x7Finish", this.gameObject);
+				if (ChangeDialogue) {
+					changer.Option = 2;
+					changer.d = 0;
+				}
 				ImportantStuff ();
 				return;
 			}

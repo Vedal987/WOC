@@ -811,6 +811,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - Gwen's house.
@@ -2192,6 +2194,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!4 &122107034 stripped
@@ -3271,6 +3275,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &199168600
@@ -3453,6 +3459,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!61 &205084564
@@ -4809,6 +4817,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &308986178
@@ -6967,6 +6977,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!114 &488144582
@@ -7092,6 +7104,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 1
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - '......'
@@ -7755,6 +7769,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - You cannot pass. The Kin-
@@ -8425,6 +8441,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 1
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &621316111
@@ -9213,6 +9231,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1001 &660686692
@@ -9984,6 +10004,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &706421956
@@ -11089,6 +11111,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 1
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - It's still another tree.
@@ -11958,6 +11982,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!61 &861539965
@@ -12281,6 +12307,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &888180110
@@ -12434,6 +12462,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &902375141
@@ -12851,6 +12881,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 1
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - You might not believe it but, it's still a tree.
@@ -13895,6 +13927,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 1
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - '......'
@@ -13964,7 +13998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &990609770
 Transform:
   m_ObjectHideFlags: 0
@@ -14019,6 +14053,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 1
   InfiniteDialogue: 0
+  ChangeDialogue: 1
+  changer: {fileID: 31122460}
   Option: 1
   Option2:
   - Here it is, my house.
@@ -14189,6 +14225,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1001 &999729576
@@ -14652,6 +14690,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!95 &1022545415
@@ -14953,6 +14993,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &1029781245
@@ -15423,6 +15465,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 1
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - Go on.
@@ -16267,6 +16311,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!61 &1084533548
@@ -16739,6 +16785,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 1
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!95 &1119050781
@@ -17213,6 +17261,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!95 &1141711804
@@ -17823,6 +17873,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 2
   Option2:
   - Hey there.
@@ -19185,6 +19237,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &1257059014
@@ -20866,6 +20920,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &1370804957
@@ -20907,6 +20963,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!61 &1370804959
@@ -21356,6 +21414,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1001 &1397936279
@@ -27398,6 +27458,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 1
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!61 &1621883743
@@ -28030,6 +28092,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!212 &1676293406
@@ -28167,6 +28231,8 @@ MonoBehaviour:
   IgnoreRaycast: 1
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - YOU?
@@ -29523,6 +29589,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &1758915573
@@ -31395,6 +31463,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 1
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!212 &1887639523
@@ -31892,6 +31962,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!95 &1901114268
@@ -32913,6 +32985,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &1981347049
@@ -33135,6 +33209,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 1
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2:
   - Come on. We haven't the time for this.
@@ -33645,6 +33721,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!1 &2066763690
@@ -33902,6 +33980,8 @@ MonoBehaviour:
   IgnoreRaycast: 0
   SecondDialogue: 0
   InfiniteDialogue: 0
+  ChangeDialogue: 0
+  changer: {fileID: 0}
   Option: 1
   Option2: []
 --- !u!212 &2081419861
