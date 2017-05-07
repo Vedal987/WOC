@@ -45,9 +45,10 @@ public class Main : MonoBehaviour {
 	public GameObject guard;
 
 	//GrassArea
-
 	public GameObject SeaDemon;
 	public bool SeaBattle;
+	public GameObject GwenFake;
+	public GameObject Gwen;
 
 	public GameObject BattleText;
 	public GameObject BattleTooltip;
@@ -306,12 +307,17 @@ public class Main : MonoBehaviour {
 		scale.y = 0;
 		BattleUI.GetComponent<RectTransform> ().localScale = scale;
 		Battle.SetActive (false);
-		canMove = true;
+		canMove = false;
 		dialogue = false;
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		creatureAgainst.GetComponent<Creature> ().health = creatureAgainst.GetComponent<Creature> ().MaxHealth;
 		exitingBattle = false;
 		SeaDemon.GetComponent<Animator> ().SetTrigger ("Spawn");
+		yield return new WaitForSeconds (7f);
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+		canMove = true;
+		GwenFake.SetActive (false);
+		Gwen.SetActive (true);
 		creature.GetComponent<Creature> ().health = creature.GetComponent<Creature> ().MaxHealth;
 	}
 
