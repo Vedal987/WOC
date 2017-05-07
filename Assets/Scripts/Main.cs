@@ -32,6 +32,8 @@ public class Main : MonoBehaviour {
 	public GameObject BattleFight;
 
 
+
+
 	//TitanHQ
 	public GameObject TitanManager;
 	public GameObject demonAttackCamera;
@@ -41,6 +43,10 @@ public class Main : MonoBehaviour {
 	public GameObject Ariel2;
 	public GameObject Ariel3;
 	public GameObject guard;
+
+	//GrassArea
+
+	public GameObject SeaDemon;
 
 	public GameObject BattleText;
 	public GameObject BattleTooltip;
@@ -343,6 +349,16 @@ public class Main : MonoBehaviour {
 				canSkip = true;
 				return;
 			}
+			if (d == "[SEADEMON]") {
+				creatureAgainst.GetComponent<RawImage> ().texture = SeaDemonImage;
+				interact.GetComponent<InteractObject> ().enabled = false;
+				DialogueBox.SetActive (false);
+				canMove = true;
+				dialogue = false;
+				canSkip = true;
+				StartCoroutine (AnimateSeaDemon ());
+				return;
+			}
 			if (d == "*Ariel mutters random words*") {
 				StartCoroutine ("FlashCamera");
 			}
@@ -354,6 +370,13 @@ public class Main : MonoBehaviour {
 			dialogue = true;
 			StartCoroutine (AnimateText (d));
 		}
+	}
+
+	public IEnumerator AnimateSeaDemon()
+	{
+		SeaDemon.SetActive (true);
+		yield return new WaitForSeconds (3f);
+		SeaDemon.GetComponent<InteractObject> ().enabled = true;
 	}
 
 	public void LoadCreature(string cname)
