@@ -103,6 +103,38 @@
 
 		</Creature>
 
+		<Creature Name="SeaDemon">
+
+		<name1>Tidal Wave</name1>
+		<damage1>70</damage1>
+		<heal1>-10</heal1>
+		<details1>NoMove</details1>
+		<tooltip1></tooltip1>
+
+		<name2>Hydraulic Power</name2>
+		<damage2>100</damage2>
+		<heal2></heal2>
+		<details2></details2>
+		<tooltip2></tooltip2>
+
+		<name3>Recharge</name3>
+		<damage3>0</damage3>
+		<heal3>10</heal3>
+		<details3>Peace</details3>
+		<tooltip3></tooltip3>
+
+		<name4>Shower</name4>
+		<damage4>0</damage4>
+		<heal4>100</heal4>
+		<details4>Peace</details4>
+		<tooltip4></tooltip4>
+
+		<health>150</health>
+		<MaxHealth>150</MaxHealth>
+		<Level>10</Level>
+
+		</Creature>
+
 
 	</Creatures>
 </CreatureCollection>
