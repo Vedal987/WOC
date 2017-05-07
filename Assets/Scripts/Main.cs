@@ -65,6 +65,10 @@ public class Main : MonoBehaviour {
 
 	public bool canEncounter;
 
+	public Texture2D KaiImage;
+	public Texture2D SeaDemonImage;
+	public Texture2D GwenImage;
+
 	//InBattle
 
 	public List<BattleMove> Moves = new List<BattleMove>();
@@ -86,6 +90,7 @@ public class Main : MonoBehaviour {
 		Vector3 newCamPos = new Vector3(PlayerPrefs.GetFloat ("PlayerXPos"), PlayerPrefs.GetFloat ("PlayerYPos"), -10);
 		this.gameObject.transform.position = newPos;
 		camera.gameObject.transform.position = newCamPos;
+		LoadCreature (PlayerPrefs.GetString ("Creature"));
 		if (PlayerPrefs.GetString ("SaveArea") == "GRASS") {
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>().clip = Grass;
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
@@ -387,6 +392,10 @@ public class Main : MonoBehaviour {
 				creature.GetComponent<Creature> ().Level = creaturev.Level;
 
 				ChangeMoves ();
+				PlayerPrefs.SetString ("Creature", cname);
+				if (cname == "Kai") {
+					creature.GetComponent<RawImage> ().texture = KaiImage;
+				}
 			}
 		}
 	}

@@ -17696,7 +17696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 772374668}
-  Name: 
+  Name: Ariel
   name1: Kick
   damage1: 80
   heal1: 0
@@ -21140,7 +21140,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451680139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 105.3, y: 0, z: 0}
+  m_LocalPosition: {x: 105.3, y: -35.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1449744417}
@@ -21229,6 +21229,9 @@ MonoBehaviour:
   canBack: 0
   Grass: {fileID: 8300000, guid: 33a553d0cf702c448b1f1673b6f33040, type: 3}
   canEncounter: 0
+  KaiImage: {fileID: 2800000, guid: 3440b7145ee277742bea396bbf929be0, type: 3}
+  SeaDemonImage: {fileID: 2800000, guid: ce6c94221658b4b4e8b9afcf657d6adb, type: 3}
+  GwenImage: {fileID: 0}
   isTurn: 1
 --- !u!82 &1451680144
 AudioSource:
@@ -22854,7 +22857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 1632384489}
-  Name: 
+  Name: Kronos
   name1: Blood Smash
   damage1: 100
   heal1: -40
