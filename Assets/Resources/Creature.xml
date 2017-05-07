@@ -113,7 +113,7 @@
 
 		<name2>Hydraulic Power</name2>
 		<damage2>100</damage2>
-		<heal2></heal2>
+		<heal2>0</heal2>
 		<details2></details2>
 		<tooltip2></tooltip2>
 

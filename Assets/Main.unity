@@ -22800,7 +22800,6 @@ GameObject:
   - component: {fileID: 1614985576}
   - component: {fileID: 1614985575}
   - component: {fileID: 1614985578}
-  - component: {fileID: 1614985579}
   m_Layer: 5
   m_Name: CreatureAgainst
   m_TagString: Untagged
@@ -22913,17 +22912,6 @@ MonoBehaviour:
   Level: 0
   AI: 1
   CreatureName: Kronos
---- !u!114 &1614985579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1614985573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6fd92df3c974ed690d61989eb183ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1618217862
 GameObject:
   m_ObjectHideFlags: 0
