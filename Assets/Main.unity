@@ -15030,9 +15030,9 @@ GameObject:
   - component: {fileID: 1022545413}
   - component: {fileID: 1022545417}
   - component: {fileID: 1022545416}
-  - component: {fileID: 1022545415}
   - component: {fileID: 1022545414}
   - component: {fileID: 1022545418}
+  - component: {fileID: 1022545415}
   m_Layer: 0
   m_Name: Ariel3
   m_TagString: Untagged
@@ -15108,7 +15108,7 @@ Animator:
   m_GameObject: {fileID: 1022545412}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 481ed23710b97f14aa59ad9f54f5a136, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83923177aa109f547bffcc84d8404f85, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -29201,10 +29201,10 @@ MonoBehaviour:
   changer: {fileID: 0}
   Option: 1
   Option2:
-  - YOU?
-  - YOU HAVE BESTED ME.
-  - I WAS GOING EASY! I'LL BE BACK.
-  - '[BYE]'
+  - 
+  - 
+  - 
+  - 
 --- !u!82 &1677607673
 AudioSource:
   m_ObjectHideFlags: 0

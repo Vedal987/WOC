@@ -340,6 +340,8 @@ public class Main : MonoBehaviour {
 		creature.GetComponent<Creature> ().health = creature.GetComponent<Creature> ().MaxHealth;
 	}
 
+
+
 	public void Dialogue(string d, GameObject interact)
 	{
 		string a;
@@ -408,7 +410,8 @@ public class Main : MonoBehaviour {
 				return;
 			}
 			if (d == "[HELL]") {
-				Ariel3.SetActive (false);
+				Ariel3.GetComponent<Animator> ().SetTrigger ("Suicide");
+				Destroy (Ariel3, 6f);
 				DialogueBox.SetActive (false);
 				canMove = true;
 				dialogue = false;
@@ -645,7 +648,6 @@ public class Main : MonoBehaviour {
 		dialogue = false;
 		demons.GetComponent<InteractObject> ().Option = 2;
 		demons.GetComponent<InteractObject> ().d = 0;	
-		demons.SetActive (true);
 		Ariel3.SetActive (true);
 		creatureAgainst.GetComponent<Creature> ().health = creatureAgainst.GetComponent<Creature> ().MaxHealth;
 		exitingBattle = false;
