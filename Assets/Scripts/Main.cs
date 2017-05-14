@@ -10,8 +10,6 @@ public class Main : MonoBehaviour {
 
 	public const string path = "Creature";
 
-	public GameObject MapMarker;
-
 	public bool canMove = true;
 	public bool dialogue = false;
 	public bool start = true;
@@ -391,6 +389,20 @@ public class Main : MonoBehaviour {
 		Options.SetActive (true);
 	}
 
+	IEnumerator TitleAfterTime()
+	{
+		yield return new WaitForSeconds (8f);
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().clip = TitleScreenMusic;
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+		TitleScreen.SetActive (true);
+	}
+
+	IEnumerator ReloadAfterTime()
+	{
+		yield return new WaitForSeconds (0.5f);
+		SceneManager.LoadScene ("Main");
+	}
+
 	public void Dialogue(string d, GameObject interact)
 	{
 		slowText = false;
@@ -432,13 +444,14 @@ public class Main : MonoBehaviour {
 				canSkip = true;
 				return;
 			}
-			if (d.Contains("*Game Saved*")) {
+			if (d.Contains("*Saving Game*")) {
 				PlayerPrefs.SetFloat ("PlayerXPos", this.gameObject.transform.position.x);
 				PlayerPrefs.SetFloat ("PlayerYPos", this.gameObject.transform.position.y);
 				PlayerPrefs.SetInt ("Flash", 1);
 				PlayerPrefs.SetInt ("Music", GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM);
 				PlayerPrefs.SetInt ("SeaDemon", SeaDemonPoint);
 				PlayerPrefs.SetInt ("SeaDemonDone", SeaDemonDonePoint);
+				StartCoroutine (ReloadAfterTime ());
 			}
 			if (d.Contains ("[GRASS]")) {
 				PlayerPrefs.SetString ("SaveArea", "GRASS");
@@ -453,6 +466,7 @@ public class Main : MonoBehaviour {
 			if (d.Contains ("[QUESTION]")) {
 				StartCoroutine (QuestionActivate ());
 				DialogueBox.SetActive (false);
+				canMove = false;
 				dialogue = false;
 				canSkip = true;
 				return;
@@ -476,6 +490,7 @@ public class Main : MonoBehaviour {
 			if (d == "[HELL]") {
 				Ariel3.GetComponent<Animator> ().SetTrigger ("Suicide");
 				Destroy (Ariel3, 6f);
+				StartCoroutine (TitleAfterTime ());
 				DialogueBox.SetActive (false);
 				canMove = true;
 				dialogue = false;
@@ -496,7 +511,7 @@ public class Main : MonoBehaviour {
 			if (d == "*Ariel mutters random words*") {
 				StartCoroutine ("FlashCamera");
 			}
-			if (d == "*You recieved Kai*") {
+			if (d == "*You received Kai*") {
 				LoadCreature ("Kai");
 			}
 			DialogueBox.SetActive (true);
@@ -644,9 +659,6 @@ public class Main : MonoBehaviour {
 		if (canMove) {
 			Vector2 targetVelocity = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 			GetComponent<Rigidbody2D> ().velocity = targetVelocity * playerSpeed;
-			if (LastKeyPress == "D") {
-				MapMarker.transform.rotation.eulerAngles.Set (0, 0, -90);
-			}
 		}
 	}
 	IEnumerator ExitBattle()

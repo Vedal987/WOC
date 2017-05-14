@@ -1,0 +1,36 @@
+WORLD OF CREATURES
+
+
+LEAD DEVELOPER/PRODUCER    JACK UNDERWOOD
+DIALOGUE/TESTING    THOMAS TURNER
+TESTING    BRADLEY GREEN
+
+
+
+TEXTURES
+
+ARIEL: Bradley Green
+TREES: TheGreatZeKro
+FIRE: arion_orion
+HOUSE: TheGreatZeKro
+
+
+
+MUSIC
+
+TITLE THEME: cynicmusic.com pixelsphere.org
+TOWN THEME: cynicmusic.com pixelsphere.org
+QUESTION MUSIC: Alexandr Zhelanov
+HOW COULD YOU?: Matthew Pablo, www.matthewpablo.com
+SEA DEMON THEME: Matthew Pablo, www.matthewpablo.com
+WAKE UP: Jack Underwood
+ARIEL IS HERE: Jack Underwood
+
+
+
+SOUND EFFECTS
+
+BELL: Ulrich Metzner
+FIRE: Iwan 'qubodup' Gabovitch
+UI CLICK: GameAudio on freesound.org
+FIREBALL: Iwan 'qubodup' Gabovitch

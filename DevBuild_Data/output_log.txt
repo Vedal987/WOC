@@ -13,29 +13,27 @@ Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\Assembly-CSh
 Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.085 seconds
+- Completed reload, in  0.018 seconds
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 5760x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.769022 ms
+UnloadTime: 0.730186 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.168622 ms
+UnloadTime: 0.161213 ms
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 396.
-Total: 0.796103 ms (FindLiveObjects: 0.015584 ms CreateObjectMapping: 0.009964 ms MarkObjects: 0.112415 ms  DeleteObjects: 0.657373 ms)
-
-The referenced script on this Behaviour (Game Object 'Battle') is missing!
- 
-(Filename:  Line: 1754)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 424.
+Total: 0.845411 ms (FindLiveObjects: 0.015073 ms CreateObjectMapping: 0.010475 ms MarkObjects: 0.114458 ms  DeleteObjects: 0.705148 ms)
 
 The referenced script on this Behaviour (Game Object 'BagText') is missing!
  
@@ -57,7 +55,7 @@ The referenced script on this Behaviour (Game Object 'Text') is missing!
  
 (Filename:  Line: 1754)
 
-The referenced script on this Behaviour (Game Object 'Canvas') is missing!
+The referenced script on this Behaviour (Game Object 'Text') is missing!
  
 (Filename:  Line: 1754)
 
@@ -70,6 +68,10 @@ The referenced script on this Behaviour (Game Object 'Text') is missing!
 (Filename:  Line: 1754)
 
 The referenced script on this Behaviour (Game Object 'Menu') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Yes') is missing!
  
 (Filename:  Line: 1754)
 
@@ -89,6 +91,10 @@ The referenced script on this Behaviour (Game Object 'Defend1') is missing!
  
 (Filename:  Line: 1754)
 
+The referenced script on this Behaviour (Game Object 'No') is missing!
+ 
+(Filename:  Line: 1754)
+
 The referenced script on this Behaviour (Game Object 'Flee') is missing!
  
 (Filename:  Line: 1754)
@@ -102,6 +108,10 @@ The referenced script on this Behaviour (Game Object 'Text') is missing!
 (Filename:  Line: 1754)
 
 The referenced script on this Behaviour (Game Object 'Attack1') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Text') is missing!
  
 (Filename:  Line: 1754)
 
@@ -125,11 +135,15 @@ The referenced script on this Behaviour (Game Object 'Text') is missing!
  
 (Filename:  Line: 1754)
 
-The referenced script on this Behaviour (Game Object 'Attack2') is missing!
+The referenced script on this Behaviour (Game Object 'TalkMenu') is missing!
  
 (Filename:  Line: 1754)
 
-The referenced script on this Behaviour (Game Object 'CreatureAgainst') is missing!
+The referenced script on this Behaviour (Game Object 'BagMenu') is missing!
+ 
+(Filename:  Line: 1754)
+
+The referenced script on this Behaviour (Game Object 'Attack2') is missing!
  
 (Filename:  Line: 1754)
 
@@ -149,10 +163,6 @@ The referenced script on this Behaviour (Game Object 'BagUI') is missing!
  
 (Filename:  Line: 1754)
 
-The referenced script on this Behaviour (Game Object 'DialogueBox') is missing!
- 
-(Filename:  Line: 1754)
-
 The referenced script on this Behaviour (Game Object 'BattleDialogueText') is missing!
  
 (Filename:  Line: 1754)
@@ -166,11 +176,16 @@ The referenced script on this Behaviour (Game Object 'Bag') is missing!
 (Filename:  Line: 1754)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.979784 ms
+UnloadTime: 1.975949 ms
+Platform assembly: C:\Users\Vedal\Desktop\WOC\DevBuild_Data\Managed\System.Xml.dll (this message is harmless)
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1876.
-Total: 0.587880 ms (FindLiveObjects: 0.058251 ms CreateObjectMapping: 0.029381 ms MarkObjects: 0.296367 ms  DeleteObjects: 0.203624 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2345.
+Total: 1.654289 ms (FindLiveObjects: 0.073836 ms CreateObjectMapping: 0.030147 ms MarkObjects: 0.372246 ms  DeleteObjects: 1.177547 ms)
+
+SeaDemonPompt
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: b90 -> priority: 1 
-  Thread -> id: 38d4 -> priority: 1 
+  Thread -> id: 324c -> priority: 1 
+  Thread -> id: 39fc -> priority: 1 
