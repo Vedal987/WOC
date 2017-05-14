@@ -1,6 +1,3 @@
-WORLD OF CREATURES
-
-
 LEAD DEVELOPER/PRODUCER    JACK UNDERWOOD
 DIALOGUE/TESTING    THOMAS TURNER
 TESTING    BRADLEY GREEN
@@ -34,3 +31,20 @@ BELL: Ulrich Metzner
 FIRE: Iwan 'qubodup' Gabovitch
 UI CLICK: GameAudio on freesound.org
 FIREBALL: Iwan 'qubodup' Gabovitch
+
+
+This is all I have so far.
+Much more will be coming soon.
+I have big plans for this game.
+So keep a look out.
+
+Thank you for playing the demo of...
+
+
+
+WORLD OF CREATURES
+
+
+
+
+THE END

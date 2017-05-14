@@ -27,6 +27,7 @@ public class Main : MonoBehaviour {
 
 	public GameObject lastInteract;
 
+
 	public GameObject Battle;
 	public GameObject BattleMenu;
 	public GameObject BattleFight;
