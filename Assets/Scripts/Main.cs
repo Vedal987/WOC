@@ -10,6 +10,8 @@ public class Main : MonoBehaviour {
 
 	public const string path = "Creature";
 
+	public GameObject MapMarker;
+
 	public bool canMove = true;
 	public bool dialogue = false;
 	public bool start = true;
@@ -36,7 +38,9 @@ public class Main : MonoBehaviour {
 	public GameObject ClickNo;
 	public GameObject EnemyDie;
 
-
+	public GameObject Question;
+	public GameObject Asker;
+	public GameObject Options;
 
 	//TitanHQ
 	public GameObject TitanManager;
@@ -75,6 +79,7 @@ public class Main : MonoBehaviour {
 
 	public bool canSkip = true;
 	public bool canBack = false;
+	public bool slowText = false;
 
 	public AudioClip Grass;
 
@@ -83,6 +88,17 @@ public class Main : MonoBehaviour {
 	public Texture2D KaiImage;
 	public Texture2D SeaDemonImage;
 	public Texture2D GwenImage;
+
+	public GameObject SeaDemonPrompt;
+
+	public GameObject TitleScreen;
+	public AudioClip TitleScreenMusic;
+
+
+
+	//SAVE POINTS
+	public int SeaDemonPoint;
+	public int SeaDemonDonePoint;
 
 	//InBattle
 
@@ -116,6 +132,16 @@ public class Main : MonoBehaviour {
 		this.gameObject.transform.position = newPos;
 		camera.gameObject.transform.position = newCamPos;
 		LoadCreature (PlayerPrefs.GetString ("Creature"));
+		if (PlayerPrefs.GetInt ("SeaDemon") == 1) {
+			SeaDemonPoint = 1;
+			SeaDemon.SetActive (true);
+			SeaDemonPrompt.SetActive (false);
+		}
+		if (PlayerPrefs.GetInt ("SeaDemonDone") == 1) {
+			SeaDemonDonePoint = 1;
+			Gwen.SetActive (true);
+			SeaDemon.SetActive (false);
+		}
 		if (PlayerPrefs.GetString ("SaveArea") == "GRASS") {
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>().clip = Grass;
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
@@ -140,6 +166,7 @@ public class Main : MonoBehaviour {
 				exitingBattle = true;
 			}
 			if (creature.GetComponent<Creature> ().health < 1 && !exitingBattle) {
+				creature.GetComponent<Creature> ().health = 0;
 				if (SeaBattle) {
 					StartCoroutine (SeaBattleAfter());
 					exitingBattle = true;
@@ -340,10 +367,33 @@ public class Main : MonoBehaviour {
 		creature.GetComponent<Creature> ().health = creature.GetComponent<Creature> ().MaxHealth;
 	}
 
+	public void QuestionYes()
+	{
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+		TitleScreen.SetActive (true);
+	}
 
+	public void QuestionNo()
+	{
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+		TitleScreen.SetActive (true);
+	}
+
+	IEnumerator QuestionActivate()
+	{
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
+		Question.SetActive (true);
+		yield return new WaitForSeconds (2f);
+		Asker.SetActive (true);
+		yield return new WaitForSeconds (2f);
+		Asker.GetComponent<InteractObject> ().Interact ();
+		yield return new WaitForSeconds (5f);
+		Options.SetActive (true);
+	}
 
 	public void Dialogue(string d, GameObject interact)
 	{
+		slowText = false;
 		string a;
 		lastInteract = interact;
 		if(d.Contains("[BACK]"))
@@ -387,11 +437,25 @@ public class Main : MonoBehaviour {
 				PlayerPrefs.SetFloat ("PlayerYPos", this.gameObject.transform.position.y);
 				PlayerPrefs.SetInt ("Flash", 1);
 				PlayerPrefs.SetInt ("Music", GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM);
+				PlayerPrefs.SetInt ("SeaDemon", SeaDemonPoint);
+				PlayerPrefs.SetInt ("SeaDemonDone", SeaDemonDonePoint);
 			}
 			if (d.Contains ("[GRASS]")) {
 				PlayerPrefs.SetString ("SaveArea", "GRASS");
 				a = d.Replace ("[GRASS]", "");
 				d = a;
+			}
+			if (d.Contains ("[SLOW]")) {
+				a = d.Replace ("[SLOW]", "");
+				d = a;
+				slowText = true;
+			}
+			if (d.Contains ("[QUESTION]")) {
+				StartCoroutine (QuestionActivate ());
+				DialogueBox.SetActive (false);
+				dialogue = false;
+				canSkip = true;
+				return;
 			}
 			if (d == "ARAGGHHH") {
 				daAnimator.SetTrigger ("2");
@@ -562,7 +626,11 @@ public class Main : MonoBehaviour {
 		while( i < strComplete.Length ){
 			str += strComplete[i++];
 			DialogueText.GetComponent<Text> ().text = str;
-			yield return new WaitForSeconds(0.03F);
+			if (slowText) {
+				yield return new WaitForSeconds (0.09F);
+			} else {
+				yield return new WaitForSeconds (0.03F);
+			}
 			if (Input.GetKey (KeyCode.E) && i > 4) {
 				canSkip = true;
 				DialogueText.GetComponent<Text> ().text = strComplete;
@@ -576,6 +644,9 @@ public class Main : MonoBehaviour {
 		if (canMove) {
 			Vector2 targetVelocity = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 			GetComponent<Rigidbody2D> ().velocity = targetVelocity * playerSpeed;
+			if (LastKeyPress == "D") {
+				MapMarker.transform.rotation.eulerAngles.Set (0, 0, -90);
+			}
 		}
 	}
 	IEnumerator ExitBattle()
@@ -647,7 +718,7 @@ public class Main : MonoBehaviour {
 		canMove = true;
 		dialogue = false;
 		demons.GetComponent<InteractObject> ().Option = 2;
-		demons.GetComponent<InteractObject> ().d = 0;	
+		demons.GetComponent<InteractObject> ().d = 0;
 		Ariel3.SetActive (true);
 		creatureAgainst.GetComponent<Creature> ().health = creatureAgainst.GetComponent<Creature> ().MaxHealth;
 		exitingBattle = false;
@@ -671,7 +742,6 @@ public class Main : MonoBehaviour {
 
 	IEnumerator StartBattle()
 	{
-		LoadCreature (PlayerPrefs.GetString ("Creature"));
 		DialogueBox.SetActive (false);
 		canMove = false;
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();

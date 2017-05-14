@@ -8,14 +8,13 @@ Shader "Hidden/ChromaticAberration" {
 	#include "UnityCG.cginc"
 	
 	struct v2f {
-		float4 pos : SV_POSITION;
+		float4 pos : POSITION;
 		float2 uv : TEXCOORD0;
 	};
 	
 	sampler2D _MainTex;
 	
 	float4 _MainTex_TexelSize;
-	half4 _MainTex_ST;
 	half _ChromaticAberration;
 	half _AxialAberration;
 	half _Luminance;
@@ -30,16 +29,16 @@ Shader "Hidden/ChromaticAberration" {
 		return o;
 	} 
 	
-	half4 fragDs(v2f i) : SV_Target 
+	half4 fragDs(v2f i) : COLOR 
 	{
-		half4 c = tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv.xy + _MainTex_TexelSize.xy * 0.5, _MainTex_ST));
-		c += tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv.xy - _MainTex_TexelSize.xy * 0.5, _MainTex_ST));
-		c += tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv.xy + _MainTex_TexelSize.xy * float2(0.5,-0.5), _MainTex_ST));
-		c += tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv.xy - _MainTex_TexelSize.xy * float2(0.5,-0.5), _MainTex_ST));
+		half4 c = tex2D (_MainTex, i.uv.xy + _MainTex_TexelSize.xy * 0.5);
+		c += tex2D (_MainTex, i.uv.xy - _MainTex_TexelSize.xy * 0.5);
+		c += tex2D (_MainTex, i.uv.xy + _MainTex_TexelSize.xy * float2(0.5,-0.5));
+		c += tex2D (_MainTex, i.uv.xy - _MainTex_TexelSize.xy * float2(0.5,-0.5));
 		return c/4.0;
 	}
 
-	half4 frag(v2f i) : SV_Target 
+	half4 frag(v2f i) : COLOR 
 	{
 		half2 coords = i.uv;
 		half2 uv = i.uv;
@@ -48,12 +47,12 @@ Shader "Hidden/ChromaticAberration" {
 		half coordDot = dot (coords,coords);
 		
 		half2 uvG = uv - _MainTex_TexelSize.xy * _ChromaticAberration * coords * coordDot;
-		half4 color = tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST));
+		half4 color = tex2D (_MainTex, uv);
 		#if SHADER_API_D3D9
 			// Work around Cg's code generation bug for D3D9 pixel shaders :(
-			color.g = color.g * 0.0001 + tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(uvG, _MainTex_ST)).g;
+			color.g = color.g * 0.0001 + tex2D (_MainTex, uvG).g;
 		#else
-			color.g = tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(uvG, _MainTex_ST)).g;
+			color.g = tex2D (_MainTex, uvG).g;
 		#endif
 		
 		return color;
@@ -74,7 +73,7 @@ Shader "Hidden/ChromaticAberration" {
 		half2(-0.32194,-0.932615),
 	};
 
-	half4 fragComplex(v2f i) : SV_Target 
+	half4 fragComplex(v2f i) : COLOR 
 	{
 		half2 coords = i.uv;
 		half2 uv = i.uv;
@@ -83,7 +82,7 @@ Shader "Hidden/ChromaticAberration" {
 		coords = (coords - 0.5h) * 2.0h;		
 		half coordDot = dot (coords,coords);
 
-		half4 color = tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST));
+		half4 color = tex2D (_MainTex, uv);
 		half tangentialStrength = _ChromaticAberration * coordDot * coordDot;
 		half maxOfs = clamp(max(_AxialAberration, tangentialStrength), _BlurDistance.x, _BlurDistance.y);
 
@@ -97,7 +96,7 @@ Shader "Hidden/ChromaticAberration" {
 		for(int l=0; l < SmallDiscKernelSamples; l++)
 		{
 			half2 sampleUV = uv + SmallDiscKernel[l].xy * _MainTex_TexelSize.xy * maxOfs;
-			half3 tap = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(sampleUV, _MainTex_ST)).rgb;
+			half3 tap = tex2D(_MainTex, sampleUV).rgb;
 			blurredTap.rgb += tap;
 		}
 		blurredTap.rgb /= (float)SmallDiscKernelSamples + 0.2h;
@@ -123,31 +122,38 @@ Subshader {
  // 0: box downsample
  Pass {
 	  ZTest Always Cull Off ZWrite Off
+	  Fog { Mode off }      
 
       CGPROGRAM
       
       #pragma vertex vert
       #pragma fragment fragDs
+      
       ENDCG
   }
 // 1: simple chrom aberration
 Pass {
 	  ZTest Always Cull Off ZWrite Off
+	  Fog { Mode off }      
 
       CGPROGRAM
       
       #pragma vertex vert
       #pragma fragment frag
+      
       ENDCG
   }
 // 2: simulates more chromatic aberration effects
 Pass {
 	  ZTest Always Cull Off ZWrite Off
+	  Fog { Mode off }
 
       CGPROGRAM
       
+      #pragma exclude_renderers flash
       #pragma vertex vert
       #pragma fragment fragComplex
+      
       ENDCG
   }  
 }

@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class PlayerPrefStart : MonoBehaviour {
 
-	public string Pref;
+	public bool SeaDemon;
+	public bool SeaDemonDone;
 
 	// Use this for initialization
 	void Start () {
-		PlayerPrefs.SetInt (Pref, 1);
+		if(SeaDemon)
+		{
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<Main> ().SeaDemonPoint = 1;
+		}
+		if(SeaDemonDone)
+		{
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<Main> ().SeaDemonDonePoint = 1;
+		}
 	}
 	
 	// Update is called once per frame
