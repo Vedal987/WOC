@@ -30,7 +30,11 @@ public class Main : MonoBehaviour {
 	public GameObject Battle;
 	public GameObject BattleMenu;
 	public GameObject BattleFight;
+	public GameObject BattleBag;
+	public GameObject BattleTalk;
 
+	public GameObject ClickNo;
+	public GameObject EnemyDie;
 
 
 
@@ -43,6 +47,9 @@ public class Main : MonoBehaviour {
 	public GameObject Ariel2;
 	public GameObject Ariel3;
 	public GameObject guard;
+	public GameObject Hell;
+	public AudioClip HowCouldYou;
+	public AudioClip FlightOfTheDemon;
 
 	//GrassArea
 	public GameObject SeaDemon;
@@ -119,7 +126,7 @@ public class Main : MonoBehaviour {
 	IEnumerator Death()
 	{
 		yield return new WaitForSeconds (2f);
-		SceneManager.LoadScene ("Main");
+		SceneManager.LoadScene ("Menu");
 	}
 		
 	void Update()
@@ -144,6 +151,8 @@ public class Main : MonoBehaviour {
 				if (Input.GetKeyDown (KeyCode.Q)) {
 					BattleMenu.SetActive (true);
 					BattleFight.SetActive (false);
+					BattleBag.SetActive (false);
+					BattleTalk.SetActive (false);
 					this.GetComponent <AudioSource> ().Play ();
 				}
 			} else {
@@ -398,9 +407,18 @@ public class Main : MonoBehaviour {
 				canSkip = true;
 				return;
 			}
+			if (d == "[HELL]") {
+				Ariel3.SetActive (false);
+				DialogueBox.SetActive (false);
+				canMove = true;
+				dialogue = false;
+				canSkip = true;
+				return;
+			}
 			if (d == "[SEADEMON]") {
 				creatureAgainst.GetComponent<RawImage> ().texture = SeaDemonImage;
-				interact.GetComponent<InteractObject> ().enabled = false;
+				interact.SetActive (false);
+				print (interact.name);
 				DialogueBox.SetActive (false);
 				canMove = true;
 				dialogue = false;
@@ -561,6 +579,7 @@ public class Main : MonoBehaviour {
 	{
 		creatureAgainst.GetComponent<Creature> ().health = 0;
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Pause ();
+		Instantiate (EnemyDie);
 		yield return new WaitForSeconds (2f);
 		inBattle = false;
 		SeaBattle = false;
@@ -605,6 +624,31 @@ public class Main : MonoBehaviour {
 				hit.collider.gameObject.SendMessage ("Interact");
 			}
 		}
+	}
+
+	IEnumerator FleeBattle()
+	{
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Pause ();
+		BattleText.GetComponent<Text> ().text = "You fled the battle.";
+		BattleMenu.SetActive (false);
+		yield return new WaitForSeconds (2f);
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().clip = HowCouldYou;
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+		Hell.SetActive (true);
+		inBattle = false;
+		Vector3 scale = BattleUI.GetComponent<RectTransform> ().localScale;
+		scale.x = 0;
+		scale.y = 0;
+		BattleUI.GetComponent<RectTransform> ().localScale = scale;
+		Battle.SetActive (false);
+		canMove = true;
+		dialogue = false;
+		demons.GetComponent<InteractObject> ().Option = 2;
+		demons.GetComponent<InteractObject> ().d = 0;	
+		demons.SetActive (true);
+		Ariel3.SetActive (true);
+		creatureAgainst.GetComponent<Creature> ().health = creatureAgainst.GetComponent<Creature> ().MaxHealth;
+		exitingBattle = false;
 	}
 
 	public void ChangeMoves()
@@ -672,7 +716,29 @@ public class Main : MonoBehaviour {
 	public void BagButton()
 	{
 		BattleMenu.SetActive (false);
+		BattleBag.SetActive (true);
 		this.GetComponent <AudioSource> ().Play ();
+	}
+
+	public void TalkButton()
+	{
+		BattleMenu.SetActive (false);
+		BattleTalk.SetActive (true);
+		this.GetComponent <AudioSource> ().Play ();
+	}
+
+	public void FleeButton()
+	{
+		if (creatureAgainst.GetComponent<Creature> ().CreatureName == "SeaDemon") {
+			BattleText.GetComponent<Text> ().text = "You cannot flee right now";
+			Instantiate (ClickNo);
+		} else {
+			this.GetComponent <AudioSource> ().Play ();
+			if (creatureAgainst.GetComponent<Creature> ().CreatureName == "Kronos") {
+				Ariel3.GetComponent<InteractObject> ().Option = 2;
+				StartCoroutine (FleeBattle());
+			}
+		}
 	}
 
 	public void Move1()
