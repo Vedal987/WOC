@@ -13,6 +13,8 @@ public class Ariel : MonoBehaviour {
 
 	private bool needBottle;
 
+	public GameObject Rain;
+
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -75,6 +77,7 @@ public class Ariel : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (5f);
 		player.GetComponent<Main> ().canMove = true;
+		Rain.GetComponent<RainCameraController> ().Play ();
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		player.GetComponent<Main> ().dialogue = false;
 		player.GetComponent<Main> ().DialogueBox.SetActive (false);

@@ -13,6 +13,7 @@ public class InteractObject : MonoBehaviour {
 	public bool SecondDialogue;
 	public bool InfiniteDialogue;
 	public bool ChangeDialogue;
+	public bool NoEscape;
 	public InteractObject changer;
 	public int Option = 1;
 	public string[] Option2;
@@ -28,7 +29,7 @@ public class InteractObject : MonoBehaviour {
 
 	void Update()
 	{
-		if (player.GetComponent<Main> ().canSkip && IgnoreRaycast) {
+		if (player.GetComponent<Main> ().canSkip && IgnoreRaycast && !NoEscape) {
 			if (Input.GetKeyDown (KeyCode.E)) {
 				Interact ();
 			}
@@ -38,7 +39,7 @@ public class InteractObject : MonoBehaviour {
 	public void Interact()
 	{
 		if (Option == 1) {
-			if (d == Dialogue.Length) {
+			if (d == Dialogue.Length && !NoEscape) {
 				if (StartGame) {
 					player.GetComponent<Main> ().Dialogue ("x7Start", this.gameObject);
 					return;

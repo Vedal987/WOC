@@ -803,6 +803,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -1139,6 +1140,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 601741368}
   Option: 1
   Option2:
@@ -2442,6 +2444,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -2521,6 +2524,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1374775110}
     m_Modifications:
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.minCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 499162, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2531,7 +2542,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499162, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 13.6
       objectReference: {fileID: 0}
     - target: {fileID: 499162, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2580,6 +2591,42 @@ Prefab:
     - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
       propertyPath: InitialModule.maxNumParticles
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.minCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.minCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.minCurve.m_Curve.Array.data[0].value
+      value: 0.14285715
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 2}
@@ -3670,6 +3717,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -3854,6 +3902,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -4308,6 +4357,7 @@ MonoBehaviour:
   d: 0
   switched: 0
   StartGame: 0
+  Rain: {fileID: 1196864734}
   dialogue2:
   - Alright we should get going before they find us.
   - Before who will find us you ask?
@@ -5296,6 +5346,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -7226,7 +7277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475851920}
   m_Layer: 0
-  m_Name: Effects
+  m_Name: Visual Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7251,6 +7302,7 @@ Transform:
   - {fileID: 601636200}
   - {fileID: 805987638}
   - {fileID: 54550532}
+  - {fileID: 1196864737}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7578,6 +7630,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -7705,6 +7758,7 @@ MonoBehaviour:
   SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -8532,6 +8586,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -9124,6 +9179,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 1
+  NoEscape: 0
   changer: {fileID: 38208307}
   Option: 1
   Option2:
@@ -9455,6 +9511,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 1
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -10246,6 +10303,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -11054,6 +11112,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -12493,6 +12552,7 @@ MonoBehaviour:
   SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -13410,6 +13470,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -13821,6 +13882,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -13976,6 +14038,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -14457,6 +14520,7 @@ MonoBehaviour:
   SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -15737,6 +15801,7 @@ MonoBehaviour:
   SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -15864,6 +15929,7 @@ MonoBehaviour:
   SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 1
+  NoEscape: 0
   changer: {fileID: 31122460}
   Option: 1
   Option2:
@@ -16049,6 +16115,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -16514,6 +16581,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -16837,6 +16905,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -17334,6 +17403,7 @@ MonoBehaviour:
   SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -18180,6 +18250,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -18659,6 +18730,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 1
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -19135,6 +19207,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -19231,6 +19304,7 @@ MonoBehaviour:
   - Now go show those demons who's boss!
   demonWaiting: 0
   Manager: {fileID: 877434580}
+  Rain: {fileID: 1196864734}
 --- !u!1001 &1149461304
 Prefab:
   m_ObjectHideFlags: 0
@@ -19833,6 +19907,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 2
   Option2:
@@ -20041,6 +20116,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1196864734 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1833355468057018, guid: 965bc8705c519404782e247f6e5c69f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1914801690}
+--- !u!4 &1196864737 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1914801690}
 --- !u!1001 &1197443139
 Prefab:
   m_ObjectHideFlags: 0
@@ -21250,6 +21335,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -23054,6 +23140,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -23097,6 +23184,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -23307,6 +23395,7 @@ GameObject:
   - component: {fileID: 1374775113}
   - component: {fileID: 1374775115}
   - component: {fileID: 1374775114}
+  - component: {fileID: 1374775116}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -23351,10 +23440,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -23490,6 +23579,19 @@ MonoBehaviour:
   downsample: 0
   rand: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
   aoShader: {fileID: 4800000, guid: 95616c020c5604dda96cf76afbbc0272, type: 3}
+--- !u!114 &1374775116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1374775105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783ede82f0e686a4eb146ac3680c9219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkness: 0.16
+  bleachBypassShader: {fileID: 4800000, guid: dd66edd235797f8439c04a93337a7b0a, type: 3}
 --- !u!1 &1378015279
 GameObject:
   m_ObjectHideFlags: 0
@@ -23643,6 +23745,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -24729,7 +24832,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: 6e9fb67e9aa7da84480723edc6d4c0ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24951,6 +25054,7 @@ MonoBehaviour:
   SeaDemonPrompt: {fileID: 614699117}
   TitleScreen: {fileID: 1723907667}
   TitleScreenMusic: {fileID: 8300000, guid: a5af0a707b8dd7844ab0852bd8bbd6c3, type: 3}
+  Rain: {fileID: 1196864734}
   SeaDemonPoint: 0
   SeaDemonDonePoint: 0
   isTurn: 1
@@ -25518,6 +25622,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 1
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -30029,6 +30134,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 1
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -30787,6 +30893,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -30927,6 +31034,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -32388,6 +32496,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -34262,6 +34371,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 1
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -34762,6 +34872,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -34913,6 +35024,57 @@ Transform:
   m_PrefabParentObject: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
     type: 2}
   m_PrefabInternal: {fileID: 1906155370}
+--- !u!1001 &1914801690
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475851920}
+    m_Modifications:
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -161.97708
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -11.239531
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523974038444356, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114971128896430674, guid: 965bc8705c519404782e247f6e5c69f0,
+        type: 2}
+      propertyPath: Alpha
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833355468057018, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+      propertyPath: m_Name
+      value: Rain
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 965bc8705c519404782e247f6e5c69f0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1915469789
 GameObject:
   m_ObjectHideFlags: 0
@@ -35994,6 +36156,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -36218,6 +36381,7 @@ MonoBehaviour:
   SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2:
@@ -36815,6 +36979,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []
@@ -37074,6 +37239,7 @@ MonoBehaviour:
   SecondDialogue: 0
   InfiniteDialogue: 0
   ChangeDialogue: 0
+  NoEscape: 0
   changer: {fileID: 0}
   Option: 1
   Option2: []

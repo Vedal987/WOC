@@ -93,6 +93,8 @@ public class Main : MonoBehaviour {
 	public GameObject TitleScreen;
 	public AudioClip TitleScreenMusic;
 
+	public GameObject Rain;
+
 
 
 	//SAVE POINTS
@@ -107,7 +109,7 @@ public class Main : MonoBehaviour {
 
 
 	void Start () {
-		
+		Rain.GetComponent<RainCameraController> ().Stop();
 		modelAnimator = model.GetComponent<Animator> ();
 		//StartCoroutine ("StartBattle");
 		if (PlayerPrefs.GetInt ("Flash") == 1) {
@@ -156,6 +158,9 @@ public class Main : MonoBehaviour {
 		
 	void Update()
 	{
+		if (GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM == 9) {
+			Rain.GetComponent<RainCameraController> ().Stop ();
+		}
 		if (TitanManager.GetComponent<ManagerTitanHQ> ().FinFight) {
 			guard.GetComponent<InteractObject> ().Option = 2;
 		}
@@ -622,6 +627,7 @@ public class Main : MonoBehaviour {
 		yield return new WaitForSeconds (3);
 		demonAttackCamera.SetActive (false);
 		camera.SetActive (true);
+		Rain.GetComponent<RainCameraController> ().Play ();
 		DialogueBox.SetActive (false);
 		canMove = true;
 		dialogue = false;

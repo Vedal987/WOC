@@ -22,6 +22,8 @@ public class Ariel2 : MonoBehaviour {
 
 	public ManagerTitanHQ Manager;
 
+	public GameObject Rain;
+
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -29,6 +31,7 @@ public class Ariel2 : MonoBehaviour {
 		if (StartGame) {
 			Interact ();
 		}
+		Rain.GetComponent<RainCameraController> ().StopImmidiate();
 	}
 
 	void Update()
@@ -75,6 +78,7 @@ public class Ariel2 : MonoBehaviour {
 		yield return new WaitForSeconds (3f);
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().ChangeMusic ();
 		camera.SetActive (false);
+		Rain.GetComponent<RainCameraController> ().StopImmidiate();
 		demonAttackCamera.SetActive (true);
 		daAnimator.SetTrigger ("1");
 		demon.SetActive (true);
