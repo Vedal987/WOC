@@ -36,7 +36,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 54550531}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 6657395}
   - component: {fileID: 6657397}
   - component: {fileID: 6657396}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 16876260}
   - component: {fileID: 16876262}
   - component: {fileID: 16876261}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 28989275}
   - component: {fileID: 28989277}
   - component: {fileID: 28989276}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -851,7 +851,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 584afc0ce3c3ed94f9790fff1f84db2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 32003354}
   - component: {fileID: 32003356}
   - component: {fileID: 32003355}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,7 +929,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1352,6 +1352,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 475851920}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &54550530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 54550532}
+  - component: {fileID: 54550531}
+  m_Layer: 0
+  m_Name: Sun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &54550531
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54550530}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 1
+  m_Color: {r: 0.5019608, g: 0.7372549, b: 0.6745098, a: 1}
+  m_Intensity: 0.23
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &54550532
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54550530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.500961, y: 69.989944, z: -1.640625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 475851920}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &57665856
 Prefab:
@@ -1960,7 +2023,7 @@ GameObject:
   - component: {fileID: 85076193}
   - component: {fileID: 85076195}
   - component: {fileID: 85076194}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2010,7 +2073,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2228,7 +2291,7 @@ GameObject:
   - component: {fileID: 113931854}
   - component: {fileID: 113931856}
   - component: {fileID: 113931855}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2278,7 +2341,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2599,7 +2662,7 @@ GameObject:
   - component: {fileID: 134849596}
   - component: {fileID: 134849598}
   - component: {fileID: 134849597}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2712,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2681,7 +2744,7 @@ GameObject:
   - component: {fileID: 136300095}
   - component: {fileID: 136300097}
   - component: {fileID: 136300096}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2731,7 +2794,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2817,6 +2880,70 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &143723732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 143723733}
+  - component: {fileID: 143723734}
+  m_Layer: 0
+  m_Name: Spotlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143723733
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 143723732}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 12.228494, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 601636200}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &143723734
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 10800000, guid: 82e89607de692fa40b42305b92cc580c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 143723732}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 0
+  m_Color: {r: 1, g: 0.95438886, b: 0.8283582, a: 1}
+  m_Intensity: 16
+  m_Range: 20.173147
+  m_SpotAngle: 25.188858
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &144094983
 Prefab:
   m_ObjectHideFlags: 0
@@ -4698,7 +4825,7 @@ GameObject:
   - component: {fileID: 262022619}
   - component: {fileID: 262022621}
   - component: {fileID: 262022620}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4748,7 +4875,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6122,7 +6249,7 @@ GameObject:
   - component: {fileID: 408133846}
   - component: {fileID: 408133848}
   - component: {fileID: 408133847}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6172,7 +6299,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6702,6 +6829,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &448984965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 601636200}
+  m_Layer: 0
+  m_Name: GodHaze
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &453639499
 GameObject:
   m_ObjectHideFlags: 0
@@ -6712,7 +6854,7 @@ GameObject:
   - component: {fileID: 453639500}
   - component: {fileID: 453639502}
   - component: {fileID: 453639501}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6762,7 +6904,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6794,7 +6936,7 @@ GameObject:
   - component: {fileID: 459229666}
   - component: {fileID: 459229668}
   - component: {fileID: 459229667}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6844,7 +6986,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7102,6 +7244,13 @@ Transform:
   m_Children:
   - {fileID: 222561778}
   - {fileID: 52927461}
+  - {fileID: 917254599}
+  - {fileID: 1951997232}
+  - {fileID: 611846512}
+  - {fileID: 1348379753}
+  - {fileID: 601636200}
+  - {fileID: 805987638}
+  - {fileID: 54550532}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8908,6 +9057,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
     type: 2}
   m_PrefabInternal: {fileID: 599759147}
+--- !u!4 &601636200
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448984965}
+  m_LocalRotation: {x: 0.608069, y: -0, z: -0, w: -0.79388416}
+  m_LocalPosition: {x: -1.78, y: -39.9, z: 17.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1918836284}
+  - {fileID: 721482343}
+  - {fileID: 143723733}
+  m_Father: {fileID: 475851920}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 285.1, y: 0, z: 0}
 --- !u!1 &601741366
 GameObject:
   m_ObjectHideFlags: 0
@@ -9136,6 +9301,64 @@ Transform:
   m_PrefabParentObject: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b,
     type: 2}
   m_PrefabInternal: {fileID: 605640947}
+--- !u!1001 &611846511
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475851920}
+    m_Modifications:
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.747086
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 72.95047
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 22.196173
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &611846512 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_PrefabInternal: {fileID: 611846511}
 --- !u!1001 &613619328
 Prefab:
   m_ObjectHideFlags: 0
@@ -9373,7 +9596,7 @@ GameObject:
   - component: {fileID: 623476052}
   - component: {fileID: 623476054}
   - component: {fileID: 623476053}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9423,7 +9646,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11082,6 +11305,138 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &721482342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 721482343}
+  - component: {fileID: 721482346}
+  - component: {fileID: 721482345}
+  - component: {fileID: 721482344}
+  m_Layer: 0
+  m_Name: Motes_ParticleSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721482343
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721482342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 601636200}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!26 &721482344
+ParticleRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2600002, guid: 82e89607de692fa40b42305b92cc580c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721482342}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 510692e4c9bebfa4895abccd0bc2f2e2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_CameraVelocityScale: 0
+  m_StretchParticles: 0
+  m_LengthScale: 2
+  m_VelocityScale: 0
+  m_MaxParticleSize: 4.5190907
+  UV Animation:
+    x Tile: 1
+    y Tile: 1
+    cycles: 1
+--- !u!12 &721482345
+ParticleAnimator:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1200002, guid: 82e89607de692fa40b42305b92cc580c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721482342}
+  Does Animate Color?: 1
+  colorAnimation[0]:
+    serializedVersion: 2
+    rgba: 16777215
+  colorAnimation[1]:
+    serializedVersion: 2
+    rgba: 3029126348
+  colorAnimation[2]:
+    serializedVersion: 2
+    rgba: 4290377727
+  colorAnimation[3]:
+    serializedVersion: 2
+    rgba: 3029919487
+  colorAnimation[4]:
+    serializedVersion: 2
+    rgba: 173974713
+  worldRotationAxis: {x: 0, y: 0, z: 0}
+  localRotationAxis: {x: 0, y: 0, z: 0}
+  sizeGrow: 0
+  rndForce: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0.05, z: 0}
+  damping: 1
+  stopSimulation: 0
+  autodestruct: 0
+--- !u!15 &721482346
+EllipsoidParticleEmitter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1500002, guid: 82e89607de692fa40b42305b92cc580c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721482342}
+  serializedVersion: 2
+  m_Enabled: 1
+  m_Emit: 1
+  minSize: 0.1
+  maxSize: 0.1
+  minEnergy: 5
+  maxEnergy: 14
+  minEmission: 10
+  maxEmission: 15
+  worldVelocity: {x: 0, y: 0, z: 0}
+  localVelocity: {x: 0, y: 0.1, z: 0}
+  rndVelocity: {x: 0, y: 0.1, z: 0}
+  emitterVelocityScale: 0.05
+  tangentVelocity: {x: 0.05, y: 0, z: -0.1}
+  angularVelocity: 0
+  rndAngularVelocity: 0
+  rndRotation: 0
+  Simulate in Worldspace?: 1
+  m_OneShot: 0
+  m_Ellipsoid: {x: 3, y: 3, z: 3}
+  m_MinEmitterRange: 0
 --- !u!1 &733867210
 GameObject:
   m_ObjectHideFlags: 0
@@ -11565,7 +11920,7 @@ GameObject:
   - component: {fileID: 762904597}
   - component: {fileID: 762904599}
   - component: {fileID: 762904598}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11615,7 +11970,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12280,7 +12635,7 @@ GameObject:
   - component: {fileID: 795598982}
   - component: {fileID: 795598984}
   - component: {fileID: 795598983}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12330,7 +12685,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12352,6 +12707,52 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &805987637
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475851920}
+    m_Modifications:
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -23.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -55.45953
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 22.196173
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &805987638 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_PrefabInternal: {fileID: 805987637}
 --- !u!1001 &807443180
 Prefab:
   m_ObjectHideFlags: 0
@@ -13814,6 +14215,68 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &917254598
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475851920}
+    m_Modifications:
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 39.85292
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 72.71047
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 22.196173
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Name
+      value: DustCloud (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &917254599 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_PrefabInternal: {fileID: 917254598}
 --- !u!1 &922633827
 GameObject:
   m_ObjectHideFlags: 0
@@ -15795,7 +16258,7 @@ GameObject:
   - component: {fileID: 1016187516}
   - component: {fileID: 1016187518}
   - component: {fileID: 1016187517}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15845,7 +16308,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16387,7 +16850,7 @@ GameObject:
   - component: {fileID: 1029781246}
   - component: {fileID: 1029781248}
   - component: {fileID: 1029781247}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16437,7 +16900,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20155,7 +20618,7 @@ GameObject:
   - component: {fileID: 1240702009}
   - component: {fileID: 1240702011}
   - component: {fileID: 1240702010}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20205,7 +20668,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21253,7 +21716,7 @@ GameObject:
   - component: {fileID: 1277413596}
   - component: {fileID: 1277413598}
   - component: {fileID: 1277413597}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21303,7 +21766,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22259,6 +22722,80 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &1348379752
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475851920}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -136.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -43.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 26.781374
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.69063
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.72320825
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -87.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500002, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: rndAngularVelocity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: rndAngularVelocity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500002, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: maxEnergy
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500002, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: minEnergy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1348379753 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 5d62873197ce78641a860d3758f2496b, type: 2}
+  m_PrefabInternal: {fileID: 1348379752}
 --- !u!1 &1354562822
 GameObject:
   m_ObjectHideFlags: 0
@@ -23242,7 +23779,7 @@ GameObject:
   - component: {fileID: 1413821304}
   - component: {fileID: 1413821306}
   - component: {fileID: 1413821305}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23292,7 +23829,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23439,7 +23976,7 @@ GameObject:
   - component: {fileID: 1417480458}
   - component: {fileID: 1417480460}
   - component: {fileID: 1417480459}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23489,7 +24026,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23589,7 +24126,7 @@ GameObject:
   - component: {fileID: 1422256917}
   - component: {fileID: 1422256919}
   - component: {fileID: 1422256918}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23639,7 +24176,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23932,7 +24469,7 @@ GameObject:
   - component: {fileID: 1438043836}
   - component: {fileID: 1438043838}
   - component: {fileID: 1438043837}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23982,7 +24519,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24655,7 +25192,7 @@ GameObject:
   - component: {fileID: 1477059503}
   - component: {fileID: 1477059505}
   - component: {fileID: 1477059504}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24705,7 +25242,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25739,7 +26276,7 @@ GameObject:
   - component: {fileID: 1580342990}
   - component: {fileID: 1580342992}
   - component: {fileID: 1580342991}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25789,7 +26326,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26229,7 +26766,7 @@ GameObject:
   - component: {fileID: 1614879273}
   - component: {fileID: 1614879275}
   - component: {fileID: 1614879274}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26279,7 +26816,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29583,7 +30120,7 @@ GameObject:
   - component: {fileID: 1630482486}
   - component: {fileID: 1630482488}
   - component: {fileID: 1630482487}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29633,7 +30170,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31236,7 +31773,7 @@ GameObject:
   - component: {fileID: 1714610572}
   - component: {fileID: 1714610574}
   - component: {fileID: 1714610573}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31286,7 +31823,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32830,7 +33367,7 @@ GameObject:
   - component: {fileID: 1848814823}
   - component: {fileID: 1848814825}
   - component: {fileID: 1848814824}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32880,7 +33417,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34553,6 +35090,139 @@ Transform:
   m_Father: {fileID: 1187917316}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1918836283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1918836284}
+  - component: {fileID: 1918836287}
+  - component: {fileID: 1918836286}
+  - component: {fileID: 1918836285}
+  m_Layer: 0
+  m_Name: Motes_ParticleSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1918836284
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 82e89607de692fa40b42305b92cc580c, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918836283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 601636200}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!26 &1918836285
+ParticleRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2600000, guid: 82e89607de692fa40b42305b92cc580c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918836283}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 510692e4c9bebfa4895abccd0bc2f2e2, type: 2}
+  - {fileID: 2100000, guid: b53e29b8cee22e046ba7d1566f08db93, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_CameraVelocityScale: 0
+  m_StretchParticles: 0
+  m_LengthScale: 2
+  m_VelocityScale: 0
+  m_MaxParticleSize: 1
+  UV Animation:
+    x Tile: 1
+    y Tile: 1
+    cycles: 1
+--- !u!12 &1918836286
+ParticleAnimator:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1200000, guid: 82e89607de692fa40b42305b92cc580c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918836283}
+  Does Animate Color?: 1
+  colorAnimation[0]:
+    serializedVersion: 2
+    rgba: 16777215
+  colorAnimation[1]:
+    serializedVersion: 2
+    rgba: 3029126348
+  colorAnimation[2]:
+    serializedVersion: 2
+    rgba: 4290377727
+  colorAnimation[3]:
+    serializedVersion: 2
+    rgba: 3029919487
+  colorAnimation[4]:
+    serializedVersion: 2
+    rgba: 173974713
+  worldRotationAxis: {x: 0, y: 0, z: 0}
+  localRotationAxis: {x: 0, y: 0, z: 0}
+  sizeGrow: 0
+  rndForce: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0.1, z: 0}
+  damping: 0.9
+  stopSimulation: 0
+  autodestruct: 0
+--- !u!15 &1918836287
+EllipsoidParticleEmitter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1500000, guid: 82e89607de692fa40b42305b92cc580c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1918836283}
+  serializedVersion: 2
+  m_Enabled: 1
+  m_Emit: 1
+  minSize: 0.05
+  maxSize: 0.15
+  minEnergy: 5
+  maxEnergy: 14
+  minEmission: 10
+  maxEmission: 15
+  worldVelocity: {x: 0, y: 0, z: 0}
+  localVelocity: {x: 0, y: 0.1, z: 0}
+  rndVelocity: {x: 0, y: 0.1, z: 0}
+  emitterVelocityScale: 0.05
+  tangentVelocity: {x: 0.05, y: 0, z: -0.1}
+  angularVelocity: 0
+  rndAngularVelocity: 30
+  rndRotation: 0
+  Simulate in Worldspace?: 1
+  m_OneShot: 0
+  m_Ellipsoid: {x: 3, y: 3, z: 3}
+  m_MinEmitterRange: 0
 --- !u!1 &1919351583
 GameObject:
   m_ObjectHideFlags: 0
@@ -34745,6 +35415,68 @@ Transform:
   m_Father: {fileID: 518681040}
   m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1951997231
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475851920}
+    m_Modifications:
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15.314888
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 72.77047
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 22.196173
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Name
+      value: DustCloud (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1951997232 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: f55a85edf7d5bd24596ee0a72d70e385, type: 2}
+  m_PrefabInternal: {fileID: 1951997231}
 --- !u!1 &1952410315
 GameObject:
   m_ObjectHideFlags: 0
@@ -36160,7 +36892,7 @@ GameObject:
   - component: {fileID: 2072204066}
   - component: {fileID: 2072204068}
   - component: {fileID: 2072204067}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36210,7 +36942,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36473,7 +37205,7 @@ GameObject:
   - component: {fileID: 2105226168}
   - component: {fileID: 2105226170}
   - component: {fileID: 2105226169}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36523,7 +37255,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36871,7 +37603,7 @@ GameObject:
   - component: {fileID: 2127674675}
   - component: {fileID: 2127674677}
   - component: {fileID: 2127674676}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36921,7 +37653,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5713cf0c46eb9e24caae44dd6dcfa7a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
