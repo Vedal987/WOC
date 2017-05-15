@@ -3892,9 +3892,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - It's a house, it reads...
-  - '"NO ONE IS HOME"'
-  - Strange.
+  - It is a house. There is a sign which reads...
+  - '"NO ONE WAS HOME, NO ONE IS HOME, NO ONE WILL BE HOME"'
+  - Strange, is it not?
+  - '...'
   d: 0
   StartGame: 0
   OnAwake: 0
