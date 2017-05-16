@@ -506,7 +506,6 @@ public class Main : MonoBehaviour {
 			if (d == "[SEADEMON]") {
 				creatureAgainst.GetComponent<RawImage> ().texture = SeaDemonImage;
 				interact.SetActive (false);
-				print (interact.name);
 				DialogueBox.SetActive (false);
 				canMove = true;
 				dialogue = false;
