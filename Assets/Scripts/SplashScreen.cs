@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class SplashScreen : MonoBehaviour {
 
-	void Start()
+	public GameObject vp;
+
+	void Awake()
 	{
-		((MovieTexture)GetComponent<Renderer> ().material.mainTexture).Play ();
 		StartCoroutine ("LoadScene");
+		vp.GetComponent<VideoPlayer> ().Play ();
+		vp.GetComponent<AudioSource> ().Play ();
 	}
 
 	IEnumerator LoadScene()
 	{
-		yield return new WaitForSeconds (10f);
+		yield return new WaitForSeconds (12f);
 		SceneManager.LoadScene ("Menu");
 	}
 }
