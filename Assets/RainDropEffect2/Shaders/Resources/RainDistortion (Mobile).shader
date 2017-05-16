@@ -1,4 +1,6 @@
-﻿Shader "RainDrop/Internal/RainDistortion (Mobile)" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "RainDrop/Internal/RainDistortion (Mobile)" {
 
 	Properties {
 		_Strength ("Distortion Strength", Range(0.0, 1000.0)) = 50.0
@@ -51,7 +53,7 @@
 			
 			v2f vert (a2v v) {
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.texcoord = v.texcoord;
 				o.uvgrab = ComputeGrabScreenPos(o.vertex);
 				o.distort = _Strength * _BackgroundTexture_TexelSize.xy;

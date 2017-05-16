@@ -11,12 +11,19 @@ public class Menu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Flash.GetComponent<Animation> ().Play ("FadeOut");
+		StartCoroutine (FlashFadeInWait ());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	IEnumerator FlashFadeInWait()
+	{
+		yield return new WaitForSeconds (2f);
+		Flash.SetActive (false);
 	}
 
 	public void New()

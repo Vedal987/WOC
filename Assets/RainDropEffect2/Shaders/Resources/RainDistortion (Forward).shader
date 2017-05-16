@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "RainDrop/Internal/RainDistortion (Forward)" {
 
 	Properties {
@@ -66,7 +68,7 @@ Shader "RainDrop/Internal/RainDistortion (Forward)" {
 
 			v2f vert (a2v i) {
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, i.vertex);
+				o.vertex = UnityObjectToClipPos(i.vertex);
 				o.color = i.color;
 				o.texcoord = i.texcoord;
 				o.uvgrab = ComputeGrabScreenPos(o.vertex);

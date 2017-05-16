@@ -1,4 +1,6 @@
-﻿Shader "RainDrop/Internal/RainNoDistortion"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "RainDrop/Internal/RainNoDistortion"
 {
 	Properties
 	{
@@ -45,7 +47,7 @@
 
 			v2f vert(a2v i) {
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, i.vertex);
+				o.vertex = UnityObjectToClipPos(i.vertex);
 				o.color.rgb = _Color.rgb;
 				o.color.rgb *= saturate(1 - _Darkness);
 				o.color.a = _Color.a;

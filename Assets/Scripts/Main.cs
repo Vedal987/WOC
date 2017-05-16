@@ -636,7 +636,7 @@ public class Main : MonoBehaviour {
 
 	IEnumerator FlashCamera()
 	{
-		Flash.GetComponent<SpriteRenderer> ().color = Color.white;
+		Flash.GetComponent<SpriteRenderer> ().color = Color.black;
 		yield return new WaitForSeconds (5f);
 		Flash.GetComponent<Animation> ().Play ();
 	}
