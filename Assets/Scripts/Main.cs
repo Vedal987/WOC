@@ -397,10 +397,11 @@ public class Main : MonoBehaviour {
 
 	IEnumerator TitleAfterTime()
 	{
-		yield return new WaitForSeconds (8f);
+		yield return new WaitForSeconds (9f);
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().clip = TitleScreenMusic;
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
 		TitleScreen.SetActive (true);
+		Hell.SetActive (false);
 	}
 
 	IEnumerator ReloadAfterTime()
