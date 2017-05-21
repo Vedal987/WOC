@@ -27,6 +27,11 @@ public class Main : MonoBehaviour {
 
 	public GameObject lastInteract;
 
+	public GameObject mapVillage1;
+	public GameObject mapTitan;
+	public GameObject mapTitan1;
+	public GameObject mapGrass;
+
 
 	public GameObject Battle;
 	public GameObject BattleMenu;
@@ -122,6 +127,9 @@ public class Main : MonoBehaviour {
 			canSkip = true;
 		} else {
 			Flash.SetActive (true);
+			mapGrass.SetActive (false);
+			mapTitan.SetActive (false);
+			mapVillage1.SetActive (true);
 		}
 		daAnimator = demonAttackCamera.GetComponent<Animator> ();
 	}
@@ -146,6 +154,10 @@ public class Main : MonoBehaviour {
 		if (PlayerPrefs.GetString ("SaveArea") == "GRASS") {
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>().clip = Grass;
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+			mapGrass.SetActive (true);
+			mapTitan.SetActive (false);
+			mapVillage1.SetActive (false);
+
 		}
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM = PlayerPrefs.GetInt("Music");
 	}
@@ -505,6 +517,7 @@ public class Main : MonoBehaviour {
 				return;
 			}
 			if (d == "[SEADEMON]") {
+				Bag.Remove ("Potion Of Healing");
 				creatureAgainst.GetComponent<RawImage> ().texture = SeaDemonImage;
 				interact.SetActive (false);
 				DialogueBox.SetActive (false);
@@ -516,9 +529,13 @@ public class Main : MonoBehaviour {
 			}
 			if (d == "*Ariel mutters random words*") {
 				StartCoroutine ("FlashCamera");
+				mapTitan.SetActive (true);
+				mapVillage1.SetActive (false);
 			}
-			if (d == "*You received Kai*") {
+			if (d.Contains( "*You received Kai*")) {
 				LoadCreature ("Kai");
+				mapGrass.SetActive (true);
+				mapTitan1.SetActive (false);
 			}
 			DialogueBox.SetActive (true);
 			canMove = false;
@@ -643,10 +660,37 @@ public class Main : MonoBehaviour {
 	}
 
 	IEnumerator AnimateText(string strComplete){
+		/*
 		int i = 0;
 		str = "";
 		while( i < strComplete.Length ){
 			str += strComplete[i++];
+			DialogueText.GetComponent<Text> ().text = str;
+			if (slowText) {
+				if (strComplete [i].ToString() == "." || strComplete [i].ToString() == ",") {
+					yield return new WaitForSeconds (0.2F);
+				}
+				yield return new WaitForSeconds (0.09F);
+			} else {
+				if (strComplete [i].ToString() == "." || strComplete [i].ToString() == ",") {
+					yield return new WaitForSeconds (0.2F);
+				}
+				yield return new WaitForSeconds (0.03F);
+			}
+			if (Input.GetKey (KeyCode.E) && i > 4) {
+				canSkip = true;
+				DialogueText.GetComponent<Text> ().text = strComplete;
+				yield break;
+			}
+		}
+		canSkip = true;
+		int i = 0;
+		str = "";
+		bool waitingForTag = false;
+		while (i < strComplete.Length) {
+			
+			str = strComplete.Insert (i, "<color=#00000000>");
+			str = str.Insert (str.Length, "</color>");
 			DialogueText.GetComponent<Text> ().text = str;
 			if (slowText) {
 				yield return new WaitForSeconds (0.09F);
@@ -658,6 +702,76 @@ public class Main : MonoBehaviour {
 				DialogueText.GetComponent<Text> ().text = strComplete;
 				yield break;
 			}
+			i++;
+		}
+		DialogueText.GetComponent<Text> ().text = strComplete;
+		canSkip = true;
+		*/
+		DialogueText.GetComponent<Text> ().text = "";
+
+		int i = 0;
+
+		bool bold = false;
+		bool red = false;
+		bool orange = false;
+		bool italics = false;
+
+		bool ignore = false;
+
+		foreach(char nextletter in strComplete.ToCharArray())
+		{
+			switch (nextletter) {
+				case '@':
+					ignore = true;
+					red = !red;
+				break;
+				case '`':
+					ignore = true;
+					orange = !orange;
+				break;
+				case '¬':
+					ignore = true;
+					bold = !bold;
+					break;
+			case '*':
+				ignore = true;
+				italics = !italics;
+				break;
+			}
+
+			string letter = nextletter.ToString ();
+
+			if (!ignore) {
+				
+				if (bold){
+					letter = "<b>"+letter+"</b>";
+				}
+				if (italics){
+					letter = "<i>"+letter+"</i>";
+				}
+				if (red){
+					letter = "<color=#ff0000>"+letter+"</color>";
+				}
+				DialogueText.GetComponent<Text> ().text += letter;
+			}
+			ignore = false;
+			if (Input.GetKey (KeyCode.E) && i > 4) {
+				canSkip = true;
+				DialogueText.GetComponent<Text> ().text = strComplete;
+				yield break;
+			}
+			if (slowText) {
+				if (letter == "." || letter == "," || letter == "!" || letter == "?") {
+					yield return new WaitForSeconds (0.2F);
+				}
+				yield return new WaitForSeconds (0.09F);
+			} else {
+				if (letter == "." || letter == "," || letter == "!" || letter == "?") {
+					yield return new WaitForSeconds (0.2F);
+				}
+				yield return new WaitForSeconds (0.03F);
+			}
+			i++;
 		}
 		canSkip = true;
 	}

@@ -89,7 +89,7 @@ public class Ariel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.GetComponent<Main> ().Bag.Contains ("Bottle Of Healing") && !switched) {
+		if (player.GetComponent<Main> ().Bag.Contains ("Potion Of Healing") && !switched) {
 			switched = true;
 			Dialogue = dialogue2;
 			needBottle = false;

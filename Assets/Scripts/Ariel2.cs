@@ -64,7 +64,7 @@ public class Ariel2 : MonoBehaviour {
 		if (dia == "Go talk to some people, make yourself at home.") {
 			demonWaiting = true;
 		}
-		if (dia == "*You received Ariel*") {
+		if (dia.Contains( "*You received Ariel*")) {
 			this.GetComponent<SpriteRenderer> ().enabled = false;
 		}
 		d++;
