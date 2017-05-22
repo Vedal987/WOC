@@ -39,6 +39,10 @@ public class Menu : MonoBehaviour {
 
 	public void Continue()
 	{
+		if (PlayerPrefs.GetFloat ("PlayerXPos", 1337.1337f) == 1337.1337f) {
+			New ();
+			return;
+		}
 		Flash.SetActive (true);
 		Flash.GetComponent<Animation> ().Play ();
 		StartCoroutine (LoadScene ());
