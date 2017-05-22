@@ -717,6 +717,7 @@ public class Main : MonoBehaviour {
 		bool italics = false;
 
 		bool ignore = false;
+		bool skipping = false;
 
 		foreach(char nextletter in strComplete.ToCharArray())
 		{
@@ -755,25 +756,29 @@ public class Main : MonoBehaviour {
 				DialogueText.GetComponent<Text> ().text += letter;
 			}
 			ignore = false;
-			if (Input.GetKey (KeyCode.E) && i > 4) {
-				canSkip = true;
-				DialogueText.GetComponent<Text> ().text = strComplete;
-				yield break;
+			if (Input.GetKey (KeyCode.E) && i > 4 && !skipping) {
+				//DialogueText.GetComponent<Text> ().text = strComplete;
+				skipping = true;
 			}
-			if (slowText) {
-				if (letter == "." || letter == "," || letter == "!" || letter == "?") {
-					yield return new WaitForSeconds (0.2F);
+			if (!skipping) {
+				if (slowText) {
+					if (letter == "." || letter == "," || letter == "!" || letter == "?") {
+						yield return new WaitForSeconds (0.2F);
+					}
+					yield return new WaitForSeconds (0.09F);
+				} else {
+					if (letter == "." || letter == "," || letter == "!" || letter == "?") {
+						yield return new WaitForSeconds (0.2F);
+					}
+					yield return new WaitForSeconds (0.03F);
 				}
-				yield return new WaitForSeconds (0.09F);
 			} else {
-				if (letter == "." || letter == "," || letter == "!" || letter == "?") {
-					yield return new WaitForSeconds (0.2F);
-				}
-				yield return new WaitForSeconds (0.03F);
+				yield return new WaitForSeconds (0.0001F);
 			}
 			i++;
 		}
 		canSkip = true;
+		skipping = false;
 	}
 
 	void FixedUpdate () {
