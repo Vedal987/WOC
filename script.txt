@@ -1,0 +1,34 @@
+Hello my name is Jack Underwood and today I am going to be showing you the game I made for code make win 2017.
+The first section of the video will be the trailer and me showing some of the main features behind the game.
+The next section will be showing you how the game was made.
+The final section will be a short video on how to install and play the game for your self.
+
+So lets get started, here is the trailer I made for the game before I show you the main features.
+Ok, so that was the trailer, let me dive in to the game to show you some of the main features.
+
+First of all we have the combat system. At the moment the combat system is pretty basic and I plan to redo it so it's
+a bit more exciting.
+Next up we have the dialogue system with animated text, which you can add italics, bold and colours in to aswell.
+Then we have all the visual effects added to the game including rain particle effects, smoke effects and 3D dust assets to create emotion withing the player.
+and saving, which was one of the most difficult features to implement,
+it's not as easy as it looks in modern games. I had to make a .xml file which it would save data like the creatures level/health
+and stored the rest of the data as registry entries on the users computer.
+The main feature and selling point is the decision system, there are several endings to the game at the moment which can only be 
+unlocked by making certain decisions which directly affect the game.
+
+Ok, now that I've shown you the main features lets move on to how it was made. I used software called Unity as the game engine and
+main software involved, it works by adding scripts to objects to make them interact with each other. All the scripts were hand written
+here is an example of one, it is the Main script and is written in C# like all the rest of the scripts. This one is 1100 lines long
+but combined with the other scripts it reaches 2118 lines of code as most of it is contained in one script. I have been working on this project for months now and have used several tools to help me including
+github to backup my project and help other people test the game and give feedback
+hacknplan which is a project manager which I use to manage my tasks and what I need to do next
+piskel which is a simple web application which I use to animate and create the sprites for the game
+Fl Studio which is a music making software that I use to create the games music and finally
+Monodevelop which I use to actually code in which works really nicely with Unity
+
+Most of the assets for the game were made by me including, 98% of textures/animations, some of the music, most of the dialogue and 100% of the scripts/coding.
+
+If you would like to play the game yourself please download the installer from the dropbox link (website?), run the installer and follow through the steps, you should then be able to run the game from the start menu or from your desktop. If you get this error, please contact me and I can help guide you through the steps. Please note that this game currently only runs on Windows and is not supported on mac or linux although I plan to make a mac version soon.
+
+I have lots of plans for this game and development will still continue so make sure to keep an eye out.
+Thanks for listening, Goodbye.                      
