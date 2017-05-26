@@ -66,6 +66,7 @@ public class Ariel2 : MonoBehaviour {
 		}
 		if (dia.Contains( "*You received Ariel*")) {
 			this.GetComponent<SpriteRenderer> ().enabled = false;
+			this.GetComponent<BoxCollider2D> ().enabled = false;
 		}
 		d++;
 

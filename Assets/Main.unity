@@ -7195,6 +7195,7 @@ RectTransform:
   - {fileID: 1687035622}
   - {fileID: 662355218}
   - {fileID: 1723907668}
+  - {fileID: 2132673265}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19275,13 +19276,14 @@ MonoBehaviour:
   StartGame: 0
   OnAwake: 0
   IgnoreRaycast: 0
-  SecondDialogue: 0
+  SecondDialogue: 1
   InfiniteDialogue: 0
   ChangeDialogue: 0
   NoEscape: 0
   changer: {fileID: 0}
   Option: 1
-  Option2: []
+  Option2:
+  - The barrel is empty.
 --- !u!61 &1084533548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26620,6 +26622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696115bfe97307741bf9a5f966c9c5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextTest: {fileID: 2132673264}
   canMove: 1
   dialogue: 0
   start: 1
@@ -32257,7 +32260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialogue:
   - A gem, with powers from other worlds.
-  - It asks if you would like to save your game? <i>(Q is NO, E is YES)</i>[BACK]
+  - It asks if you would like to save your game? (Q is NO, E is YES)[BACK]
   - '`*Saving Game*`[GRASS]'
   d: 0
   StartGame: 0
@@ -32796,7 +32799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 78.67
+      value: 78.44
       objectReference: {fileID: 0}
     - target: {fileID: 4557617352837912, guid: 4f30e79d8268d1240ad5dc5e4cd4ea5b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -33598,7 +33601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1687035622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40542,6 +40545,94 @@ Transform:
   m_Father: {fileID: 1674951428}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2132673264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2132673265}
+  - component: {fileID: 2132673268}
+  - component: {fileID: 2132673267}
+  - component: {fileID: 2132673266}
+  m_Layer: 5
+  m_Name: TextTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2132673265
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132673264}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 54.26}
+  m_LocalScale: {x: 1, y: 1, z: 22.409994}
+  m_Children: []
+  m_Father: {fileID: 440032936}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 704.1, y: -122.48}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &2132673266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132673264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+--- !u!114 &2132673267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132673264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9705882, g: 0.9705882, b: 0.9705882, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 03cd13f2d1414ef499a0f98042c105a0, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &2132673268
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132673264}
 --- !u!1 &2134751258
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Xml.Serialization;
 using System.IO;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Text;	
+
 
 public class Main : MonoBehaviour {
 
 	public const string path = "Creature";
+
+	public GameObject TextTest;
 
 	public bool canMove = true;
 	public bool dialogue = false;
@@ -170,6 +175,12 @@ public class Main : MonoBehaviour {
 		
 	void Update()
 	{
+		if (Input.GetKeyDown (KeyCode.F8)) {
+			DialogueBox.SetActive (false);
+			canMove = true;
+			dialogue = false;
+			canSkip = true;
+		}
 		if (GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().currentM == 9) {
 			Rain.GetComponent<RainCameraController> ().Stop ();
 		}
@@ -659,6 +670,41 @@ public class Main : MonoBehaviour {
 		Flash.GetComponent<Animation> ().Play ();
 	}
 
+	List<string> WrapText(string text, double pixels)
+	{
+		string[] originalLines = text.Split(' ');
+
+		List<string> wrappedLines = new List<string>();
+
+		StringBuilder actualLine = new StringBuilder();
+		double actualWidth = 0;
+		string temp;
+
+		foreach (var item in originalLines)
+		{
+			temp = actualLine.ToString();
+			actualLine.Append(item + " ");
+			TextTest.GetComponent<Text> ().text = actualLine.ToString ();
+			Canvas.ForceUpdateCanvases ();
+			actualWidth = TextTest.GetComponent<RectTransform> ().rect.width;
+
+			if (actualWidth > pixels)
+			{
+				//Too big - undo last add!
+				wrappedLines.Add(temp);
+				actualLine.Remove(0, actualLine.Length);
+				actualWidth = 0;
+				actualLine.Append (item + " ");
+			} 
+		}
+
+		if(actualLine.Length > 0)
+			wrappedLines.Add(actualLine.ToString());
+
+		return wrappedLines;
+	}
+		
+
 	IEnumerator AnimateText(string strComplete){
 		/*
 		int i = 0;
@@ -707,6 +753,7 @@ public class Main : MonoBehaviour {
 		DialogueText.GetComponent<Text> ().text = strComplete;
 		canSkip = true;
 		*/
+
 		DialogueText.GetComponent<Text> ().text = "";
 
 		int i = 0;
@@ -718,8 +765,19 @@ public class Main : MonoBehaviour {
 
 		bool ignore = false;
 		bool skipping = false;
+		string wrappedStrComplete = "";
 
-		foreach(char nextletter in strComplete.ToCharArray())
+		List<string> lines = WrapText(strComplete, 448.5f);
+
+		foreach (var item in lines) {
+
+			wrappedStrComplete += item + "\n";
+
+		}
+
+
+
+		foreach(char nextletter in wrappedStrComplete.ToCharArray())
 		{
 			switch (nextletter) {
 				case '@':
@@ -752,6 +810,9 @@ public class Main : MonoBehaviour {
 				}
 				if (red){
 					letter = "<color=#ff0000>"+letter+"</color>";
+				}
+				if (orange){
+					letter = "<color=#ffa500ff>"+letter+"</color>";
 				}
 				DialogueText.GetComponent<Text> ().text += letter;
 			}
