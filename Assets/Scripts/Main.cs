@@ -150,15 +150,18 @@ public class Main : MonoBehaviour {
 			SeaDemonPoint = 1;
 			SeaDemon.SetActive (true);
 			SeaDemonPrompt.SetActive (false);
+			Bag.Remove ("Potion Of Healing");
 		}
 		if (PlayerPrefs.GetInt ("SeaDemonDone") == 1) {
 			SeaDemonDonePoint = 1;
 			Gwen.SetActive (true);
 			SeaDemon.SetActive (false);
+			Bag.Remove ("Potion Of Healing");
 		}
 		if (PlayerPrefs.GetString ("SaveArea") == "GRASS") {
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource>().clip = Grass;
 			GameObject.FindGameObjectWithTag ("Music").GetComponent<AudioSource> ().Play ();
+			Bag.Add ("Potion Of Healing");
 			mapGrass.SetActive (true);
 			mapTitan.SetActive (false);
 			mapVillage1.SetActive (false);
